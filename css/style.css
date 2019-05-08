@@ -12,9 +12,15 @@
   margin-bottom: 10px;
   padding: 5px;
 }
+
+/*Fin clases variadas */
+/**Clases de estructuras */
 .slider{
   padding: 3px;
   margin-top: 8px;
 }
-
-/*Fin clases variadas */
+.navheader{
+  padding-left: 15px;
+  width: 100%;
+}
+/*Fin de clases estructuras*/
