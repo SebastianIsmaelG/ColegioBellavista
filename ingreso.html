@@ -9,48 +9,44 @@
     <title>Colegio Bellavista Ingreso</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container d-flex justify-content-center">
+      <div class="" style="padding:10px;">
+        <img src="images/utilidad/insignia.png" class="img-responsive" height="115" width="100" alt="">
+      </div>
+    </div>
+    <div class="container text-center">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Ingreso Usuario</h3>
+          <h3>Ingreso Administración</h3>
         </div>
       </div>
-      <div class="row">
-        <form class="" action="funciones/nuevo_usuario.php" method="post">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="form-group">
-              <input type="text" class="form-control" name="nombre_real_usuario" value="" placeholder="Nombre" required>
+    </div>
+    <div class="container">
+      <div class="contenedor_registro d-flex justify-content-center">
+        <div class="row">
+          <form class="" action="funciones/ingresar.php" method="post" id="formCheckPassword">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input type="text" class="form-control" name="nombre_usuario" value="" placeholder="Nombre Usuario" required>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="form-group">
-              <input type="text" class="form-control" name="apellido_real_usuario" value="" placeholder="Apellido" required>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input type="password" class="form-control" name="password_usuario" id="password_usuario" value="" placeholder="Contraseña" required>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="form-group">
-              <input type="text" class="form-control" name="nombre_usuario" value="" placeholder="Nombre Usuario" required>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" name="btn_ingreso_usuario">Ingresar</button>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="form-group">
-              <input type="password" class="form-control" name="password_usuario" value="" placeholder="Contraseña" required>
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary" name="btn_registro_usuario">REGISTRAR</button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
     <!--SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-
-    </script>
   </body>
 </html>

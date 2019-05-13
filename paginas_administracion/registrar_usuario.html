@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="../text/css" href="css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../images/utilidad/favicon.ico" />
+    <title>Colegio Bellavista Registro</title>
+  </head>
+  <body>
+    <div style="padding:10px;">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h3>Registrar Usuario</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="contenedor_registro d-flex justify-content-center">
+          <div class="row">
+            <form class="" action="../funciones/registrar_usuario.php" method="POST" id="formCheckPassword">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="nombre_real_usuario" value="" placeholder="Nombre" required>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="apellido_real_usuario" value="" placeholder="Apellido" required>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="nombre_usuario" value="" placeholder="Nombre Usuario" required>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password_usuario" id="password_usuario" placeholder="Contraseña" required>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <input type="password" class="form-control" name="cmf_password_usuario" id="cmf_password_usuario" placeholder="Confirme contraseña">
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block" name="btn_registro_usuario" value="REGISTRAR">Registrar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+    <script type="text/javascript">
+              $("#formCheckPassword").validate({
+               rules: {
+                   password_usuario: {
+                     required: true,
+                        minlength: 6,
+                        maxlength: 15,
+
+                   } ,
+
+                       cmf_password_usuario: {
+                        equalTo: "#password_usuario",
+                         minlength: 6,
+                         maxlength: 15
+                   }
+
+
+               },
+          messages:{
+             password_usuario: {
+                     required:"Contraseña Requerida",
+                     minlength: "Minimo 6 caracteres",
+                     maxlength: "Maximo 10 caracteres"
+                   },
+           cmf_password_usuario: {
+             equalTo: "La contraseña debe ser igual al anterior",
+             minlength: "Minimo 6 caracteres",
+             maxlength: "Maximo 10 caracteres"
+           }
+          }
+
+          });
+    </script>
+  </body>
+</html>

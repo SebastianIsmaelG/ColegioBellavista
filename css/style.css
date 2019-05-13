@@ -79,6 +79,9 @@
   transform: scale(1.1);
   background-color: #f2f2f2;
 }
+.contenedor_registro{
+  padding: 10px;
+}
 .seccion_noticias{
   margin: 5px;
   padding: 5px;
