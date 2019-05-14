@@ -20,30 +20,35 @@
       <div class="container">
         <div class="contenedor_registro d-flex justify-content-center">
           <div class="row">
-            <form class="" action="../funciones/registrar_usuario.php" method="POST" id="formCheckPassword">
+            <form class="" action="#" method="POST" id="formCheckPassword">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="nombre_real_usuario" value="" placeholder="Nombre" required>
+                  <input type="text" class="form-control" name="nombre_real_usuario" maxlength="25" placeholder="Nombre" required>
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="apellido_real_usuario" value="" placeholder="Apellido" required>
+                  <input type="text" class="form-control" name="apellido_real_usuario" maxlength="25" placeholder="Apellido" required>
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="nombre_usuario" value="" placeholder="Nombre Usuario" required>
+                  <input type="text" class="form-control" name="nombre_usuario" maxlength="25" placeholder="Nombre Usuario" required>
+                </div>
+              </div>
+              <div class="col-lg--12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email_usuario" name="email_usuario" maxlength="80" placeholder="Ingrese correo electronico" required>
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group">
-                  <input type="password" class="form-control" name="password_usuario" id="password_usuario" placeholder="Contraseña" required>
+                  <input type="password" class="form-control" name="password_usuario" id="password_usuario" maxlength="25" placeholder="Contraseña" required>
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group">
-                  <input type="password" class="form-control" name="cmf_password_usuario" id="cmf_password_usuario" placeholder="Confirme contraseña">
+                  <input type="password" class="form-control" name="cmf_password_usuario" id="cmf_password_usuario" maxlength="25" placeholder="Confirme contraseña" required>
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

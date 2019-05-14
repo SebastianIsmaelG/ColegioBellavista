@@ -5,6 +5,21 @@
     -ms-user-select: none;
     user-select: none;
 }
+.titulo_user{
+  margin: 0;
+  padding: 0;
+}
+.title_red{
+  color:#ff3333;
+}
+.container_buttons{
+  padding: 10px;
+
+}
+
+.hover_image:hover{
+  transform: scale(1.2);
+}
 .box{
   border-style: solid;
   border-width: 3px;
