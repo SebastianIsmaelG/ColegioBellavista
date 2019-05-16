@@ -5,7 +5,7 @@ if (isset($_POST["btn_ingreso_usuario"])) {
       $usuario = $_POST["nombre_usuario"];
       $password = $_POST["password_usuario"];
       if ($usuario=="" || $password=="") {
-          echo "<script> window.alert('Ha ocurrrido un error contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>"; //SCRIPT CORRECTO
+          echo "<script> window.alert('Ha ocurrrido un error al ingresar los datos. COD:0001');window.location.href='../ingreso.html';</script>"; //SCRIPT CORRECTO
       }else{
         require ("dbcall.php");
         if (!$cnn) {
@@ -49,7 +49,7 @@ if (isset($_POST["btn_ingreso_usuario"])) {
       }
 
     } catch (\Exception $e) {
-        echo "<script> window.alert('Ha ocurrrido un error contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
+        echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
     }
 
 }else {
