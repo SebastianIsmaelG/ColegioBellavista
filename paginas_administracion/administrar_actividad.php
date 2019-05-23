@@ -54,19 +54,20 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="py-2">
-              <h5>ACTIVIDADES ALMACENADAS</h5>
+              <h5 class="title_red">ACTIVIDADES ALMACENADAS</h5>
+              <hr>
             </div>
           </div>
         </div>
       </div>
       <div class="container py-2">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="py-2 text-center">
                <input id="input_busqueda_actividades" onkeyup="busqueda_avanzada()" class="form-control" type="text" placeholder="Filtrar por nombre">
             </div>
           </div>
-          <div class="col-lg-12">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="py-2 text-center">
               <?php require ("../funciones/datos_actividades.php") ?>
             </div>

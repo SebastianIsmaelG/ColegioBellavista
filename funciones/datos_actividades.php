@@ -27,10 +27,10 @@
       }
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
       //Se crea la tabla dinamicamente
-      $sql = mysqli_prepare($cnn,"SELECT nombre_actividad, fecha_actividad FROM actividades ORDER BY fecha_actividad DESC LIMIT ?,?");
+      $sql = mysqli_prepare($cnn,"SELECT id_actividad, nombre_actividad, fecha_actividad FROM actividades ORDER BY fecha_actividad DESC LIMIT ?,?");
       mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);
-      mysqli_stmt_bind_result($sql,$na,$fa);
+      mysqli_stmt_bind_result($sql,$ia,$na,$fa);
 
       //Se dibuja la tabla
       echo "<div class='table-responsive'><table class='table table-bordered table-hover font_open' id='tabla_actividades'><thead class='thead-dark'><tr><th>Nombre Actividad</th><th>Fecha Actividad</th><th>Editar Actividad</th><th>Eliminar Actividad</th></tr></Thread><tbody>";
@@ -50,23 +50,20 @@
                           </button>
                         </div>
                         <div class='modal-body'>
-                          <div class='container-fluid'>
-                            <div class='row'>
-                              <form action='#'>
-                                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                  <div class='form-group'>
-                                    <input class='form-control' type='text' name='editar_nombre' value='$na'>
-                                  </div>
-                                  <div class='form-group'>
-                                    <input class='form-control' type='date' name='editar_fecha' value='$fa'>
-                                  </div>
-                                </div>
-                              </form>
+                          <div class='container'><form action='../funciones/editar_actividad.php' method='post'>
+                            <div class='form-group text-left'>
+                              <label for='nombre_editar_actividad' class='font_open'>Nombre Actividad</label>
+                              <input type='text' id='nombre_editar_actividad' name='nombre_editar_actividad' class='form-control' value='$na'>
+                            </div>
+                            <div class='form-group text-left'>
+                              <label for='nombre_fecha_actividad' class='font_open'>Fecha Actividad</label>
+                              <input type='date' id='fecha_editar_actividad' name='fecha_editar_actividad' class='form-control' value='$fa'>
                             </div>
                           </div>
                         </div>
                         <div class='modal-footer'>
-                          <button type='button' class='btn btn-primary'>Guardar Cambios</button>
+                          <input type='hidden' name='id_editar_actividad' value='$ia'>
+                          <input type='submit' class='btn btn-primary' name='btn_editar_actividad' value='Guardar Cambios'></form>
                         </div>
                       </div>
                     </div>
@@ -82,10 +79,18 @@
                           </button>
                         </div>
                         <div class='modal-body'>
-                          ...
+                          <div class='container'><form action='../funciones/eliminar_actividad.php' method='post'>
+                            <div class='form-group text-left'>
+                              <label for='nombre_editar_actividad' class='font_open font-weight-bold'>¿Esta seguro que desea eliminar esta actividad?</label>
+                              <hr>
+                              <p ><span class='font_open font-weight-bold'>Nombre Actividad: </span> $na</p>
+                              <p ><span class='font_open font-weight-bold'>Fecha Actividad: </span> $fa</p>
+                            </div>
+                          </div>
                         </div>
                         <div class='modal-footer'>
-                          <button type='button' class='btn btn-primary'>Save changes</button>
+                          <input type='hidden' name='id_eliminar_actividad' value='$ia'>
+                          <input type='submit' class='btn btn-danger' name='btn_eliminar_actividad' value='Eliminar'></form>
                         </div>
                       </div>
                     </div>

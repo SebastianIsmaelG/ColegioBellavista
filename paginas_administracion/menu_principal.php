@@ -68,7 +68,7 @@
                   <a href="administrar_actividad.php"><img src="../images/utilidad/saved-96.png" class="img-responsive hover_image" height="100" width="100"></a>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                  <a href="administrar_actividad.php" class="nav-link"> Actividades Almacenadas</a>
+                  <a href="administrar_actividad.php" class="nav-link"> Administrar Actividades </a>
                 </div>
               </div>
             </div>
@@ -102,10 +102,10 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/saved-96.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="administrar_noticia.php"><img src="../images/utilidad/saved-96.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Noticias Almacenadas</a>
+                    <a href="administrar_noticia.php" class="nav-link"> Administrar Noticias</a>
                   </div>
                 </div>
               </div>
@@ -139,10 +139,10 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/saved-96.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="#"><img src="../images/utilidad/pictures-folderb-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Álbumes Almacenados</a>
+                    <a href="#" class="nav-link"> Administrar Álbumes </a>
                   </div>
                 </div>
               </div>
@@ -176,10 +176,10 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/saved-96.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="#"><img src="../images/utilidad/pictures-folder-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Álbumes Almacenados</a>
+                    <a href="#" class="nav-link"> Administrar Álbumes </a>
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/user-80.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="#"><img src="../images/utilidad/add-user-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                     <a href="#" class="nav-link"> Nuevo Integrante</a>
@@ -213,10 +213,35 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/saved-96.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="#"><img src="../images/utilidad/user-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Datos Integrantes Almacenados</a>
+                    <a href="#" class="nav-link"> Administrar Datos Integrantes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <br>
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div style="padding:10px;">
+                <h4><span class="title_red">SECCIÓN</span> SLIDER PRINCIPAL</h4>
+                <hr>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="container_buttons">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="#"><img src="../images/utilidad/slider-128.png" class="img-responsive hover_image" height="100" width="100"></a>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="#" class="nav-link"> Administrar Imagenes Slider</a>
                   </div>
                 </div>
               </div>
@@ -241,7 +266,7 @@
                     <a href="#"><img src="../images/utilidad/contacts-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Datos Contactos Almacenados</a>
+                    <a href="#" class="nav-link"> Administrar Datos Contacto</a>
                   </div>
                 </div>
               </div>
@@ -266,7 +291,7 @@
                     <a href="#"><img src="../images/utilidad/school-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Datos Centro Educativo Almacenados</a>
+                    <a href="#" class="nav-link"> Administrar Datos Centro Educativo</a>
                   </div>
                 </div>
               </div>

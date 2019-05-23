@@ -11,12 +11,19 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/utilidad/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <title>Nueva Actividad CB</title>
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=7shzku874p8s9dkpqj1ywrozttfkzt8efthe0njwz1f84jwp"></script>
+    <script>
+      tinymce.init({
+        selector: '#textarea_cuerpo_noticia'
+      });
+    </script>
+
+    <title>Nueva Noticia CB</title>
   </head>
   <body>
     <section>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary noseleccionable">
-        <a class="navbar-brand font-weight-bold text-uppercase" href="menu_principal.php">Nueva Actividad</a>
+        <a class="navbar-brand font-weight-bold text-uppercase" href="menu_principal.php">Nueva Noticia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,8 +50,8 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="menu_principal.php">Menu Principal</a></li>
-            <li class="breadcrumb-item"><a href="menu_principal.php?label=actividades">Seccion Actividades</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Nueva Actividad</li>
+            <li class="breadcrumb-item"><a href="menu_principal.php?label=noticias">Seccion Noticias</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nueva Noticia</li>
           </ol>
         </nav>
       </div>
@@ -52,9 +59,9 @@
     <section>
       <div class="container py-2">
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="">
-              <h5 class="title_red">NUEVA ACTIVIDAD</h5>
+          <div class="col-lg-12">
+            <div class="py-2">
+              <h5 class="title_red">NUEVA NOTICIA</h5>
               <hr>
             </div>
           </div>
@@ -62,41 +69,73 @@
       </div>
       <div class="container py-2">
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="py-2">
-              <p class="font-weight-bold"> * Las actividades ingresadas se mostraran en orden descendente desde mas cercana a ocurrir </p>
+          <div class="col-lg-12">
+            <div class="">
+              <p class="font-weight-bold"> * Las noticias ingresadas se mostraran en orden descendente desde la que posea la fecha mas actual </p>
             </div>
           </div>
         </div>
         <div class="">
-          <form class="" name="formulario1" action="../funciones/ingresar_actividad.php" method="post">
+          <form action="../funciones/ingresar_noticia.php" method="post" enctype="multipart/form-data">
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-lg-12">
                 <div class="form-group">
-                  <label class="control-label label_menu" for="nombre_actividad">Nombre de la actividad </label>
+                  <label class="control-label label_menu sr-only" for=""> Titulo de la noticia</label>
+                  <input type="text" class="form-control" name="titular_noticia" placeholder="Titular de la noticia" required autofocus>
                 </div>
               </div>
-              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+              <div class="col-lg-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="nombre_actividad" id="nombre_actividad" maxlength="40" required>
+                  <label class="control-label label_menu sr-only" for=""> Introducción de la noticia</label>
+                  <textarea name="introduccion_noticia" class="form-control" rows="2" cols="80" maxlength="200" placeholder="Introducción de la noticia" required></textarea>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label class="control-label label_menu sr-only" for=""> Cuerpo de la noticia</label>
+                  <textarea name="cuerpo_noticia" id="textarea_cuerpo_noticia" class="form-control" rows="20" cols="80"></textarea>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <label class="h5"> Imagenes anexas</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <div class="py-2">
+                        <div class="">
+                          <input type="file" class="btn btn-info" name="imagen1" style="padding-left:5px;">
+                        </div>
+                      </div>
+                      <div class="py-2">
+                        <div class="">
+                          <input type="file" class="btn btn-info" name="imagen2" style="padding-left:5px;">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <div class="py-2">
+                        <div class="">
+                          <input type="file" class="btn btn-info" name="imagen3" style="padding-left:5px;">
+                        </div>
+                      </div>
+                      <div class="py-2">
+                        <div class="">
+                          <input type="file" class="btn btn-info" name="imagen4" style="padding-left:5px;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="form-group">
-                  <label class="control-label label_menu" for="fecha_actividad" >Fecha de la actividad </label>
-                </div>
-              </div>
-              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <div class="form-group">
-                  <input type="date" class="form-control" id="fecha_actividad" name="fecha_actividad">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                <input type="submit" class="btn btn-success" name="btn_nueva_actividad" value="Agregar Actividad">
+              <div class="col-lg-12 text-right">
+                <input type="submit" class="btn btn-info" name="btn_preview_noticia" value="Vista Previa">
+                <input type="submit" class="btn btn-success" name="btn_nueva_noticia" value="Subir Noticia">
               </div>
             </div>
           </form>

@@ -5,6 +5,10 @@
     -ms-user-select: none;
     user-select: none;
 }
+.input_noticia:hover{
+  cursor: pointer;
+}
+
 #input_busqueda_actividades{
   background-image: url('../images/iconos/busqueda-30.png');
   background-position: 10px;
@@ -50,7 +54,6 @@
 }
 .container_buttons{
   padding: 10px;
-
 }
 
 .hover_image:hover{
@@ -108,11 +111,14 @@
 .album-text{
   background-color: #E03C3B;
   color: white;
-  padding: 10px 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   cursor: pointer;
 }
 .title_content_album{
-  font-size: 13px;
+  font-size: 20px;
 }
 .container_actividad{
   margin-top: 10px;
