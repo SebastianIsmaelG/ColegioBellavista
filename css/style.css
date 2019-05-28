@@ -8,7 +8,13 @@
 .input_noticia:hover{
   cursor: pointer;
 }
-
+@media (min-width: 668px) {
+.whatsapp { display: none }
+}
+img {
+    max-width: 100%;
+    height: auto !important;
+}
 #input_busqueda_actividades{
   background-image: url('../images/iconos/busqueda-30.png');
   background-position: 10px;
@@ -49,6 +55,11 @@
   border-color: #3396ff;
   background-color: #3396ff;
 }
+.detail_social{
+  border-style: solid;
+  border-width: thin;
+  border-color: #3396ff;
+}
 .title_red{
   color:#ff3333;
 }
@@ -58,6 +69,15 @@
 
 .hover_image:hover{
   transform: scale(1.2);
+}
+.sadas{
+  background-image: url("../images/utilidad/FRONT COLEGIO.jpg");
+  background-color: #cccccc;
+  height: 250px;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
 }
 .box{
   border-style: solid;
@@ -71,8 +91,14 @@
 }
 .navbar_titulo{
   font-weight: bold;
-  font-size: 18px !important;
-  color: #ffff !important;
+  font-size: 16px !important;
+}
+.bellavista_title{
+  color: rgba(255, 255, 255,0.9);
+  font-weight: bold;
+  font-size: 20px !important;
+  text-shadow: -1px 0 black, 0 1px black,
+	  1px 0 black, 0 -1px black;
 }
 .thumbnail_galeria{
   border-style: solid;
@@ -145,6 +171,11 @@
 }
 .padding_bottom{
   margin-bottom: 5px;
+}
+.breadcumb_noticia{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
 /*Fin clases variadas */
 

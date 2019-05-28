@@ -107,7 +107,13 @@
     <script type="text/javascript">
        CKEDITOR.replace( 'cuerpo_noticia', {
         language: 'es',
-        uiColor: '#9AB8F3'
+        uiColor: '#9AB8F3',
+        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+       filebrowserImageBrowseUrl: '../ckfinder/ckfinder.html?type=Images',
+       filebrowserFlashBrowseUrl: '../ckfinder/ckfinder.html?type=Flash',
+       filebrowserUploadUrl: '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+       filebrowserImageUploadUrl: '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+       filebrowserFlashUploadUrl: '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
       });
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
