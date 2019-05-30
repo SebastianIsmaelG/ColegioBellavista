@@ -1,4 +1,5 @@
 <?php
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
   if (!isset($_POST["btn_editar_actividad"])) {
     echo "<script> window.location.href='../ingreso.html';</script>";
   }else {
@@ -19,7 +20,7 @@
         }else{
             //Ingresa los datos
             $sql = mysqli_prepare($cnn,"UPDATE actividades SET nombre_actividad=?,fecha_actividad=? WHERE (id_actividad=?)");
-            mysqli_stmt_bind_param($sql,"ssi",$nombre_actividad,$nueva_fecha_actividad,$id_actividad_vieja);
+            mysqli_stmt_bind_param($sql,"ssi",utf8_decode($nombre_actividad),$nueva_fecha_actividad,$id_actividad_vieja);
             if (mysqli_stmt_execute($sql) == TRUE) {
                 echo "<script> window.alert('Actividad modificada con exito');window.location.href='../paginas_administracion/administrar_actividad.php';</script>";
             }else {

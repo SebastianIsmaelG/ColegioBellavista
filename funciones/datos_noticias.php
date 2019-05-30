@@ -1,4 +1,5 @@
 <?php
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
   try {
     require ("dbcall.php");
     if (!$cnn) {
@@ -8,7 +9,7 @@
       $modalwindow1 = 0;
       $modalwindow2 = 0;
       //RowCount
-      $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT nombre_actividad,fecha_actividad FROM actividades)as TT";
+      $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia FROM noticias)as TT";
       $rs = mysqli_query($cnn,$sqlCount);
       if (mysqli_num_rows($rs)==0) {
           echo "Sin resultados";
@@ -27,53 +28,27 @@
       }
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
       //Se crea la tabla dinamicamente
-      $sql = mysqli_prepare($cnn,"SELECT id_actividad, nombre_actividad, fecha_actividad FROM actividades ORDER BY fecha_actividad DESC LIMIT ?,?");
+      $sql = mysqli_prepare($cnn,"SELECT id_noticia,titulo_noticia,fecha_noticia,intro_noticia,cuerpo_noticia FROM noticias ORDER BY fecha_noticia DESC LIMIT ?,?");
       mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);
-      mysqli_stmt_bind_result($sql,$ia,$ena,$fa);
+      mysqli_stmt_bind_result($sql,$idn,$etn,$fn,$ein,$ecn);
 
       //Se dibuja la tabla
-      echo "<div class='table-responsive'><table class='table table-bordered table-hover font_open' id='tabla_actividades'><thead class='thead-dark'><tr><th>Nombre Actividad</th><th>Fecha Actividad</th><th>Editar Actividad</th><th>Eliminar Actividad</th></tr></Thread><tbody>";
+      echo "<div class='table-responsive'><table class='table table-bordered table-hover font_open' id='tabla_actividades'><thead class='thead-dark'><tr><th>Titulo Noticia</th><th>Fecha Publicación</th><th>Editar Publicación</th><th>Eliminar Publicación</th></tr></Thread><tbody>";
       while ($fila = mysqli_stmt_fetch($sql)) {
-          $na= utf8_encode($ena);
+        $tn = utf8_encode($etn);
+        $in = utf8_encode($ein);
+        $cn = utf8_encode($ecn);
           echo "<tr>
-                  <td><p>$na</p></td>
-                  <td><p>$fa</p></td>
-                  <td><button class='btn btn-success' data-toggle='modal' data-target='#ModalCenterEditar$modalwindow1' >Editar</button>
-                  <div class='modal fade' id='ModalCenterEditar$modalwindow1' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-                    <div class='modal-dialog modal-dialog-centered' role='document'>
-                      <div class='modal-content'>
-                        <div class='modal-header'>
-                          <h6 class='modal-title font-weight-bold' id='exampleModalLongTitle'>EDITAR ACTIVIDAD</h6>
-                          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                          </button>
-                        </div>
-                        <div class='modal-body'>
-                          <div class='container'><form action='../funciones/editar_actividad.php' method='post'>
-                            <div class='form-group text-left'>
-                              <label for='nombre_editar_actividad' class='font_open'>Nombre Actividad</label>
-                              <input type='text' id='nombre_editar_actividad' name='nombre_editar_actividad' class='form-control' value='$na'>
-                            </div>
-                            <div class='form-group text-left'>
-                              <label for='nombre_fecha_actividad' class='font_open'>Fecha Actividad</label>
-                              <input type='date' id='fecha_editar_actividad' name='fecha_editar_actividad' class='form-control' value='$fa'>
-                            </div>
-                          </div>
-                        </div>
-                        <div class='modal-footer'>
-                          <input type='hidden' name='id_editar_actividad' value='$ia'>
-                          <input type='submit' class='btn btn-primary' name='btn_editar_actividad' value='Guardar Cambios'></form>
-                        </div>
-                      </div>
-                    </div>
-                  </div></td>
+                  <td><p>$tn</p></td>
+                  <td><p>$fn</p></td>
+                  <td><form action='#' method='post'><button type='submit' name='btn_editar_noticia' class='btn btn-success'>Editar</button></form>
                   <td><button class='btn btn-danger' data-toggle='modal' data-target='#ModalCenterEliminar$modalwindow2'>Eliminar</button>
                   <div class='modal fade' id='ModalCenterEliminar$modalwindow2' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
                     <div class='modal-dialog modal-dialog-centered' role='document'>
                       <div class='modal-content'>
                         <div class='modal-header'>
-                          <h6 class='modal-title font-weight-bold' id='exampleModalLongTitle'>ELIMINAR ACTIVIDAD</h6>
+                          <h6 class='modal-title font-weight-bold' id='exampleModalLongTitle'>ELIMINAR NOTICIA</h6>
                           <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                             <span aria-hidden='true'>&times;</span>
                           </button>
@@ -81,15 +56,15 @@
                         <div class='modal-body'>
                           <div class='container'><form action='../funciones/eliminar_actividad.php' method='post'>
                             <div class='form-group text-left'>
-                              <label for='nombre_editar_actividad' class='font_open font-weight-bold'>¿Esta seguro que desea eliminar esta actividad?</label>
+                              <label for='nombre_editar_actividad' class='font_open font-weight-bold'>¿Esta seguro que desea eliminar esta publicación?</label>
                               <hr>
-                              <p ><span class='font_open font-weight-bold'>Nombre Actividad: </span> $na</p>
-                              <p ><span class='font_open font-weight-bold'>Fecha Actividad: </span> $fa</p>
+                              <p ><span class='font_open font-weight-bold'>Titulo Noticia: $tn </span> </p>
+                              <p ><span class='font_open font-weight-bold'>Fecha Noticia:$fn </span> </p>
                             </div>
                           </div>
                         </div>
                         <div class='modal-footer'>
-                          <input type='hidden' name='id_eliminar_actividad' value='$ia'>
+                          <input type='hidden' name='id_eliminar_actividad' value=''>
                           <input type='submit' class='btn btn-danger' name='btn_eliminar_actividad' value='Eliminar'></form>
                         </div>
                       </div>

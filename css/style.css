@@ -8,9 +8,7 @@
 .input_noticia:hover{
   cursor: pointer;
 }
-@media (min-width: 668px) {
-.whatsapp { display: none }
-}
+
 img {
     max-width: 100%;
     height: auto !important;
@@ -75,9 +73,12 @@ img {
   background-color: #cccccc;
   height: 250px;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-attachment: fixed
+}
+.shared_label{
+  font-weight: bold;
 }
 .box{
   border-style: solid;
@@ -197,11 +198,134 @@ img {
   padding-left: 15px;
   width: 100%;
 }
+/**Primer boton **/
+.button_save{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  position: fixed;
+  bottom:50px;
+  right: 10px;
+  z-index: 999px;
+}
+.label_button_save{
+  border-radius: 10px;
+  width: 220px;
+  margin: 0px;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+}
+.div_button{
+  width: 20%;
+  margin: 0px;
+  cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: inherit;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+}
+/**Fin primer boton **/
+/**Segundo boton **/
+.button_save_editor{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  position: fixed;
+  bottom:100px;
+  right: 10px;
+  z-index: 999px;
+}
+.label_button_save_editor{
+  border-radius: 10px;
+  width: 220px;
+  margin: 0px;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  bottom: 105px;
+  right: 10px;
+
+}
+.div_button_editor{
+  width: 20%;
+  margin: 0px;
+  cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: inherit;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+}
+/** Fin segundo boton **/
+/**Tercer boton **/
+.button_save_borrador{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  position: fixed;
+  bottom:70px;
+  right: 10px;
+  z-index: 999px;
+}
+.label_button_save_borrador{
+  border-radius: 10px;
+  width: 220px;
+  margin: 0px;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  bottom: 55px;
+  right: 10px;
+}
+.div_button_borrador{
+  width: 20%;
+  margin: 0px;
+  cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: inherit;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+}
+/**Fin tercer boton **/
+.banner_container{
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+}
 .encabezado_secciones{
   background-color: #E03C3B;
   color: white;
   text-transform: uppercase;
   padding: 5px;
+}
+.border_aside{
+  background-color: #f2f2f2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d9d9d9;
 }
 .contenido_secciones{
   background-color: #ffff;

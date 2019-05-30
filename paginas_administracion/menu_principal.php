@@ -110,6 +110,18 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="container_buttons">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="administrar_borradores.php"><img src="../images/utilidad/borrar-64.png" class="img-responsive hover_image" height="100" width="100"></a>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="administrar_borradores.php" class="nav-link"> Administrar Borradores</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         <br>
       </div>
