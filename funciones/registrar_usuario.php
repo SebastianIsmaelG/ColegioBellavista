@@ -1,4 +1,5 @@
 <?php
+//Este proceso quedo invalidado a peticion del mantenedor del sitio
 if (isset($_POST["btn_registro_usuario"])) {
   try {
     $nombre_real = $_POST["nombre_real_usuario"];

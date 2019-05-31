@@ -9,7 +9,7 @@
       $modalwindow1 = 0;
       $modalwindow2 = 0;
       //RowCount
-      $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia FROM noticias)as TT";
+      $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia FROM borradores)as TT";
       $rs = mysqli_query($cnn,$sqlCount);
       if (mysqli_num_rows($rs)==0) {
           echo "Sin resultados";
@@ -28,10 +28,10 @@
       }
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
       //Se crea la tabla dinamicamente
-      $sql = mysqli_prepare($cnn,"SELECT id_noticia,titulo_noticia,fecha_noticia,intro_noticia,cuerpo_noticia FROM noticias ORDER BY fecha_noticia DESC LIMIT ?,?");
+      $sql = mysqli_prepare($cnn,"SELECT id_noticia, fecha_noticia, titulo_noticia, intro_noticia, cuerpo_noticia FROM borradores ORDER BY fecha_noticia DESC LIMIT ?,?");
       mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);
-      mysqli_stmt_bind_result($sql,$idn,$etn,$fn,$ein,$ecn);
+      mysqli_stmt_bind_result($sql,$idn,$fn,$etn,$ein,$ecn);
 
       //Se dibuja la tabla
       echo "<div class='table-responsive'><table class='table table-bordered table-hover font_open' id='tabla_actividades'><thead class='thead-dark'><tr><th>Titulo Noticia</th><th>Fecha Publicación</th><th>Editar Publicación</th><th>Eliminar Publicación</th></tr></Thread><tbody>";

@@ -5,7 +5,7 @@
     $id_actividad_vieja = $_POST["id_eliminar_actividad"];
 
     if ($id_actividad_vieja == "") {
-      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0007');</script>";
+      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0007'); window.history.back();</script>";
     }else {
       try {
         require ("dbcall.php");
