@@ -42,20 +42,21 @@
           echo "<tr>
                   <td><p>$tn</p></td>
                   <td><p>$fn</p></td>
-                  <td><form action='../funciones/editar_noticia.php' method='post'>
+                  <td><form action='../funciones/editar_borrador.php' method='post'>
                   <input type='hidden' name='id_noticia' value='$idn'>
                   <input type='hidden' name='titulo_noticia' value='$tn'>
                   <input type='hidden' name='fecha_noticia' value='$fn'>
                   <input type='hidden' name='intro_noticia' value='$in'>
                   <input type='hidden' name='cuerpo_noticia' value='$cn'>
-                  <button type='submit' name='btn_editar_noticia' class='btn btn-success'>Editar</button>
+                  <button type='submit' name='btn_editar_borrador' class='btn btn-success'>Editar</button>
                   </form>
                   <td><button class='btn btn-danger' data-toggle='modal' data-target='#ModalCenterEliminar$modalwindow2'>Eliminar</button>
+
                   <div class='modal fade' id='ModalCenterEliminar$modalwindow2' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
                     <div class='modal-dialog modal-dialog-centered' role='document'>
                       <div class='modal-content'>
                         <div class='modal-header'>
-                          <h6 class='modal-title font-weight-bold' id='exampleModalLongTitle'>ELIMINAR NOTICIA</h6>
+                          <h6 class='modal-title font-weight-bold' id='exampleModalLongTitle'>ELIMINAR BORRADOR</h6>
                           <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                             <span aria-hidden='true'>&times;</span>
                           </button>

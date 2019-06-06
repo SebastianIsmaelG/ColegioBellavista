@@ -8,14 +8,17 @@
 .input_noticia:hover{
   cursor: pointer;
 }
-
+.display_center{
+  display: block;
+  text-align: -webkit-center;
+}
 img {
     max-width: 100%;
     height: auto !important;
 }
 #input_busqueda_actividades{
   background-image: url('../images/iconos/busqueda-30.png');
-  background-position: 10px;
+  background-position: 8px;
   background-repeat: no-repeat;
   font-size: 16px;
   padding: 12px 40px 12px 40px;
@@ -24,6 +27,47 @@ img {
 .label_menu{
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+}
+.imagen_bellavista{
+    background-image: url(../images/utilidad/FRONT_COLEGIO.jpg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 0;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    height: 300px;
+}
+.imagen_bellavista2{
+    background-image: url(../images/galerias/diadelecturacra/IMG_20190425_092526.jpg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 0;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    height: 200px;
+}
+.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+}
+.font_lato{
+  font-family: 'Lato', sans-serif !important;
+  letter-spacing: 1px;
+}
+.title_vision_mision{
+  font-weight: 400;
+  line-height: 1.26;
+  letter-spacing: 1px;
 }
 .font_open{
   font-family: 'Open Sans', sans-serif;
@@ -166,9 +210,30 @@ img {
 .contenedor_registro{
   padding: 10px;
 }
+.admision_banner{
+  padding-top: 20px;
+  padding_bottom: 20px;
+  height: 100%;
+  text-align: center;
+}
 .seccion_noticias{
   margin: 5px;
   padding: 5px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color:#bfbfbf;
+}
+.icon_zoom{
+  transition: width 1s, height 1s, transform 1s;
+  -moz-transition: width 1s, height 1s, -moz-transform 1s;
+  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+  -o-transition: width 1s, height 1s,-o-transform 1s;
+}
+.icon_zoom:hover{
+    transform : scale(1.2);
+  -moz-transform : scale(1.2);      /* Firefox */
+  -webkit-transform : scale(1.2);   /* Chrome - Safari */
+  -o-transform : scale(1.2);
 }
 .padding_bottom{
   margin-bottom: 5px;
@@ -181,6 +246,7 @@ img {
 /*Fin clases variadas */
 
 /**Clases de estructuras */
+
 .box_container{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -193,6 +259,13 @@ img {
 .border_solid{
   border-style: solid;
   border-width: 2px;
+}
+.border-activity{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  background-color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
 }
 .navheader{
   padding-left: 15px;
@@ -321,6 +394,12 @@ img {
   text-transform: uppercase;
   padding: 5px;
 }
+.encabezado_secciones2{
+  background-color: #E03C3B;
+  color: white;
+  text-transform: uppercase;
+  padding: 2px;
+}
 .border_aside{
   background-color: #f2f2f2;
   border-style: solid;
@@ -329,10 +408,21 @@ img {
 }
 .contenido_secciones{
   background-color: #ffff;
-  border-left:solid black 2px;
-  border-right:solid black 2px;
+  border-left:solid black 1.5px;
+  border-right:solid black 1.5px;
   border-top: 0px!important;
-  border-bottom:solid black 2px;
+  border-bottom:solid black 1.5px;
   padding: 5px;
 }
+.custom-actividad{
+  width: 50%!important;
+  float: left;
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+.border-activity:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 /*Fin de clases estructuras*/

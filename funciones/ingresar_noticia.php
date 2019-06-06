@@ -12,7 +12,8 @@
     $fecha_publicacion = date('d-m-Y');
 
     if ($titulo_noticia=="" || $intro_noticia=="" || $cuerpo_noticia=="" || $fecha_publicacion=="") {
-      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008'); window.history.back();</script>";
+      echo "<script> window.alert(' Ha ocurrrido un error al recuperar los datos, reintente. COD:0008');window.history.back();</script>";
+    }else{
     }
     echo "<html>
             <head>
@@ -63,7 +64,7 @@
                   </div>
                   <div class='container '>
                     <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
-                      <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='index.html'>Menu Principal</a>
+                      <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='index.php'>Menu Principal</a>
                       <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                         <span class='navbar-toggler-icon'></span>
                       </button>

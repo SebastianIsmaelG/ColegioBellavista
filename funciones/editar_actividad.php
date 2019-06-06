@@ -3,9 +3,15 @@
   if (!isset($_POST["btn_editar_actividad"])) {
     echo "<script> window.location.href='../ingreso.html';</script>";
   }else {
-    $id_actividad_vieja = $_POST["id_editar_actividad"];
-    $nuevo_nombre_actividad = $_POST["nombre_editar_actividad"];
-    $nueva_fecha_actividad = $_POST["fecha_editar_actividad"];
+    try {
+      $id_actividad_vieja = $_POST["id_editar_actividad"];
+      $nuevo_nombre_actividad = $_POST["nombre_editar_actividad"];
+      $nueva_fecha_actividad = $_POST["fecha_editar_actividad"];
+      
+    } catch (\Exception $e) {
+      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0006');window.location.href='../paginas_administracion/menu_principal.php';</script>";
+    }
+
 
     if ($id_actividad_vieja=="" || $nuevo_nombre_actividad=="" || $nueva_fecha_actividad=="") {
         echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0006');</script>";

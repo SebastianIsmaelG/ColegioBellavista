@@ -11,7 +11,8 @@
       $fecha_publicacion = date('Y-m-d');
 
       if ($usuario=="" || $titulo=="" || $intro=="" || $cuerpo=="") {
-        echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0009');</script>";
+        echo "<script> window.alert(' Ha ocurrrido un error al recuperar los datos, reintente. COD:0009');window.history.back();</script>";
+      }else{
       }else {
         require ("dbcall.php");
         if (!$cnn) {

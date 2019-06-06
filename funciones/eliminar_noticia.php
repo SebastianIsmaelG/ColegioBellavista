@@ -5,7 +5,7 @@
     $id_noticia = $_POST["id_noticia"];
 
     if ($id_noticia == "") {
-      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:00012'); window.history.back();</script>";
+      echo "<script> window.alert(' Ha ocurrrido un error al recuperar los datos, reintente. COD:0012');window.history.back();</script>";
     }else {
       try {
         require ("dbcall.php");

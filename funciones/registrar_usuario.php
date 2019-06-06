@@ -10,7 +10,8 @@ if (isset($_POST["btn_registro_usuario"])) {
     $confirm_password = $_POST["cmf_password_usuario"];
 
     if ($nombre_real == "" || $apellido_real == "" || $usuario=="" || $password=="" || $email =="") {
-        echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>"; //SCRIPT CORRECTO
+      echo "<script> window.alert(' Ha ocurrrido un error al recuperar los datos, reintente. COD:0000');window.history.back();</script>";
+    }else{
     }else {
       require ("dbcall.php");
       if (!$cnn) {
