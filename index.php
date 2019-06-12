@@ -35,7 +35,7 @@
                 <div class='row'>
                   <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                     <div class='py-2'>
-                      <img src='images/utilidad/insignia.png' width='76' height='80' alt=''>
+                      <a href="index.php"><img src='images/utilidad/insignia.png' width='76' height='80' alt=''></a>
                     </div>
                   </div>
                   <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -48,31 +48,31 @@
             </div>
             <div class='container'>
               <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
-                <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='../index.php'>Menu Principal</a>
+                <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='#'>Menu Principal</a>
                 <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                   <span class='navbar-toggler-icon'></span>
                 </button>
                 <div class='collapse navbar-collapse' id='navbarNav' >
                   <ul class='navbar-nav mx-auto' style='width:100%;'>
                     <li class='nav-item navheader'>
-                      <a class='nav-link navbar_titulo' href='index.php'>INICIO <span class='sr-only'>INICIO</span></a>
+                      <a class='nav-link navbar_titulo line_hover' href='index.php'>INICIO<span class='sr-only'>INICIO</span></a>
                     </li>
                     <li class='nav-item dropdown navheader'>
-                      <a class='nav-link dropdown-toggle navbar_titulo' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
+                      <a class='nav-link dropdown-toggle navbar_titulo line_hover' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
                       <div class='dropdown-menu background_navbar' aria-labelledby='navbarDropdown'>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.html'>Centro Educativo</a>
-                          <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='admision.html'>Admisión</a>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='equipo.php'>Equipo Docente</a>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='noticias.php'>Noticias</a>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='actividades.php'>Actividades</a>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='galerias.php'>Galeria</a>
+                          <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='admision.html'>Historia</a>
                       </div>
                     </li>
                     <li class='nav-item navheader'>
-                      <a class='nav-link navbar_titulo' href='historia.html'>HISTORIA</a>
+                      <a class='nav-link navbar_titulo line_hover' href='historia.html'>ADMISIÓN <span class="ano_actual"></span></a>
                     </li>
                     <li class='nav-item navheader'>
-                      <a class='nav-link navbar_titulo' href='contacto.php' tabindex='-1'>CONTACTO</a>
+                      <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
                     </li>
                   </ul>
                 </div>
@@ -80,6 +80,15 @@
             </div>
         </header>
         <section>
+          <!--Datos almacenados-->
+          <?php
+            try {
+              require('funciones/datos_index.php');
+              setlocale(LC_TIME, 'es_CO.UTF-8');
+            } catch (\Exception $e) {
+              echo "<script> alert('Ha ocurrido un error al solicitar la informacion, contacte al administrador. COD:0014');</script>";
+            }
+          ?>
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12"><!--Columna Izquierda Slider-Noticias-->
@@ -129,14 +138,14 @@
                               <div class="seccion_noticias">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <input type="hidden" name="valor_noticia" value="">
-                                    <a class="text-decoration-none" href="noticia.php?publicacion="><h5 class="font-weight-bold text-danger">Titulo de la noticia</h5></a>
+                                    <a class="text-decoration-none" href="noticia.php?name=<?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_1)) {echo $id_noticia_1;}else {echo "";} ?>" ><h5 class="font-weight-bold text-danger"><?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?></h5></a>
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <p>Integer a tellus eu urna vehicula tempus vitae nec lectus. Fusce gravida faucibus sagittis. Sed augue ligula, commodo sed consectetur sed, auctor in lectus. Curabitur in iaculis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae<span>...<a href="noticia.php?publicacion=">ver mas»</a></span></p>
+                                    <p><?php if (isset($intro_noticia_1)) {echo $intro_noticia_1;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_1)) {echo $id_noticia_1;}else {echo "";} ?>">ver mas»</a></span></p>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
-                                    <span class="text-justify"><small class="font-weight-bold ">01-Enero-2019</small></span>
+                                    <span class="text-justify"><small class="font-weight-bold "><?php if (isset($fecha_noticia_1)) {
+                                      echo strftime("%d de %B, %G", strtotime($fecha_noticia_1));}else {echo "";} ?></small></span>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
@@ -161,14 +170,15 @@
                               <div class="seccion_noticias">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <input type="hidden" name="valor_noticia" value="">
-                                    <a class="text-decoration-none" href="noticia.php?publicacion="><h5 class="font-weight-bold text-danger">Titulo de la noticia</h5></a>
+                                    <a class="text-decoration-none" href="noticia.php?name=<?php if (isset($titulo_noticia_2)) {echo $titulo_noticia_2;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_2)) {echo $id_noticia_2;}else {echo "";} ?>" ><h5 class="font-weight-bold text-danger"><?php if (isset($titulo_noticia_2)) {echo $titulo_noticia_2;}else {echo "";} ?></h5></a>
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <p>Integer a tellus eu urna vehicula tempus vitae nec lectus. Fusce gravida faucibus sagittis. Sed augue ligula, commodo sed consectetur sed, auctor in lectus. Curabitur in iaculis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae<span>...<a href="noticia.php?publicacion=">ver mas»</a></span></p>
+                                    <p><?php if (isset($intro_noticia_2)) {echo $intro_noticia_2;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_2)) {echo $titulo_noticia_2;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_2)) {echo $id_noticia_2;}else {echo "";} ?>" >ver mas»</a></span></p>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
-                                    <span class="text-justify"><small class="font-weight-bold ">01-Enero-2019</small></span>
+                                    <span class="text-justify"><small class="font-weight-bold "><?php if (isset($fecha_noticia_2)) {
+
+                                      echo strftime("%d de %B, %G", strtotime($fecha_noticia_2));}else {echo "";} ?></small></span>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
@@ -193,14 +203,15 @@
                               <div class="seccion_noticias">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <input type="hidden" name="valor_noticia" value="">
-                                    <a class="text-decoration-none" href="noticia.php?publicacion="><h5 class="font-weight-bold text-danger">Titulo de la noticia</h5></a>
+                                    <a class="text-decoration-none" href="noticia.php?name=<?php if (isset($titulo_noticia_3)) {echo $titulo_noticia_3;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_3)) {echo $id_noticia_3;}else {echo "";} ?>" ><h5 class="font-weight-bold text-danger"><?php if (isset($titulo_noticia_3)) {echo $titulo_noticia_3;}else {echo "";} ?></h5></a>
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <p>Integer a tellus eu urna vehicula tempus vitae nec lectus. Fusce gravida faucibus sagittis. Sed augue ligula, commodo sed consectetur sed, auctor in lectus. Curabitur in iaculis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae<span>...<a href="noticia.php?publicacion=">ver mas»</a></span></p>
+                                    <p><?php if (isset($intro_noticia_3)) {echo $intro_noticia_3;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_3)) {echo $titulo_noticia_3;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_3)) {echo $id_noticia_3;}else {echo "";} ?>" >ver mas»</a></span></p>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
-                                    <span class="text-justify"><small class="font-weight-bold ">01-Enero-2019</small></span>
+                                    <span class="text-justify"><small class="font-weight-bold "><?php if (isset($fecha_noticia_3)) {
+
+                                      echo strftime("%d de %B, %G", strtotime($fecha_noticia_3));}else {echo "";} ?></small></span>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
@@ -225,14 +236,14 @@
                               <div class="seccion_noticias">
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <input type="hidden" name="valor_noticia" value="">
-                                    <a class="text-decoration-none" href="noticia.php?publicacion="><h5 class="font-weight-bold text-danger">Titulo de la noticia</h5></a>
+                                    <a class="text-decoration-none" href="noticia.php?name=<?php if (isset($titulo_noticia_4)) {echo $titulo_noticia_4;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_4)) {echo $id_noticia_4;}else {echo "";} ?>" ><h5 class="font-weight-bold text-danger"><?php if (isset($titulo_noticia_4)) {echo $titulo_noticia_4;}else {echo "";} ?></h5></a>
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <p>Integer a tellus eu urna vehicula tempus vitae nec lectus. Fusce gravida faucibus sagittis. Sed augue ligula, commodo sed consectetur sed, auctor in lectus. Curabitur in iaculis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae<span>...<a href="noticia.php?publicacion=">ver mas»</a></span></p>
+                                    <p><?php if (isset($intro_noticia_4)) {echo $intro_noticia_4;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_4)) {echo $titulo_noticia_4;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_4)) {echo $id_noticia_4;}else {echo "";} ?>" >ver mas»</a></span></p>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
-                                    <span class="text-justify"><small class="font-weight-bold ">01-Enero-2019</small></span>
+                                    <span class="text-justify"><small class="font-weight-bold "><?php if (isset($fecha_noticia_4)) {
+                                      echo strftime("%d de %B, %G", strtotime($fecha_noticia_4));}else {echo "";} ?></small></span>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
@@ -333,7 +344,9 @@
                               <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                   <div class="container_thumbnail">
-                                    <img src="images/galerias/diadelecturacra/IMG_20190425_092606.jpg" alt="" class="img-responsive img-thumbnail album-image">
+                                    <a href="https://unsplash.it/1200/768.jpg?image=100" data-toggle="lightbox" data-gallery="gallery3">
+                                        <img src="images/galerias/diadelecturacra/IMG_20190425_092606.jpg" class="img-fluid img-thumbnail album-image">
+                                    </a>
                                     <div class="album-container">
                                       <div class="album-text">
                                           <p class="title_content_album">Ver Álbum</p>
@@ -400,10 +413,10 @@
                                           <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
                                         </div>
                                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center ">
-                                          <p class="font-weight-bold"> Acto Ceremonial de un dia cualquiera 2019</p>
+                                          <p class="font-weight-bold"> <?php if (isset($titulo_actividad_1)) {echo $titulo_actividad_1; }else{echo "";} ?></p>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                                          <p class="font-weight-bold"> 4 Abril</p>
+                                          <p class="font-weight-bold"> <?php if (isset($fecha_actividad_1)) {echo $fecha_actividad_1; }else{echo "";} ?></p>
                                         </div>
                                       </div>
                                     </a>
@@ -415,10 +428,10 @@
                                           <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
                                         </div>
                                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center ">
-                                          <p class="font-weight-bold"> Dia Del Libro</p>
+                                          <p class="font-weight-bold"> <?php if (isset($titulo_actividad_2)) {echo $titulo_actividad_2; }else{echo "";} ?></p>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                                          <p class="font-weight-bold"> 4 Abril</p>
+                                          <p class="font-weight-bold"> <?php if (isset($fecha_actividad_2)) {echo $fecha_actividad_2; }else{echo "";} ?></p>
                                         </div>
                                       </div>
                                     </a>
@@ -430,10 +443,10 @@
                                         <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
                                       </div>
                                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center ">
-                                        <p class="font-weight-bold"> Semana de las Artes</p>
+                                        <p class="font-weight-bold"> <?php if (isset($titulo_actividad_3)) {echo $titulo_actividad_3; }else{echo "";} ?></p>
                                       </div>
                                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                                        <p class="font-weight-bold"> 4 Abril</p>
+                                        <p class="font-weight-bold"> <?php if (isset($fecha_actividad_3)) {echo $fecha_actividad_3; }else{echo "";} ?></p>
                                       </div>
                                     </div>
                                     </a>
@@ -488,7 +501,7 @@
               <h5>Institución</h5>
               <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-                <li><a class="text-muted" href="admision.html">Admisión</a></li>
+                <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
                 <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
                 <li><a class="text-muted" href="historia.html">Historia</a></li>
                 <li><a class="text-muted" href="contacto.php">Contacto</a></li>
@@ -537,5 +550,22 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+          var ano = (new Date).getFullYear();
+          $(document).ready(function() {
+          $(".ano_actual").text( ano );
+          });
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"></script>
+        <script type="text/javascript">
+          $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                    event.preventDefault();
+                    $(this).ekkoLightbox();
+              });
+        </script>
     </body>
 </html>

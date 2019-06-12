@@ -82,8 +82,7 @@ img.right
 	border: 1px solid #ccc;
 	float: right;
 	margin-left: 15px;
-	padding: 3px;
-	
+	padding: 5px;
 }
 
 img.left
@@ -91,7 +90,7 @@ img.left
 	border: 1px solid #ccc;
 	float: left;
 	margin-right: 15px;
-	padding: 3px;
+	padding: 5px;
 }
 
 pre

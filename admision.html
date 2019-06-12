@@ -38,7 +38,7 @@
             <div class='row'>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                 <div class='py-2'>
-                  <img src='images/utilidad/insignia.png' width='76' height='80' alt=''>
+                  <a href="index.php" class="text-decoration-none"><img src='images/utilidad/insignia.png' width='76' height='80' alt=''></a>
                 </div>
               </div>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -58,24 +58,24 @@
             <div class='collapse navbar-collapse' id='navbarNav' >
               <ul class='navbar-nav mx-auto' style='width:100%;'>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo' href='index.php'>INICIO <span class='sr-only'>INICIO</span></a>
+                  <a class='nav-link navbar_titulo line_hover' href='index.php'>INICIO <span class='sr-only'>INICIO</span></a>
                 </li>
                 <li class='nav-item dropdown navheader'>
-                  <a class='nav-link dropdown-toggle navbar_titulo' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
+                  <a class='nav-link dropdown-toggle navbar_titulo line_hover' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
                   <div class='dropdown-menu background_navbar' aria-labelledby='navbarDropdown'>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.html'>Centro Educativo</a>
-                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='admision.html'>Admisión</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='equipo.php'>Equipo Docente</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='noticias.php'>Noticias</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='actividades.php'>Actividades</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='galerias.php'>Galeria</a>
+                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='historia.html'>Historia</a>
                   </div>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo' href='historia.html'>HISTORIA</a>
+                  <a class='nav-link navbar_titulo line_hover' href='admision.html'>ADMISIÓN <span class="ano_actual"></span></a>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo' href='contacto.php' tabindex='-1'>CONTACTO</a>
+                  <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
                 </li>
               </ul>
             </div>
@@ -87,7 +87,7 @@
           <hr>
           <div class="container py-2">
             <div class="container py-2">
-              <h2 class="text-center text-danger">ADMISION 2019</h2>
+              <h2 class="text-center text-danger">ADMISIÓN <span class="ano_actual"></h2>
             </div>
             <div class="container">
               <div class="row">
@@ -207,7 +207,7 @@
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-            <li><a class="text-muted" href="admision.html">Admisión</a></li>
+            <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
             <li><a class="text-muted" href="historia.html">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>
@@ -256,6 +256,12 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var ano = (new Date).getFullYear();
+      $(document).ready(function() {
+      $(".ano_actual").text( ano );
+      });
+    </script>
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

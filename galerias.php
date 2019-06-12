@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Galeria Colegio Bellavista</title>
   </head>
-  <body style="background-color:#F8F9FA;">
+  <body>
     <header style="background-color:#E03C3B;">
         <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
             <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
@@ -36,7 +36,7 @@
             <div class='row'>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                 <div class='py-2'>
-                  <img src='images/utilidad/insignia.png' width='76' height='80' alt=''>
+                  <a href="index.php"><img src='images/utilidad/insignia.png' width='76' height='80' alt=''></a>
                 </div>
               </div>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -49,31 +49,31 @@
         </div>
         <div class='container'>
           <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
-            <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='../index.php'>Menu Principal</a>
+            <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='#'>Menu Principal</a>
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
               <span class='navbar-toggler-icon'></span>
             </button>
             <div class='collapse navbar-collapse' id='navbarNav' >
               <ul class='navbar-nav mx-auto' style='width:100%;'>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo' href='index.php'>INICIO <span class='sr-only'>INICIO</span></a>
+                  <a class='nav-link navbar_titulo line_hover' href='index.php'>INICIO <span class='sr-only'>INICIO</span></a>
                 </li>
                 <li class='nav-item dropdown navheader'>
-                  <a class='nav-link dropdown-toggle navbar_titulo' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
+                  <a class='nav-link dropdown-toggle navbar_titulo line_hover' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
                   <div class='dropdown-menu background_navbar' aria-labelledby='navbarDropdown'>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.html'>Centro Educativo</a>
-                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='admision.html'>Admisión</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='equipo.php'>Equipo Docente</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='noticias.php'>Noticias</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='actividades.php'>Actividades</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='galerias.php'>Galeria</a>
+                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='historia.html'>Historia</a>
                   </div>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo' href='historia.html'>HISTORIA</a>
+                  <a class='nav-link navbar_titulo line_hover' href='admision.html' tabindex='-1'>ADMISIÓN <span class="ano_actual"></span></a>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo' href='contacto.php' tabindex='-1'>CONTACTO</a>
+                  <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
                 </li>
               </ul>
             </div>
@@ -86,9 +86,9 @@
           <div class="container py-3">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">INICIO</a></li>
-                <li class="breadcrumb-item"><a href="#">INSTITUCIÓN</a></li>
-                <li class="breadcrumb-item active" aria-current="page">GALERIA</li>
+                <li class="breadcrumb-item"><a href="index.php"><small>INICIO</small></a></li>
+                <li class="breadcrumb-item"><a href="#"><small>INSTITUCIÓN</small></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><small>GALERIA</small></li>
               </ol>
             </nav>
           </div>
@@ -103,14 +103,14 @@
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
                       <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://placekitten.com/100/50" class="card-img-top" alt="..."></a>
+                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
                               <span class="h6 text-left">Titulo del album</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es la descripcion del album en donde se explica la actividad realizada blabla eso po.</span>
+                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                               <div class="" style="display:inline-block;">
@@ -140,14 +140,14 @@
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
                       <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://placekitten.com/100/50" class="card-img-top" alt="..."></a>
+                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
                               <span class="h6 text-left">Titulo del album</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es la descripcion del album en donde se explica la actividad realizada blabla eso po.</span>
+                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                               <div class="" style="display:inline-block;">
@@ -177,14 +177,14 @@
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
                       <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://placekitten.com/100/50" class="card-img-top" alt="..."></a>
+                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
                               <span class="h6">Titulo del album</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es la descripcion del album en donde se explica la actividad realizada blabla eso po.</span>
+                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                               <div class="" style="display:inline-block;">
@@ -214,14 +214,14 @@
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
                       <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://placekitten.com/100/50" class="card-img-top" alt="..."></a>
+                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
                               <span class="h6 text-left">Titulo del album</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es la descripcion del album en donde se explica la actividad realizada blabla eso po.</span>
+                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                               <div class="" style="display:inline-block;">
@@ -251,14 +251,14 @@
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
                       <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://placekitten.com/100/50" class="card-img-top" alt="..."></a>
+                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
                               <span class="h6 text-left">Titulo del album</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es la descripcion del album en donde se explica la actividad realizada blabla eso po.</span>
+                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                               <div class="" style="display:inline-block;">
@@ -288,14 +288,14 @@
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
                       <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://placekitten.com/100/50" class="card-img-top" alt="..."></a>
+                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
                               <span class="h6 text-left">Titulo del album</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es la descripcion del album en donde se explica la actividad realizada blabla eso po.</span>
+                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                               <div class="" style="display:inline-block;">
@@ -373,7 +373,7 @@
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-            <li><a class="text-muted" href="admision.html">Admisión</a></li>
+            <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
             <li><a class="text-muted" href="historia.html">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>
@@ -423,5 +423,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var ano = (new Date).getFullYear();
+      $(document).ready(function() {
+      $(".ano_actual").text( ano );
+      });
+    </script>
   </body>
 </html>

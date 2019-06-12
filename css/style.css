@@ -1,21 +1,68 @@
 /* Clases variadas */
+.line_hover:hover{
+  padding-bottom: 4px;
+  border-bottom: solid #ff4d4d;
+}
+.icon_social_contacto{
+  font-size: 32px;
+  width: 35px;
+  height: 35px;
+  line-height: 30px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  color: gray;
+}
+.facebook_icon:hover{
+  color:#4267B2!important;
+}
+.instagram_icon:hover{
+  color: #E41036!important;
+}
+.yotube_icon:hover{
+  color: #FD0000!important;
+}
+.pinterest_icon:hover{
+  color: #E00018!important;
+}
+.twitter_icon:hover{
+  color: #5DA9DD!important;
+}
 .noseleccionable{
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
+.border_bottom{
+  border-bottom: solid 2px #ff4d4d;
+}
 .input_noticia:hover{
   cursor: pointer;
 }
 .display_center{
-  display: block;
   text-align: -webkit-center;
+  text-align: center;
 }
 img {
     max-width: 100%;
     height: auto !important;
 }
+.google-maps{
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
 #input_busqueda_actividades{
   background-image: url('../images/iconos/busqueda-30.png');
   background-position: 8px;
@@ -64,6 +111,9 @@ img {
   font-family: 'Lato', sans-serif !important;
   letter-spacing: 1px;
 }
+.font_roboto{
+  font-family: 'Roboto Slab', serif;
+}
 .title_vision_mision{
   font-weight: 400;
   line-height: 1.26;
@@ -72,6 +122,9 @@ img {
 .font_open{
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
+}
+.font_open_nosize{
+  font-family: 'Open Sans', sans-serif;
 }
 .field-icon {
   float: right;
@@ -222,6 +275,9 @@ img {
   border-style: solid;
   border-width: 1.5px;
   border-color:#bfbfbf;
+}
+.seccion_noticias:hover{
+ box-shadow: 1px 1px #999999;
 }
 .icon_zoom{
   transition: width 1s, height 1s, transform 1s;
