@@ -83,7 +83,7 @@
               </div>
               <div class="col-lg-12">
                 <div class="form-group">
-                  <label class="control-label label_menu sr-only" for=""> Introducción de la noticia</label>
+                  <label class="control-label label_menu sr-only" for="introduccion_noticia"> Introducción de la noticia</label>
                   <textarea name="introduccion_noticia" class="form-control" rows="2" cols="80" maxlength="200" placeholder="Introducción de la noticia" required aria-describedby="intro_help"></textarea>
                   <small id="intro_help" class="form-text text-muted">
                     Maximo 200 caracteres, el texto ingresado se muestra en la vista previa de la publicación.
@@ -93,7 +93,7 @@
               <div class="col-lg-12">
                 <div class="form-group">
                   <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="foto_intro_noticia" id="customFile">
+                     <input type="file" class="custom-file-input" name="foto_intro_noticia" id="customFile" required>
                      <label class="custom-file-label" for="customFile">Buscar archivo...</label>
                   </div>
                   <small id="intro_help" class="form-text text-muted">
@@ -103,7 +103,7 @@
               </div>
               <div class="col-lg-12">
                 <div class="form-group">
-                  <label class="control-label label_menu sr-only" for=""> Cuerpo de la noticia</label>
+                  <label class="control-label label_menu sr-only" for="cuerpo_noticia"> Cuerpo de la noticia</label>
                   <textarea name="cuerpo_noticia" id="cuerpo_noticia" rows="30" cols="80"></textarea>
                 </div>
               </div>
@@ -111,6 +111,7 @@
             <div class="row">
               <div class="col-lg-12 text-right">
                 <input type="submit" class="btn btn-info" name="btn_preview_noticia" value="Vista Previa">
+                <input type="submit" class="btn btn-danger" name="btn_guardar_borrador" value="Guardar Borrador">
                 <input type="submit" class="btn btn-success" name="btn_nueva_noticia" value="Subir Noticia">
               </div>
             </div>

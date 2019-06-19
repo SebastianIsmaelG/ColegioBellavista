@@ -9,7 +9,7 @@
       $modalwindow1 = 0;
       $modalwindow2 = 0;
       //RowCount
-      $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia FROM noticias)as TT";
+      $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia,foto_intro_noticia FROM noticias)as TT";
       $rs = mysqli_query($cnn,$sqlCount);
       if (mysqli_num_rows($rs)==0) {
           echo "Sin resultados";
@@ -28,16 +28,17 @@
       }
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
       //Se crea la tabla dinamicamente
-      $sql = mysqli_prepare($cnn,"SELECT id_noticia,titulo_noticia,fecha_noticia,intro_noticia,cuerpo_noticia FROM noticias ORDER BY fecha_noticia DESC LIMIT ?,?");
+      $sql = mysqli_prepare($cnn,"SELECT id_noticia,titulo_noticia,fecha_noticia,intro_noticia,foto_intro_noticia, cuerpo_noticia FROM noticias ORDER BY fecha_noticia DESC LIMIT ?,?");
       mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);
-      mysqli_stmt_bind_result($sql,$idn,$etn,$fn,$ein,$ecn);
+      mysqli_stmt_bind_result($sql,$idn,$etn,$fn,$ein,$efin,$ecn);
 
       //Se dibuja la tabla
       echo "<div class='table-responsive'><table class='table table-bordered table-hover font_open' id='tabla_actividades'><thead class='thead-dark'><tr><th>Titulo Noticia</th><th>Fecha Publicación</th><th>Editar Publicación</th><th>Eliminar Publicación</th></tr></Thread><tbody>";
       while ($fila = mysqli_stmt_fetch($sql)) {
         $tn = utf8_encode($etn);
         $in = utf8_encode($ein);
+        $fin = utf8_encode($efin);
         $cn = utf8_encode($ecn);
           echo "<tr>
                   <td><p>$tn</p></td>
@@ -47,6 +48,7 @@
                   <input type='hidden' name='titulo_noticia' value='$tn'>
                   <input type='hidden' name='fecha_noticia' value='$fn'>
                   <input type='hidden' name='intro_noticia' value='$in'>
+                  <input type='hidden' name='foto_intro_noticia' value='$fin'>
                   <input type='hidden' name='cuerpo_noticia' value='$cn'>
                   <button type='submit' name='btn_editar_noticia' class='btn btn-success'>Editar</button>
                   </form>

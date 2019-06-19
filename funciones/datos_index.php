@@ -12,7 +12,7 @@
       FROM noticias as n
       ORDER by rand() LIMIT 4";
       $results = mysqli_query($cnn, $sql);
-      if(mysqli_num_rows($results)>="1"){
+      if(mysqli_num_rows($results)>="4"){
         $rows = [];
         while($row = mysqli_fetch_assoc($results)) {
                   $rows[] = $row;
@@ -55,7 +55,7 @@
       ORDER by rand() LIMIT 3";
 
       $results = mysqli_query($cnn, $sql);
-      if (mysqli_num_rows($results)>="1") {
+      if (mysqli_num_rows($results)>="3") {
         $rows = [];
         while($row = mysqli_fetch_assoc($results)) {
                   $rows[] = $row;

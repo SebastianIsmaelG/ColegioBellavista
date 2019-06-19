@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
@@ -10,9 +11,10 @@ require ("../funciones/session_usuario.php");
     $fecha_noticia = $_POST["fecha_noticia"];
     $titulo_noticia = $_POST["titulo_noticia"];
     $intro_noticia = $_POST["intro_noticia"];
+    $foto_intro_noticia = $_POST["foto_intro_noticia"];
     $cuerpo_noticia = $_POST["cuerpo_noticia"];
 
-    if ($id_noticia==""||$fecha_noticia==""||$usuario_session==""||$titulo_noticia==""||$intro_noticia==""||$cuerpo_noticia=="") {
+    if ($id_noticia==""||$fecha_noticia==""||$usuario_session==""||$titulo_noticia==""||$intro_noticia==""||$cuerpo_noticia=="" ||  $foto_intro_noticia=="") {
       echo "<script> window.alert('Ha ocurrrido un error al recuperar los datos, reintente. COD:0010');window.history.back();</script>";
     }
   }
@@ -84,18 +86,37 @@ require ("../funciones/session_usuario.php");
            </div>
          </div>
          <div class="">
-           <form action="../funciones/modificar_noticia.php" method="post" enctype="multipart/form-data">
+           <form action="../funciones/modificar_noticia.php" method="POST" enctype="multipart/form-data">
              <div class="row">
                <div class="col-lg-12">
                  <div class="form-group">
                    <label class="control-label label_menu " for=""> Titulo de la noticia</label>
                    <input type="text" class="form-control" name="titular_noticia" placeholder="Titular de la noticia" value="<?php echo $titulo_noticia ?>" required autofocus>
+                   <small id="titulo_help" class="form-text text-muted">
+                     Maximo 200 caracteres
+                   </small>
                  </div>
                </div>
                <div class="col-lg-12">
                  <div class="form-group">
                    <label class="control-label label_menu " for=""> Introducción de la noticia</label>
                    <textarea name="introduccion_noticia" class="form-control" rows="4" cols="80" maxlength="200" placeholder="Introducción de la noticia" required><?php echo $intro_noticia ?></textarea>
+                   <small id="intro_help" class="form-text text-muted">
+                     Maximo 200 caracteres, el texto ingresado se muestra en la vista previa de la publicación.
+                   </small>
+                 </div>
+               </div>
+               <!--$foto_intro_noticia-->
+               <div class="col-lg-12">
+                 <div class="form-group">
+                   <div class="custom-file">
+                      <input type="hidden" name="foto_intro_noticia_old" value="<?php echo $foto_intro_noticia; ?>">
+                      <input type="file" class="custom-file-input" name="foto_intro_noticia" id="customFile">
+                      <label class="custom-file-label" for="customFile"><?php echo $foto_intro_noticia; ?></label>
+                   </div>
+                   <small id="intro_help" class="form-text text-muted">
+                     Tamaño maximo 3mb. La imagen ingresada se mostrara en la introduccion de la seccion noticias, es importante que represente a la publicación.
+                   </small>
                  </div>
                </div>
                <div class="col-lg-12">
@@ -133,5 +154,12 @@ require ("../funciones/session_usuario.php");
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
      <script src="../js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <script>
+     // Add the following code if you want the name of the file appear on select
+     $(".custom-file-input").on("change", function() {
+       var fileName = $(this).val().split("\\").pop();
+       $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+     });
+     </script>
    </body>
  </html>

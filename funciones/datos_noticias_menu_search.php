@@ -2,7 +2,14 @@
 <?php
   try {
     require('dbcall.php');
+    if (!isset($_GET["text_input_busqueda_noticias"])) {
+      echo "<script>window.history.back();</script>";
+    }else {
+      $factor_busquedaGET = $_GET["text_input_busqueda_noticias"];
+      $factor_busqueda_titulo = "%".$factor_busquedaGET."%";
+      $factor_busqueda_fecha = "%".$factor_busquedaGET."%";
 
+    }
     if (!$cnn) {
       die("Conexion Fallida: " . mysqli_connect_error());
     }else {
@@ -19,22 +26,26 @@
 
       //Bloque para el conteo de resultados de la consulta
       $sqlCount = mysqli_prepare($cnn,"SELECT COUNT(*) AS TD FROM (SELECT n.id_noticia, u.nombre, u.apellido
-      FROM noticias as n INNER JOIN usuarios as u ON n.usuario_autor = u.nombre_usuario) as tt");
+      FROM noticias as n INNER JOIN usuarios as u ON n.usuario_autor = u.nombre_usuario WHERE n.titulo_noticia LIKE ? OR n.fecha_noticia LIKE ?) as tt");
+      mysqli_stmt_bind_param($sqlCount,"ss",$factor_busqueda_titulo,$factor_busqueda_fecha);
       mysqli_stmt_execute($sqlCount);
       mysqli_stmt_bind_result($sqlCount,$rc);
 
       while ($fila = mysqli_stmt_fetch($sqlCount)) {
         $rowCount = $rc;
       }
+      if ($rowCount=="0") {
+        echo "Sin resultados";
+      }
     }
     $empiezaPaginacion = ($pagina-1) *  $paginacion;
 
     //Consulta SQL
     $sql = mysqli_prepare($cnn,"SELECT n.id_noticia, u.nombre, u.apellido, n.titulo_noticia,n.fecha_noticia,n.intro_noticia,n.foto_intro_noticia
-    FROM noticias as n INNER JOIN usuarios as u ON n.usuario_autor = u.nombre_usuario
+    FROM noticias as n INNER JOIN usuarios as u ON n.usuario_autor = u.nombre_usuario WHERE n.titulo_noticia LIKE ? OR n.fecha_noticia LIKE ?
     ORDER BY n.fecha_noticia ASC LIMIT ?,?");
 
-    mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);
+    mysqli_stmt_bind_param($sql,"ssii",$factor_busqueda_titulo,$factor_busqueda_fecha,$empiezaPaginacion,$paginacion);
     mysqli_stmt_execute($sql);
     mysqli_stmt_bind_result($sql,$ID,$NOMBRE,$APELLIDO,$TITULO,$FECHA,$INTRO,$FOTO_INTRO);
 

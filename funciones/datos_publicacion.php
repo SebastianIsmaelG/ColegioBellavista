@@ -9,8 +9,8 @@
       if (!$cnn) {
         die("Conexion Fallida: " . mysqli_connect_error());
       }else{
-        //Sentencia de busqueda Noticia
-        setlocale(LC_TIME, 'es_CO.UTF-8');
+        //Cambio de zona horaria
+        setlocale(LC_ALL, 'es_CL.UTF-8');
 
         $sql = mysqli_prepare($cnn,"SELECT n.titulo_noticia, n.fecha_noticia, u.nombre, u.apellido, n.cuerpo_noticia
         FROM noticias as n

@@ -48,7 +48,7 @@
           </center>
         </div>
         <div class='container'>
-          <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
+          <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable shadow-border-nr'>
             <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='#'>Menu Principal</a>
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
               <span class='navbar-toggler-icon'></span>
@@ -81,8 +81,8 @@
         </div>
     </header>
     <section>
-          <br>
-        <div class="container bg-light">
+        <br>
+        <div class="container bg-light shadow-border">
           <div class="container py-3">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
@@ -94,16 +94,27 @@
           </div>
           <hr>
           <div class="container py-2">
-            <div class="form-group">
-              <input type="search" id="input_busqueda_actividades" class="form-control" name="" value="" placeholder="Buscar en Galerias..">
+            <div class="form-group display_center">
+              <form action="noticias.php" class="form-inline" method="GET" onSubmit="return validar();">
+                <div class="form-group col-lg-8 col-md-8 col-sm-7 col-xs-6" style="width:70%;">
+                  <label for="input_busqueda_galerias" class="sr-only">Busqueda en Galerias..</label>
+                  <input type="search" id="input_busqueda_galerias" class="form-control" name="text_input_busqueda_galerias" value="" placeholder="Buscar Galerias.." style="width:100%;">
+                </div>
+                <div class="form-group col-lg-4 col-md-4 col-sm-3 col-xs-6" style="width:30%;">
+                  <input type="submit" name="btn_bd" class="btn btn-primary" value="Busqueda">
+                </div>
+                <div class="col-lg-10">
+                  <small id="inputHelpBlock" class="form-text text-muted"></small>
+                </div>
+              </form>
             </div>
             <div class="container">
               <section class="display_center">
                 <div class="row">
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
-                      <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
+                      <div class="card">
+                        <a href="#" class="text-decoration-none"><img src="images/galerias/acto-alumno_opt.jpg" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
@@ -139,8 +150,8 @@
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
-                      <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
+                      <div class="card">
+                        <a href="#" class="text-decoration-none"><img src="images/galerias/DSC_0265.jpg" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
@@ -176,8 +187,8 @@
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
-                      <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
+                      <div class="card">
+                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20180425-WA0017.jpg" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
@@ -213,8 +224,8 @@
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
-                      <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
+                      <div class="card">
+                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20180626-WA0024.jpg" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
@@ -250,8 +261,8 @@
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
-                      <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
+                      <div class="card" >
+                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20190603-WA0011.jpg" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
@@ -287,8 +298,8 @@
                   </div>
                   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="" style="padding:3px;">
-                      <div class="card" style="width: 18rem;">
-                        <a href="#" class="text-decoration-none"><img src="http://lorempixel.com/200/100" class="card-img-top" alt="..."></a>
+                      <div class="card">
+                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20190611-WA0010.jpg" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
@@ -428,6 +439,14 @@
       $(document).ready(function() {
       $(".ano_actual").text( ano );
       });
+    </script>
+    <script type="text/javascript">
+      function validar() {
+        if ($('#input_busqueda_actividades').val().length == 0) {
+          document.getElementById("inputHelpBlock").innerHTML = "Ingrese una frase o palabra clave y presione Busqueda";
+          return false;
+        }
+      };
     </script>
   </body>
 </html>

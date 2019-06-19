@@ -17,8 +17,10 @@
     <link rel='shortcut icon' href='images/utilidad/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?php echo $titulo ?></title>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3"></script>
   </head>
   <body style="background-color:#F8F9FA;">
+    <div id="fb-root"></div>
     <header style="background-color:#E03C3B;">
         <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
             <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
@@ -56,7 +58,7 @@
           </center>
         </div>
         <div class='container'>
-          <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
+          <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable shadow-border-nr'>
             <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='#'>Menu Principal</a>
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
               <span class='navbar-toggler-icon'></span>
@@ -88,95 +90,106 @@
           </nav>
         </div>
     </header>
-    <section>
-      <br>
-      <div class="container bg-light">
-        <div class="container py-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.php"><small>INICIO</small></a></li>
-              <li class="breadcrumb-item"><a href="index.html">INSTITUCIÓN</a></li>
-              <li class="breadcrumb-item active" aria-current="page">NOTICIAS</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class='container bg-light'>
-            <div class='row'>
-                <div class='col-lg-9 col-md-12 col-sm-12 col-xs-12 bg-white'>
-                  <div class='row'>
-                    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                      <h4 class='text-uppercase py-2'><?php if (isset($titulo_publicacion)) {echo $titulo_publicacion; }else{echo "";} ?></h4>
-                      <hr>
-                    </div>
-                    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                      <div class='row'>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style='width:70%;'>
-                          <div class='container'><span>Escrito por <?php if (isset($nombre_autor)) {echo $nombre_autor; }else{echo "";} ?> <?php if (isset($apellido_autor)) {echo $apellido_autor; }else{echo "";} ?> </span></div>
-                        </div>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right' style='width:30%;'>
-                          <div class='container'><?php if (isset($fecha_publicacion)) {echo $fecha_publicacion; }else{echo "";} ?></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class='row'>
-                      <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                        <div class='container py-3'>
-                          <div class="font_open text-justify" style="text-indent: 40px;">
-                            <?php if (isset($cuerpo_publicacion)) {echo $cuerpo_publicacion; }else{echo "";} ?>
-                          </div>
-                        </div>
-                        <div class='container py-2 text-right'>
-                          <div class="social-share">
-                            <span>Compartir &nbsp;</span>
-                            <a href="#" target="_blank" class="text-decoration-none text-light">
-                            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
-                            </a>
-                            <a href="#" target="_blank" class="text-decoration-none text-light">
-                            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                            </a>
-                            <a href="#" target="_blank" class="text-decoration-none text-light" >
-                            <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                <div class='col-lg-3 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block'>
-                  <div class="my-2 bg-white">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="">
-                          <a class="text-decoration-none" href="#"><img src="images/utilidad/banner_instagram.jpg" alt=""></a>
-                        </div>
-                      </div>
-                      <div class="col-lg-12 d-none d-lg-block">
-                        <iframe src="//lightwidget.com/widgets/848dc7aa797d583c98a4acd84b239dff.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-                      </div>
-                      <div class="col-lg-12 d-lg-none d-xl-none">
-                        <iframe src="//lightwidget.com/widgets/d6adeb8094e05563affc956162c833b3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-                      </div>
-                      <div class="col-lg-12">
-                        <div class="">
-                          <a class="text-decoration-none" href="#"><img src="images/utilidad/banner_facebook.jpg" alt=""></a>
-                        </div>
-                      </div>
-                      <div class="col-lg-12 d-none d-lg-block">
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FColegio-Bellavista-1328489143963284%2F&tabs=timeline&width=250&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="250" height="450" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                      </div>
-                      <div class="col-lg-12 d-lg-none d-xl-none">
-                          <!--Facebook Peque-->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
+    <br>
+    <div class="container bg-light shadow-border">
+      <section>
+        <br>
+        <div class="container bg-light">
+          <div class="container py-3">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php"><small>INICIO</small></a></li>
+                <li class="breadcrumb-item"><a href="index.html">INSTITUCIÓN</a></li>
+                <li class="breadcrumb-item active" aria-current="page">NOTICIAS</li>
+              </ol>
+            </nav>
           </div>
-    </section>
+        </div>
+      </section>
+      <section>
+        <div class='container bg-light'>
+              <div class='row'>
+                  <div class='col-lg-9 col-md-12 col-sm-12 col-xs-12 bg-white'>
+                    <div class='row'>
+                      <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                        <h4 class='text-uppercase py-3'><?php if (isset($titulo_publicacion)) {echo $titulo_publicacion; }else{echo "";} ?></h4>
+                        <hr>
+                      </div>
+                      <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                        <div class='row'>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style='width:70%;'>
+                            <div class='container'><span>Escrito por <?php if (isset($nombre_autor)) {echo $nombre_autor; }else{echo "";} ?> <?php if (isset($apellido_autor)) {echo $apellido_autor; }else{echo "";} ?> </span></div>
+                          </div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right' style='width:30%;'>
+                            <div class='container'><?php if (isset($fecha_publicacion)) {echo $fecha_publicacion; }else{echo "";} ?></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                          <div class='container py-3'>
+                            <div class="font_open text-justify" style="text-indent: 40px;">
+                              <?php if (isset($cuerpo_publicacion)) {echo $cuerpo_publicacion; }else{echo "";} ?>
+                            </div>
+                          </div>
+                          <div class='container py-2 text-right'>
+                            <div class="social-share">
+                              <span>Compartir &nbsp;</span>
+                              <a href="#" target="_blank" class="text-decoration-none text-light">
+                              <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                              </a>
+                              <a href="#" target="_blank" class="text-decoration-none text-light">
+                              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                              </a>
+                              <a href="#" target="_blank" class="text-decoration-none text-light" >
+                              <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="container display_center py-2" style="background-color: #eee;border-left: 7px solid #cecece;">
+                            <div class="fb-comments" data-href="http://localhost:8090/Proyectos/ColegioBellavista/noticia.php" data-width="" data-numposts="8"></div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class='col-lg-3 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block'>
+                    <div class="my-2 bg-white">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="">
+                            <a class="text-decoration-none" href="#"><img src="images/utilidad/banner_instagram.jpg" alt=""></a>
+                          </div>
+                        </div>
+                        <div class="col-lg-12 d-none d-lg-block">
+                          <iframe src="//lightwidget.com/widgets/848dc7aa797d583c98a4acd84b239dff.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                        </div>
+                        <!-- divs sm
+                        <div class="col-lg-12">
+                          <div class="">
+                            <a class="text-decoration-none" href="#"><img src="images/utilidad/banner_instagram.jpg" alt=""></a>
+                          </div>
+                        </div>
+                        <div class="col-lg-12 d-lg-none d-xl-none">
+                          <iframe src="//lightwidget.com/widgets/d6adeb8094e05563affc956162c833b3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                        </div>-->
+                        <div class="col-lg-12">
+                          <div class="">
+                            <a class="text-decoration-none" href="#"><img src="images/utilidad/banner_facebook.jpg" alt=""></a>
+                          </div>
+                        </div>
+                        <div class="col-lg-12 d-none d-lg-block">
+                          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FColegio-Bellavista-1328489143963284%2F&tabs=timeline&width=250&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="250" height="450" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+      </section>
+    </div>
     <footer class="container-fluid py-3 bg-dark noseleccionable">
       <div class="row">
         <div class="col-12 col-md">

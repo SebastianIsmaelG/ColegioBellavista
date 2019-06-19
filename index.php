@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" dir="ltr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="theme-color" content="#E03C3B">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
         <title>Colegio Bellavista</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+          $(window).on('load', function () {
+              setTimeout(function () {
+            $(".loader-page").css({visibility:"hidden",opacity:"0"})
+          }, 2000);
+
+          });
+        </script>
     </head>
     <body class="sadas">
+      <div class="loader-page">
+      </div>
         <header>
             <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
                 <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
@@ -47,7 +58,7 @@
               </center>
             </div>
             <div class='container'>
-              <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
+              <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable shadow-border-nr'>
                 <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='#'>Menu Principal</a>
                 <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                   <span class='navbar-toggler-icon'></span>
@@ -95,7 +106,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="slider">
-                      <div id="carouselExampleIndicators" class="carousel slide border_solid" data-ride="carousel" data-interval="3000">
+                      <div id="carouselExampleIndicators" style="-webkit-transform: translateZ(0); -moz-transform: translateZ(0);" class="carousel slide border_solid carousel-fade" data-ride="carousel" data-interval="3000">
                         <ol class="carousel-indicators">
                           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -412,10 +423,10 @@
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
                                           <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center ">
+                                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 text-center ">
                                           <p class="font-weight-bold"> <?php if (isset($titulo_actividad_1)) {echo $titulo_actividad_1; }else{echo "";} ?></p>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                                        <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 text-center">
                                           <p class="font-weight-bold"> <?php if (isset($fecha_actividad_1)) {echo $fecha_actividad_1; }else{echo "";} ?></p>
                                         </div>
                                       </div>
@@ -427,10 +438,10 @@
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
                                           <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center ">
+                                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 text-center ">
                                           <p class="font-weight-bold"> <?php if (isset($titulo_actividad_2)) {echo $titulo_actividad_2; }else{echo "";} ?></p>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                                        <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 text-center">
                                           <p class="font-weight-bold"> <?php if (isset($fecha_actividad_2)) {echo $fecha_actividad_2; }else{echo "";} ?></p>
                                         </div>
                                       </div>
@@ -442,10 +453,10 @@
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
                                         <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
                                       </div>
-                                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-center ">
+                                      <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 text-center ">
                                         <p class="font-weight-bold"> <?php if (isset($titulo_actividad_3)) {echo $titulo_actividad_3; }else{echo "";} ?></p>
                                       </div>
-                                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                                      <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 text-center">
                                         <p class="font-weight-bold"> <?php if (isset($fecha_actividad_3)) {echo $fecha_actividad_3; }else{echo "";} ?></p>
                                       </div>
                                     </div>
@@ -549,14 +560,13 @@
         </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript">
           var ano = (new Date).getFullYear();
           $(document).ready(function() {
           $(".ano_actual").text( ano );
           });
         </script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>

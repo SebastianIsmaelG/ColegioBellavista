@@ -37,7 +37,7 @@
         </div>
       </nav>
     </section>
-
+    <br>
     <section>
       <div class="container">
         <div class="row">
@@ -139,10 +139,10 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/gallery-80.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="nuevo_album.php"><img src="../images/utilidad/gallery-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Nuevo Álbum</a>
+                    <a href="nuevo_album.php" class="nav-link"> Nuevo Álbum</a>
                   </div>
                 </div>
               </div>
@@ -151,10 +151,10 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/pictures-folderb-80.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="administar_album.php"><img src="../images/utilidad/pictures-folderb-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Administrar Álbumes </a>
+                    <a href="administar_album.php" class="nav-link"> Administrar Álbumes </a>
                   </div>
                 </div>
               </div>

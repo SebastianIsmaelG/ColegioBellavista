@@ -1,15 +1,15 @@
 <?php
   //Datos incrustados van a noticias.php
-  echo "<section class='bg-white border border-secondary my-2'>
+  echo "<section class='bg-white border my-2 shadow-border' >
     <div class='container'>
       <div class='row'>
         <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
           <div class='py-2'>
-            <h2 class='text-danger'>$settitulo</h2>
+            <a class='text-decoration-none' href='noticia.php?name=$setitulo&publicacion=$setid'><h2 class='text-danger'> $setitulo </h2></a>
           </div>
         </div>
         <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left' style='width:50%;'>
-          <span class='text-justify'><img src='images/iconos/calendario-color.png' alt='' width='20' height='20' ><small class='font_open font-weight-bold' >  $setfecha_c</small></span>
+          <span class='text-justify'><img src='images/iconos/calendario-color.png' alt='' width='20' height='20' ><small class='font_open font-weight-bold' >  "; echo strftime("%d de %B del %Y", strtotime($setfecha)); echo "</small></span>
         </div>
         <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right' style='width:50%;'>
           <div class='social-share'>
@@ -26,7 +26,7 @@
         </div>
         <div class='col-lg-10 col-md-12 col-sm-12 col-xs-12'> <!--No sm no xs-->
           <div class='py-2'>
-            <div class='imagen_bellavista2'></div>
+            <div style='background-image: url(images/noticias/images/$setfotointro);background-position: 0 0;background-repeat: no-repeat;background-size: cover;background-position: center;padding: 70px 0;border-style: solid;border-width: thin;border-color: black;height: 200px;'></div>
           </div>
         </div>
         <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>

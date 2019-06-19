@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Actividades Colegio Bellavista</title>
   </head>
-  <body>
+  <body >
     <header style="background-color:#E03C3B;">
         <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
             <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
@@ -48,7 +48,7 @@
           </center>
         </div>
         <div class='container'>
-          <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable'>
+          <nav class='navbar navbar-expand-lg navbar-light bg-light noseleccionable shadow-border-nr shadow-border-nr'>
             <a class='navbar-brand font-weight-bold text-uppercase d-lg-none' style='color:rgb(0, 0, 0,0.6)' href='#'>Menu Principal</a>
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
               <span class='navbar-toggler-icon'></span>
@@ -81,8 +81,8 @@
         </div>
     </header>
     <section>
-          <br>
-        <div class="container bg-light">
+        <br>
+        <div class="container bg-light shadow-border">
           <div class="container py-3">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
@@ -95,7 +95,18 @@
           <hr>
           <div class="container py-2">
             <div class="form-group">
-              <input type="search" id="input_busqueda_actividades" class="form-control" name="" value="" placeholder="Buscar actividades..">
+              <form action="noticias.php" class="form-inline" method="GET" onSubmit="return validar();">
+                <div class="form-group col-lg-8 col-md-7 col-sm-7 col-xs-7" style="width:70%">
+                  <label for="input_busqueda_actividades" class="sr-only">Busqueda Actividades</label>
+                  <input type="search" id="input_busqueda_actividades" class="form-control" name="text_input_busqueda_actividades" value="" placeholder="Buscar actividades.." style="width:100%;">
+                </div>
+                <div class="form-group col-lg-4 col-md-3 col-sm-3 col-xs-3" style="width:30%">
+                  <input type="submit" name="btn_bd" class="btn btn-primary" value="Busqueda">
+                </div>
+                <div class="col-lg-10">
+                  <small id="inputHelpBlock" class="form-text text-muted"></small>
+                </div>
+              </form>
             </div>
             <div class="container">
               <div class="row">
@@ -129,104 +140,19 @@
                 </div>
               </div>
             </div>
-            <div class="container">
-              <div class="row">
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>Celebración Dia del libro</p>
-                    </div>
-                  </div>
-                </div>
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>11-Abril-2019</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>Celebración Dia del libro</p>
-                    </div>
-                  </div>
-                </div>
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>11-Abril-2019</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>Celebración Dia del libro</p>
-                    </div>
-                  </div>
-                </div>
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>11-Abril-2019</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>Celebración Dia del libro</p>
-                    </div>
-                  </div>
-                </div>
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>11-Abril-2019</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>Celebración Dia del libro</p>
-                    </div>
-                  </div>
-                </div>
-                <div div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 custom-actividad">
-                  <div class="container-fluid">
-                    <div class="box_container border-activity text-center font-weight-bold">
-                      <p>11-Abril-2019</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!--Datos almacenados-->
+            <?php
+              try {
+                if (isset($_GET["btn_bd"])) {
+                  require('funciones/datos_actividades_menu_search.php');
+                }else {
+                  require('funciones/datos_actividades_menu.php');
+                }
+              } catch (\Exception $e) {
+                echo "<script> alert('Ha ocurrido un error al solicitar la informacion, contacte al administrador. COD:0019');</script>";
+              }
+            ?>
             <br>
-            <div class="container">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Siguiente</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
           </div>
         </div>
         <br>
@@ -301,19 +227,27 @@
     </footer>
 
     <!--SCRIPTS-->
-    <script language=javascript>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
     function nuevaventana (URL){
        window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
     }
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function validar() {
+        if ($('#input_busqueda_actividades').val().length == 0) {
+          document.getElementById("inputHelpBlock").innerHTML = "Ingrese una frase o palabra clave y presione Busqueda";
+          return false;
+        }
+      };
+    </script>
     <script type="text/javascript">
       var ano = (new Date).getFullYear();
       $(document).ready(function() {
       $(".ano_actual").text( ano );
       });
     </script>
-    <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
