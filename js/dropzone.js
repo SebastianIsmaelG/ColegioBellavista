@@ -174,7 +174,7 @@ var Dropzone = function (_Emitter) {
          * How many file uploads to process in parallel (See the
          * Enqueuing file uploads* documentation section for more info)
          */
-        parallelUploads: 2,
+        parallelUploads: 25,
 
         /**
          * Whether to send multiple files in one request. If
@@ -225,7 +225,7 @@ var Dropzone = function (_Emitter) {
          * the event `maxfilesexceeded` will be called. The dropzone element gets the
          * class `dz-max-files-reached` accordingly so you can provide visual feedback.
          */
-        maxFilesize: 256,
+        maxFilesize: 50,
 
         /**
          * The name of the file param that gets transferred.
@@ -325,7 +325,7 @@ var Dropzone = function (_Emitter) {
         /**
          * Whether hidden files in directories should be ignored.
          */
-        ignoreHiddenFiles: true,
+        ignoreHiddenFiles: null,
 
         /**
          * The default implementation of `accept` checks the file's mime type or
@@ -369,7 +369,7 @@ var Dropzone = function (_Emitter) {
          * already uploading) the file. The `dictCancelUpload`, `dictCancelUploadConfirmation`
          * and `dictRemoveFile` options are used for the wording.
          */
-        addRemoveLinks: false,
+        addRemoveLinks: true,
 
         /**
          * Defines where to display the file previews – if `null` the
@@ -421,12 +421,12 @@ var Dropzone = function (_Emitter) {
         /**
          * The text used before any files are dropped.
          */
-        dictDefaultMessage: "Drop files here to upload",
+        dictDefaultMessage: "Arrasta o pincha aqui para escojer los archivos",
 
         /**
          * The text that replaces the default message text it the browser is not supported.
          */
-        dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
+        dictFallbackMessage: "Tu navegador no soporta drag'n'drop file uploads, actualizate :P.",
 
         /**
          * The text that will be added before the fallback form.
@@ -439,12 +439,12 @@ var Dropzone = function (_Emitter) {
          * If the filesize is too big.
          * `{{filesize}}` and `{{maxFilesize}}` will be replaced with the respective configuration values.
          */
-        dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+        dictFileTooBig: "Archivo es muy grande ({{filesize}}MiB). Tamaño maximo: {{maxFilesize}}MiB.",
 
         /**
          * If the file doesn't match the file type.
          */
-        dictInvalidFileType: "You can't upload files of this type.",
+        dictInvalidFileType: "Error, no puedes subir archivos de este tipo.",
 
         /**
          * If the server response was invalid.
@@ -455,22 +455,22 @@ var Dropzone = function (_Emitter) {
         /**
          * If `addRemoveLinks` is true, the text to be used for the cancel upload link.
          */
-        dictCancelUpload: "Cancel upload",
+        dictCancelUpload: "Cancelar Subida",
 
         /**
          * The text that is displayed if an upload was manually canceled
          */
-        dictUploadCanceled: "Upload canceled.",
+        dictUploadCanceled: "Subida Cancelada.",
 
         /**
          * If `addRemoveLinks` is true, the text to be used for confirmation when cancelling upload.
          */
-        dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
+        dictCancelUploadConfirmation: "Estas seguro que quieres cancelar la subida?",
 
         /**
          * If `addRemoveLinks` is true, the text to be used to remove a file.
          */
-        dictRemoveFile: "Remove file",
+        dictRemoveFile: "Remover archivo",
 
         /**
          * If this is not null, then the user will be prompted before removing a file.
@@ -481,7 +481,7 @@ var Dropzone = function (_Emitter) {
          * Displayed if `maxFiles` is st and exceeded.
          * The string `{{maxFiles}}` will be replaced by the configuration value.
          */
-        dictMaxFilesExceeded: "You can not upload any more files.",
+        dictMaxFilesExceeded: "No puedes subir mas archivos.",
 
         /**
          * Allows you to translate the different units. Starting with `tb` for terabytes and going down to

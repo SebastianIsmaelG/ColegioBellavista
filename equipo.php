@@ -69,7 +69,7 @@
                   </div>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo line_hover' href='admision.html' tabindex='-1'>ADMISIÓN <span class="ano_actual"></span></a>
+                  <a class='nav-link navbar_titulo line_hover' href='admision.php' tabindex='-1'>ADMISIÓN <span class="ano_actual"></span></a>
                 </li>
                 <li class='nav-item navheader'>
                   <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
@@ -125,7 +125,7 @@ s
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-            <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
+            <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
             <li><a class="text-muted" href="historia.html">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>

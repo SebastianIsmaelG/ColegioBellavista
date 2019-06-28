@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
         <title>Colegio Bellavista</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
         <script type="text/javascript">
           $(window).on('load', function () {
               setTimeout(function () {
@@ -21,22 +22,32 @@
     <body class="sadas">
       <div class="loader-page">
       </div>
+      <!--Datos almacenados-->
+      <?php
+        try {
+          require('funciones/datos_index.php');
+          require('funciones/datos_contacto.php');
+          setlocale(LC_TIME, 'es_CO.UTF-8');
+        } catch (\Exception $e) {
+          echo "<script> alert('Ha ocurrido un error al solicitar la informacion, contacte al administrador. COD:0014');</script>";
+        }
+      ?>
         <header>
             <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
                 <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
                   <li class="nav-item">
                     <div style="padding-right:6px;">
-                      <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> directorbellavista@machali.cl</p>
+                      <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
                     </div>
                   </li>
                   <li class="nav-item">
                     <div>
-                      <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> (9) 93492280</p>
+                      <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                     </div>
                   </li>
                   <li class="nav-item">
                     <div>
-                      <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> Calle John Kennedy # 178, Coya – Machalí</p>
+                      <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                     </div>
                   </li>
                 </ul>
@@ -76,11 +87,11 @@
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='noticias.php'>Noticias</a>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='actividades.php'>Actividades</a>
                           <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='galerias.php'>Galeria</a>
-                          <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='admision.html'>Historia</a>
+                          <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='admision.php'>Historia</a>
                       </div>
                     </li>
                     <li class='nav-item navheader'>
-                      <a class='nav-link navbar_titulo line_hover' href='historia.html'>ADMISIÓN <span class="ano_actual"></span></a>
+                      <a class='nav-link navbar_titulo line_hover' href='Admision.php'>ADMISIÓN <span class="ano_actual"></span></a>
                     </li>
                     <li class='nav-item navheader'>
                       <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
@@ -91,15 +102,6 @@
             </div>
         </header>
         <section>
-          <!--Datos almacenados-->
-          <?php
-            try {
-              require('funciones/datos_index.php');
-              setlocale(LC_TIME, 'es_CO.UTF-8');
-            } catch (\Exception $e) {
-              echo "<script> alert('Ha ocurrido un error al solicitar la informacion, contacte al administrador. COD:0014');</script>";
-            }
-          ?>
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12"><!--Columna Izquierda Slider-Noticias-->
@@ -114,13 +116,13 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="images/slider/FRONT_COLEGIO.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php if (isset($slider1)) { echo $sliderurl.$slider1;}else { echo"";} ?>"  class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
-                            <img src="images/slider/IMG_20181121_103445.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php if (isset($slider2)) { echo $sliderurl.$slider2;}else { echo"";} ?>"  class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
-                            <img src="images/slider/IMG_20190329_100645.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php if (isset($slider3)) { echo $sliderurl.$slider3;}else { echo"";} ?>"  class="d-block w-100" alt="...">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -295,21 +297,21 @@
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                   <div style="padding:3px;">
-                                    <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> directorbellavista@machali.cl</p>
+                                    <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto ?></p>
                                   </div>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                   <div style="padding:3px;">
-                                    <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> (9) 93492280</p>
+                                    <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                                   </div>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                   <div style="padding:3px;">
-                                    <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> Calle John Kennedy # 178, Coya – Machalí</p>
+                                    <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                                   </div>
                                 </div>
                               </div>
@@ -331,72 +333,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
                             <div class="contenido_secciones noseleccionable">
                               <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                  <div class="container_thumbnail">
-                                    <img src="images/galerias/cuartorealidadvirtual/IMG_20190329_090042.jpg" alt="" class="img-responsive img-thumbnail album-image">
-                                    <div class="album-container">
-                                      <div class="album-text">
-                                          <p class="title_content_album">Ver Álbum</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                  <div class="container_thumbnail">
-                                    <img src="images/galerias/baileentretenido/IMG_20181121_104944.jpg" alt="" class="img-responsive img-thumbnail album-image">
-                                    <div class="album-container">
-                                      <div class="album-text">
-                                          <p class="title_content_album">Ver Álbum</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                  <div class="container_thumbnail">
-                                    <a href="https://unsplash.it/1200/768.jpg?image=100" data-toggle="lightbox" data-gallery="gallery3">
-                                        <img src="images/galerias/diadelecturacra/IMG_20190425_092606.jpg" class="img-fluid img-thumbnail album-image">
-                                    </a>
-                                    <div class="album-container">
-                                      <div class="album-text">
-                                          <p class="title_content_album">Ver Álbum</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d-none d-sm-block">
-                                  <div class="container_thumbnail">
-                                    <img src="images/galerias/cuartorealidadvirtual/IMG_20190329_090042.jpg" alt="" class="img-responsive img-thumbnail album-image">
-                                    <div class="album-container">
-                                      <div class="album-text">
-                                        <p class="title_content_album">Ver Álbum</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d-none d-sm-block">
-                                  <div class="container_thumbnail">
-                                    <img src="images/galerias/baileentretenido/IMG_20181121_104944.jpg" alt="" class="img-responsive img-thumbnail album-image">
-                                    <div class="album-container">
-                                      <div class="album-text">
-                                        <p class="title_content_album">Ver Album</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d-none d-sm-block">
-                                  <div class="container_thumbnail">
-                                    <img src="images/galerias/diadelecturacra/IMG_20190425_092606.jpg" alt="" class="img-responsive img-thumbnail album-image">
-                                    <div class="album-container">
-                                      <div class="album-text">
-                                        <p class="title_content_album">Ver Álbum</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <?php require("funciones/gallery_index.php") ?>
                               </div>
                             </div>
                           </div>
@@ -474,7 +411,7 @@
                     <div class="container">
                       <div class="box_container">
                         <div class="encabezado_secciones">
-                          <a href="admision.html" class="text-decoration-none"><img src="images/utilidad/ADMISION-2019.jpg" alt=""></a>
+                          <a href="admision.php" class="text-decoration-none"><img src="images/utilidad/ADMISION-2019.jpg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -503,16 +440,16 @@
             <div class="col-12  col-md">
               <h5>Contacto</h5>
               <ul class="list-unstyled text-small">
-                <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="" width="18" height="16"></span>&nbsp;directorbellavista@machali.cl</p></li>
-                <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span>&nbsp;(9) 93492280</p></li>
-                <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span>&nbsp;Calle John Kennedy # 178, Coya – Machalí</p></li>
+                <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
+                <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+                <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
               </ul>
             </div>
             <div class="col-6  col-md">
               <h5>Institución</h5>
               <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-                <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
+                <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
                 <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
                 <li><a class="text-muted" href="historia.html">Historia</a></li>
                 <li><a class="text-muted" href="contacto.php">Contacto</a></li>
@@ -558,7 +495,6 @@
            window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
         }
         </script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript">
@@ -567,8 +503,6 @@
           $(".ano_actual").text( ano );
           });
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"></script>
         <script type="text/javascript">

@@ -2,7 +2,6 @@
 <?php
   try {
     require('dbcall.php');
-//Editando esto....
     if (!$cnn) {
       die("Conexion Fallida: " . mysqli_connect_error());
     }else {
@@ -10,7 +9,7 @@
       setlocale(LC_ALL, 'es_CL.UTF-8');
       //Paginacion
 
-      $paginacion  = 5;
+      $paginacion  = 8;
       if (isset($_GET['pagina'])) {
         $pagina = $_GET['pagina'];
       }else {
@@ -61,7 +60,11 @@
     }else {
       $condicionalDisable2="";
     }
-
+    if ($total_paginas>=5) {
+      $ceil=5;
+    }else {
+      $ceil=$total_paginas;
+    }
       echo "<section class='container ' style='padding-top:10px;'>
               <nav aria-label='Page navigation'>
                 <ul class='pagination justify-content-center'>
@@ -71,10 +74,25 @@
                   <li class='page-item'>
                     <a class='page-link ' id='paginacion_links' href='actividades.php?pagina=1' aria-label='Goto page 1'>1</a>
                   </li>";
-
-                  for ($i=2; $i <=$total_paginas ; $i++) {
+                  for ($i=2; $i <=$ceil ; $i++) {
                     echo "<li class='page-item'><a class='page-link' id='paginacion_links' href='actividades.php?pagina=".$i."' aria-label='Goto page $i'>$i</a></li>";
                   }
+                  //
+                  $condicionalDisable3="";
+                  //11 quiero que se cuestione
+                  if ($pagina<=5) {
+                    // code...
+                  }else {
+                    if ($pagina==$total_paginas) {
+                      $condicionalDisable3="disabled";
+                      $i = $pagina;
+                    }else {
+                      $i = $pagina+1;
+                      echo "<li class='page-item $condicionalDisable3'><a class='page-link' id='paginacion_links' href='actividades.php?pagina=".$i."' aria-label='Goto page $i'>$i</a></li>";
+                    }
+
+                  }
+
             echo "<li class='page-item $condicionalDisable2'>
                     <a class='page-link ' id='paginacion_links' href='actividades.php?pagina=".($pagina+1)."' >Siguiente &raquo;</a>
                   </li>";

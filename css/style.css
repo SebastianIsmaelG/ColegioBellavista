@@ -192,7 +192,6 @@ img {
 }
 .sadas{
   background-image: url("../images/utilidad/FRONT COLEGIO.jpg");
-  background-color: #cccccc;
   height: 250px;
   background-position: center;
   background-repeat: no-repeat;
@@ -239,6 +238,72 @@ img {
 .container_thumbnail:hover .album-container {
   opacity: 1;
 }
+@media only screen and (max-width: 9999px){
+  .album-image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    height: 140px!important;
+    overflow: hidden;
+  }
+
+}
+@media only screen and (max-width: 1200px){
+  .album-image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    height: 120px!important;
+    overflow: hidden;
+  }
+
+}
+@media only screen and (max-width: 992px){
+  .album-image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    height: 200px!important;
+    overflow: hidden;
+  }
+
+}
+@media only screen and (max-width: 768px){
+  .album-image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    height: 200px!important;
+    overflow: hidden;
+  }
+
+}
+@media only screen and (max-width: 576px){
+  .album-image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    max-height: 300px;
+    height: 320px!important;
+    overflow: hidden;
+  }
+
+}
 .album-image{
   opacity: 1;
   display: block;
@@ -246,7 +311,9 @@ img {
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  overflow: hidden;
 }
+
 .album-container{
   transition: .5 ease;
   opacity: 0;

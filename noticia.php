@@ -18,8 +18,19 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?php echo $titulo ?></title>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(window).on('load', function () {
+          setTimeout(function () {
+        $(".loader-page").css({visibility:"hidden",opacity:"0"})
+      }, 2000);
+
+      });
+    </script>
   </head>
   <body style="background-color:#F8F9FA;">
+    <div class="loader-page">
+    </div>
     <div id="fb-root"></div>
     <header style="background-color:#E03C3B;">
         <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
@@ -80,7 +91,7 @@
                   </div>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo line_hover' href='historia.html'>ADMISIÓN <span class="ano_actual"></span></a>
+                  <a class='nav-link navbar_titulo line_hover' href='admision.php'>ADMISIÓN <span class="ano_actual"></span></a>
                 </li>
                 <li class='nav-item navheader'>
                   <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
@@ -218,7 +229,7 @@
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-            <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
+            <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
             <li><a class="text-muted" href="historia.html">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>

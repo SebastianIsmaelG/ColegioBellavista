@@ -70,7 +70,7 @@
                   </div>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo line_hover' href='admision.html' tabindex='-1'>ADMISIÓN <span class="ano_actual"></span></a>
+                  <a class='nav-link navbar_titulo line_hover' href='admision.php' tabindex='-1'>ADMISIÓN <span class="ano_actual"></span></a>
                 </li>
                 <li class='nav-item navheader'>
                   <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
@@ -108,235 +108,14 @@
                 </div>
               </form>
             </div>
-            <div class="container">
-              <section class="display_center">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <div class="" style="padding:3px;">
-                      <div class="card">
-                        <a href="#" class="text-decoration-none"><img src="images/galerias/acto-alumno_opt.jpg" class="card-img-top" alt="..."></a>
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                              <span class="h6 text-left">Titulo del album</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                              <div class="" style="display:inline-block;">
-                                <span class="font-weight-bold text-danger" style="font-size:11px;">Compartir</span>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/facebook.png" alt="Facebook"  height="18px" width="18px" class="icon_zoom"/>
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/whatsapp-48.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light" >
-                                <img src="images/iconos/twitter.png" alt="Instagram" height="18px" width="18px" class="icon_zoom" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <div class="" style="padding:3px;">
-                      <div class="card">
-                        <a href="#" class="text-decoration-none"><img src="images/galerias/DSC_0265.jpg" class="card-img-top" alt="..."></a>
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                              <span class="h6 text-left">Titulo del album</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                              <div class="" style="display:inline-block;">
-                                <span class="font-weight-bold text-danger" style="font-size:11px;">Compartir</span>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/facebook.png" alt="Facebook"  height="18px" width="18px" class="icon_zoom"/>
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/whatsapp-48.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light" >
-                                <img src="images/iconos/twitter.png" alt="Instagram" height="18px" width="18px" class="icon_zoom" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <div class="" style="padding:3px;">
-                      <div class="card">
-                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20180425-WA0017.jpg" class="card-img-top" alt="..."></a>
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                              <span class="h6">Titulo del album</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                              <div class="" style="display:inline-block;">
-                                <span class="font-weight-bold text-danger" style="font-size:11px;">Compartir</span>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/facebook.png" alt="Facebook"  height="18px" width="18px" class="icon_zoom"/>
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/whatsapp-48.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light" >
-                                <img src="images/iconos/twitter.png" alt="Instagram" height="18px" width="18px" class="icon_zoom" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <div class="" style="padding:3px;">
-                      <div class="card">
-                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20180626-WA0024.jpg" class="card-img-top" alt="..."></a>
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                              <span class="h6 text-left">Titulo del album</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                              <div class="" style="display:inline-block;">
-                                <span class="font-weight-bold text-danger" style="font-size:11px;">Compartir</span>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/facebook.png" alt="Facebook"  height="18px" width="18px" class="icon_zoom"/>
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/whatsapp-48.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light" >
-                                <img src="images/iconos/twitter.png" alt="Instagram" height="18px" width="18px" class="icon_zoom" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <div class="" style="padding:3px;">
-                      <div class="card" >
-                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20190603-WA0011.jpg" class="card-img-top" alt="..."></a>
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                              <span class="h6 text-left">Titulo del album</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                              <div class="" style="display:inline-block;">
-                                <span class="font-weight-bold text-danger" style="font-size:11px;">Compartir</span>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/facebook.png" alt="Facebook"  height="18px" width="18px" class="icon_zoom"/>
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/whatsapp-48.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light" >
-                                <img src="images/iconos/twitter.png" alt="Instagram" height="18px" width="18px" class="icon_zoom" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <div class="" style="padding:3px;">
-                      <div class="card">
-                        <a href="#" class="text-decoration-none"><img src="images/galerias/IMG-20190611-WA0010.jpg" class="card-img-top" alt="..."></a>
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-                              <span class="h6 text-left">Titulo del album</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
-                              <span style="font-size:12px;">Este es un texto de descripcion del album en donde se explica la actividad realizada.</span>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                              <div class="" style="display:inline-block;">
-                                <span class="font-weight-bold text-danger" style="font-size:11px;">Compartir</span>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/facebook.png" alt="Facebook"  height="18px" width="18px" class="icon_zoom"/>
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light">
-                                <img src="images/iconos/whatsapp-48.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
-                                </a>
-                              </div>
-                              <div style="display: inline-block;padding-right:2px;">
-                                <a href="#" target="_blank" class="text-decoration-none text-light" >
-                                <img src="images/iconos/twitter.png" alt="Instagram" height="18px" width="18px" class="icon_zoom" />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <br>
+            <?php
+              try {
+                require('funciones/datos_galerias_menu.php');
+              } catch (\Exception $e) {
+                echo "<script> alert('Ha ocurrido un error al solicitar la informacion, contacte al administrador. COD:0029');</script>";
+              }
+
+             ?>
             <div class="container">
               <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
@@ -384,7 +163,7 @@
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-            <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
+            <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
             <li><a class="text-muted" href="historia.html">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>

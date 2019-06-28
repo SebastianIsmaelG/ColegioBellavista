@@ -33,8 +33,8 @@ if (isset($_POST["btn_ingreso_usuario"])) {
                           }
                           //Comprueba el hash con la contraseña ingresada
                           if (password_verify($password,$password_hash)) {
-                            $_SESSION["usuario_administracion"]=$usuario;
-                            echo "<script> window.location.href='../paginas_administracion/menu_principal.php';</script>";//Aceder
+                            $_SESSION["usuario_administracion"]=utf8_encode($usuario);
+                            echo "<script> window.location.href='../administracion/menu_principal.php';</script>";//Aceder
                           }else {
                             echo "<script> window.alert('Usuario y/o contraseña incorrectos, reintente');window.location.href='../ingreso.html';</script>";
                           }

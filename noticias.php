@@ -81,7 +81,7 @@
                   </div>
                 </li>
                 <li class='nav-item navheader'>
-                  <a class='nav-link navbar_titulo line_hover' href='admision.html'>ADMISIÓN <span class="ano_actual"></span></a>
+                  <a class='nav-link navbar_titulo line_hover' href='admision.php'>ADMISIÓN <span class="ano_actual"></span></a>
                 </li>
                 <li class='nav-item navheader'>
                   <a class='nav-link navbar_titulo line_hover' href='contacto.php' tabindex='-1'>CONTACTO</a>
@@ -109,7 +109,7 @@
               <form action="noticias.php" class="form-inline" method="GET" onSubmit="return validar();">
                 <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-7" style="width:70%">
                   <label for="input_busqueda_actividades" class="sr-only">Busqueda Noticias</label>
-                  <input type="search" id="input_busqueda_actividades" class="form-control" name="text_input_busqueda_noticias" value="" placeholder="Buscar publicaciones.." style="width:100%;">
+                  <input type="search" id="input_busqueda_actividades" class="form-control" name="text_input_busqueda_noticias" placeholder="Buscar publicaciones.." style="width:100%;">
                 </div>
                 <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width:30%">
                   <input type="submit" name="btn_bd" class="btn btn-primary" value="Busqueda">
@@ -200,7 +200,7 @@
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
-            <li><a class="text-muted" href="admision.html">Admisión <span class="ano_actual"></span></a></li>
+            <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
             <li><a class="text-muted" href="historia.html">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>

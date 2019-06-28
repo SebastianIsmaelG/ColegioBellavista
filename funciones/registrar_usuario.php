@@ -42,7 +42,7 @@ if (isset($_POST["btn_registro_usuario"])) {
                               mysqli_stmt_free_result($sql);
                               mysqli_close($cnn);
 
-                              echo "<script> window.alert('Usuario almacenado con exito!');window.location.href='../paginas_administracion/registrar_usuario.html';</script>";
+                              echo "<script> window.alert('Usuario almacenado con exito!');window.location.href='../administracion/registrar_usuario.html';</script>";
 
                           }
                         } catch (\Exception $e) {

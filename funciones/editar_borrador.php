@@ -59,8 +59,8 @@ require ("../funciones/session_usuario.php");
        <div class="container py-4">
          <nav aria-label="breadcrumb">
            <ol class="breadcrumb">
-             <li class="breadcrumb-item"><a href="../paginas_administracion/menu_principal.php">Menu Principal</a></li>
-             <li class="breadcrumb-item"><a href="../paginas_administracion/menu_principal.php?label=noticias">Seccion Noticias</a></li>
+             <li class="breadcrumb-item"><a href="../administracion/menu_principal.php">Menu Principal</a></li>
+             <li class="breadcrumb-item"><a href="../administracion/menu_principal.php?label=noticias">Seccion Noticias</a></li>
              <li class="breadcrumb-item active" aria-current="page">Editar Borrador</li>
            </ol>
          </nav>

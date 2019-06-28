@@ -128,7 +128,8 @@
                     for ($i=2; $i <=$total_paginas ; $i++) {
                       echo "<li class='page-item'><a class='page-link' id='paginacion_links' href='administrar_actividad.php?pagina=".$i."' aria-label='Goto page $i'>$i</a></li>";
                     }
-              echo "<li class='page-item $condicionalDisable2'>
+                echo "
+                    <li class='page-item $condicionalDisable2'>
                       <a class='page-link ' id='paginacion_links' href='administrar_actividad.php?pagina=".($pagina+1)."' >Siguiente &raquo;</a>
                     </li>";
       echo "</ul></nav>
