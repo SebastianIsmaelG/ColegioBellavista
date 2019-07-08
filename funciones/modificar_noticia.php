@@ -1,7 +1,7 @@
 <?php
   error_reporting(E_ERROR | E_PARSE);
   session_start();
-  require ("../funciones/session_usuario.php");
+  require ("session_usuario.php");
   if (!isset($_POST["btn_modificar_noticia"])) {
       echo "<script> window.location.href='../ingreso.html';</script>";
   }else {
@@ -51,7 +51,7 @@
                     mysqli_stmt_bind_param($sql,"sssi",utf8_decode($titulo),utf8_decode($intro),utf8_decode($cuerpo),$id);
 
                     if (mysqli_stmt_execute($sql) == TRUE) {
-                        echo "<script> window.alert('Publicación actualizada con exito');window.location.href='../administracion/menu_principal.php';</script>";
+                        echo "<script> window.alert('Publicación actualizada con exito');window.location.href='../administracion/administrar_noticia.php';</script>";
                     }else {
                         echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:00011');window.location.href='../administracion/menu_principal.php';</script>";
                     }
@@ -79,11 +79,11 @@
                           rename("../images/noticias/images/$nombre_fotografia_intro","../images/noticias/images/$nombre_nuevo");
 
                           //Almacena los datos
-                          $sql = mysqli_prepare($cnn,"UPDATE NOTICIAS SET titulo_noticia=?,intro_noticia=?, foto_intro_noticia = ?, cuerpo_noticia=? WHERE(id_noticia=?)");
+                          $sql = mysqli_prepare($cnn,"UPDATE noticias SET titulo_noticia=?,intro_noticia=?, foto_intro_noticia = ?, cuerpo_noticia=? WHERE(id_noticia=?)");
                           mysqli_stmt_bind_param($sql,"ssssi",utf8_decode($titulo),utf8_decode($intro),utf8_decode($nombre_nuevo), utf8_decode($cuerpo),$id);
 
                           if (mysqli_stmt_execute($sql) == TRUE) {
-                              echo "<script> window.alert('Publicación actualizada con exito');window.location.href='../administracion/menu_principal.php';</script>";
+                              echo "<script> window.alert('Publicación actualizada con exito');window.location.href='../administracion/administrar_noticia.php';</script>";
                           }else {
                               echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:00011');window.location.href='../administracion/menu_principal.php';</script>";
                           }

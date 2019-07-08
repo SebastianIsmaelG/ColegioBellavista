@@ -2,7 +2,7 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
-require ("../funciones/session_usuario.php");
+require ("session_usuario.php");
   if (!isset($_POST["btn_editar_noticia"])) {
       echo "<script> window.location.href='../ingreso.html';</script>";
   }else {

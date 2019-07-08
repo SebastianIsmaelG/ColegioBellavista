@@ -10,9 +10,13 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/utilidad/favicon.ico" />
+    <!--Scripts-->
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <!--Fin -->
     <title>Menu Administracion CB</title>
   </head>
   <body>
+    <!--El ul se crea desde buscador.js-->
     <section>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary noseleccionable">
         <a class="navbar-brand font-weight-bold text-uppercase" href="menu_principal.php">Menu Administración</a>
@@ -30,10 +34,8 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar secciones.." aria-label="Search">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
+          <div class="buscador" id="bs1"></div>
+          <button class="btn btn-success my-2 my-sm-0" onclick="return validar();" type="button">Buscar</button>
         </div>
       </nav>
     </section>
@@ -166,24 +168,48 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div style="padding:10px;">
-                <h4><span class="title_red">SECCIÓN</span> EQUIPO DOCENTE</h4>
+                <h4><span class="title_red">SECCIÓN</span> EQUIPO DE TRABAJO</h4>
                 <hr>
               </div>
             </div>
           </div>
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="container_buttons">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                  <a href="nuevo_equipo.php"><img src="../images/utilidad/add-user-80.png" class="img-responsive hover_image" height="100" width="100"></a>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                  <a href="nuevo_equipo.php" class="nav-link"> Nuevo Integrante</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/user-80.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="administrar_equipo.php"><img src="../images/utilidad/user-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Administrar Datos Integrantes</a>
+                    <a href="administrar_equipo.php" class="nav-link"> Administrar Datos Integrantes</a>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="container_buttons">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                      <a href="administrar_horario.php"><img src="../images/utilidad/horas-64.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                      <a href="administrar_horario.php" class="nav-link"> Datos Horario Apoderados</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         <br>
       </div>
@@ -251,10 +277,22 @@
               <div class="container_buttons">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#"><img src="../images/utilidad/school-80.png" class="img-responsive hover_image" height="100" width="100"></a>
+                    <a href="administrar_admision.php"><img src="../images/utilidad/school-80.png" class="img-responsive hover_image" height="100" width="100"></a>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="nav-link"> Administrar Datos Centro Educativo</a>
+                    <a href="administrar_admision.php" class="nav-link"> Administrar Datos Admisión</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="container_buttons">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="administrar_peticiones.php"><img src="../images/utilidad/icons8-formulario-96.png" class="img-responsive hover_image" height="100" width="100"></a>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="administrar_peticiones.php" class="nav-link"> Datos Formulario Admisión</a>
                   </div>
                 </div>
               </div>
@@ -264,9 +302,22 @@
       </div>
     </section>
 
-    <!--SCRIPTS-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!--SCRIPTS del ul si -->
+    <script src="../js/buscador.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/validar.js"></script>
+    <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $('ul li').click(function(){
+      console.log($(this).html());
+      });
+    </script>
+    <script type="text/javascript">
+      function show(){
+        $(".haja").show();
+      }
+    </script>
   </body>
 </html>

@@ -9,26 +9,121 @@
     <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Admisión Colegio Bellavista</title>
+    <script type="text/javascript">
+          function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, '\\$&');
+          var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      function openModal(){
+        var open_modal = getParameterByName('estatemodal');
+        if (open_modal =="true"){
+        //Abre el modal que quieras
+          $('#Modalsend').modal();
+        }
+        if (open_modal =="false"){
+        //Abre el modal que quieras
+          $('#Modalsenderror').modal();
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      function comprobar_form(){
+        if (document.getElementById('input1').value == ""){
+          document.getElementById("inputHelpBlockcampos1").innerHTML = "Complete los campos requeridos";
+            return false;
+        }else{
+          if (document.getElementById('input2').value == "" ) {
+            document.getElementById("inputHelpBlockcampos2").innerHTML = "Complete los campos requeridos";
+              return false;
+          }else {
+            document.form_contacto.submit()
+          }
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      function hideHelp() {
+        $( "#inputHelpBlockcampos1").hide();
+
+      }
+      function hideHelp2(){
+        $( "#inputHelpBlockcampos2").hide();
+      }
+    </script>
   </head>
-  <body>
-    <header style="background-color:#E03C3B;">
-        <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
-            <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
+  <body onpaste="return false" onload="openModal()">
+    <?php
+     try {
+       require("funciones/datos_cupos_admision.php");
+       require('funciones/datos_contacto.php');
+      } catch (\Exception $e) {
+        echo "<script>console.log('error al tomar los datos desde datos_cupos_admision.php');</script>";
+      }
+       ?>
+    <div class="modal fade" id="Modalsend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body border border-light bg-danger rounded">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12 text-white">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="col-12 text-center text-white font-weight-bold">
+                      <p style="font-size: 1.1rem;">Formulario enviado con exito</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="modal fade" id="Modalsenderror" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-dialog-centered" role="document">
+             <div class="modal-content">
+               <div class="modal-body border border-light bg-danger rounded">
+                 <div class="container-fluid">
+                   <div class="row">
+                     <div class="col-12 text-white">
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="col-12 text-center text-white font-weight-bold">
+                       <p style="font-size: 1.1rem;">Ocurrio un error al enviar el formulario, reintente</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+    <header class="header_color">
+        <div class="container-fluid d-block d-sm-none color_1">
+            <ul class="nav justify-content-center color_1">
               <li class="nav-item">
                 <div style="padding-right:6px;">
-                  <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> directorbellavista@machali.cl</p>
+                  <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="email" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> (9) 93492280</p>
+                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> Calle John Kennedy # 178, Coya – Machalí</p>
+                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="direccion" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                 </div>
               </li>
             </ul>
@@ -63,12 +158,12 @@
                 <li class='nav-item dropdown navheader'>
                   <a class='nav-link dropdown-toggle navbar_titulo line_hover' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
                   <div class='dropdown-menu background_navbar' aria-labelledby='navbarDropdown'>
-                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.html'>Centro Educativo</a>
+                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.php'>Centro Educativo</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='equipo.php'>Equipo Docente</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='noticias.php'>Noticias</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='actividades.php'>Actividades</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='galerias.php'>Galeria</a>
-                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='historia.html'>Historia</a>
+                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='historia.php'>Historia</a>
                   </div>
                 </li>
                 <li class='nav-item navheader'>
@@ -93,7 +188,7 @@
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                   <p class="font_open">Phasellus tincidunt eget augue nec semper. Nam congue facilisis porttitor. Nullam egestas enim sed libero placerat accumsan. Nulla vel mauris a magna condimentum consectetur id ac purus. Nam eleifend quam vel elit imperdiet rutrum. Nulla lacinia sit amet lectus at sollicitudin. Curabitur maximus mi eget risus pretium, ac semper lectus rutrum. Aliquam scelerisque rhoncus ipsum non congue. Sed vel convallis risus. Nunc sodales, lorem suscipit molestie ultrices, elit nisi volutpat velit, eget efficitur eros ante viverra lacus. Aliquam eget lacus bibendum, ultrices libero a, ullamcorper eros. Maecenas commodo dolor vitae lorem porttitor iaculis. Suspendisse ut enim nisi. Mauris at finibus massa.</p>
-                  <p class="font_open">Las Postulaciones de 1° a 8° año Basico 2019 se deberá realizar a través del Sistema de Admisión Escolar.</p>
+                  <p class="font_open">Las Postulaciones de Pre-Kinder a 8° año Basico 2019 se deberán realizar a través del Sistema de Admisión Escolar.</p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                   <iframe width="100%;" height="315" src="https://www.youtube.com/embed/T5Bn3I7WzJI" allowfullscreen></iframe>
@@ -103,36 +198,39 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                   <div class="container">
                     <div class="text-center">
-                      <table class="table table-bordered">
+                      <table class="table table-bordered font-weight-bold">
                         <tr class="bg-danger text-light">
                           <td><h4>CUPOS DISPONIBLES</h4></td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>&nbsp;&nbsp;&nbsp;&nbsp;Kinder : <span id="vacantes_k">45</span> Vacantes</td>
+                          <td>Pre-Kinder : <span id="vacantes_pk"><?php if(isset($cupos0)){echo $cupos0;}else{echo "";} ?></span> Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>1° Básico : <span id="vacantes_1">45</span> Vacantes</td>
+                          <td>&nbsp;&nbsp;&nbsp;&nbsp;Kinder : <span id="vacantes_k"><?php if(isset($cupos1)){echo $cupos1;}else{echo "";} ?></span> Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>2° Básico :  <span id="vacantes_2">45</span> Vacantes</td>
+                          <td>1° Básico : <span id="vacantes_1"><?php if(isset($cupos2)){echo $cupos2;}else{echo "";} ?></span> Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>3° Básico :  <span id="vacantes_3">45</span>  Vacantes</td>
+                          <td>2° Básico :  <span id="vacantes_2"><?php if(isset($cupos3)){echo $cupos3;}else{echo "";} ?></span> Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>4° Básico :  <span id="vacantes_4">45</span> Vacantes</td>
+                          <td>3° Básico :  <span id="vacantes_3"><?php if(isset($cupos4)){echo $cupos4;}else{echo "";} ?></span>  Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>5° Básico :  <span id="vacantes_5">45</span>  Vacantes</td>
+                          <td>4° Básico :  <span id="vacantes_4"><?php if(isset($cupos5)){echo $cupos5;}else{echo "";} ?></span> Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>6° Básico :  <span id="vacantes_6">45</span>  Vacantes</td>
+                          <td>5° Básico :  <span id="vacantes_5"><?php if(isset($cupos6)){echo $cupos6;}else{echo "";} ?></span>  Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>7° Básico :  <span id="vacantes_7">45</span>  Vacantes</td>
+                          <td>6° Básico :  <span id="vacantes_6"><?php if(isset($cupos7)){echo $cupos7;}else{echo "";} ?></span>  Vacantes</td>
                         </tr>
                         <tr class="bg-info text-light">
-                          <td>8° Básico :  <span id="vacantes_8">45</span> Vacantes</td>
+                          <td>7° Básico :  <span id="vacantes_7"><?php if(isset($cupos8)){echo $cupos8;}else{echo "";} ?></span>  Vacantes</td>
+                        </tr>
+                        <tr class="bg-info text-light">
+                          <td>8° Básico :  <span id="vacantes_8"><?php if(isset($cupos9)){echo $cupos9;}else{echo "";} ?></span> Vacantes</td>
                         </tr>
                       </table>
                     </div>
@@ -140,7 +238,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                   <section class="py-3 px-5 rounded" style="background-color: #bfbfbf">
-                    <form method="post" action="#">
+                    <form class="" action="funciones/formulario_admision.php" name="form_contacto" method="post">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
@@ -150,29 +248,31 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
                             <label for="" class="sr-only"></label>
-                            <input type="text" class="form-control" placeholder="Nombre*" required>
+                            <input type="text" class="form-control" id="input1" name="usuario"  onkeyup="hideHelp();"onkeypress="return soloLetras(event);" placeholder="Nombre*" maxlength="50">
+                            <small class="text-danger" id="inputHelpBlockcampos1"></small>
                           </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
                             <label for="" class="sr-only"></label>
-                            <input type="text" class="form-control" placeholder="Telefono*" required>
+                            <input type="text" class="form-control" id="input2" name="fono" onkeyup="hideHelp2();"  onkeypress="return soloNumeros(event);" placeholder="Telefono*" maxlength="11">
+                            <small class="text-danger" id="inputHelpBlockcampos2"></small>
                           </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
                             <label for="" class="sr-only"></label>
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="email" class="form-control" id="input3" name="email" placeholder="Email" maxlength="50">
                           </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
-                            <div class="g-recaptcha" data-sitekey="6LdG56YUAAAAAFiVKPhpgo9q4iUSEQ4w-zWavLNC" style=""></div>
+                            <div class="g-recaptcha" data-sitekey="6LdG56YUAAAAAFiVKPhpgo9q4iUSEQ4w-zWavLNC"></div>
                           </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="form-group">
-                            <input type="submit" class="btn btn-primary font-weight-bold " name="" value="Enviar" style="width:100%;">
+                            <input type="button" class="btn btn-primary font-weight-bold " id="enviarDatos" onclick="comprobar_form()" name="post_form" name="button" style="width:100%;" value="Enviar">
                           </div>
                         </div>
                       </div>
@@ -204,18 +304,18 @@
         <div class="col-12  col-md">
           <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="" width="18" height="16"></span>&nbsp;directorbellavista@machali.cl</p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span>&nbsp;(9) 93492280</p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span>&nbsp;Calle John Kennedy # 178, Coya – Machalí</p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
           </ul>
         </div>
         <div class="col-6  col-md">
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
+            <li><a class="text-muted" href="educativo.php">Centro Educativo</a></li>
             <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
-            <li><a class="text-muted" href="historia.html">Historia</a></li>
+            <li><a class="text-muted" href="historia.php">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>
           </ul>
         </div>
@@ -230,23 +330,23 @@
         </div>
         <div class="col-12  col-md">
           <h5>Redes Sociales</h5>
-          <div style="display: inline-block;padding-right:2px;">
-            <a href="#" target="_blank" class="text-decoration-none text-light">
+          <div class="custom_display">
+            <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
             <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
             </a>
           </div>
-          <div style="display: inline-block;padding-right:2px;">
+          <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light">
             <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
             </a>
           </div>
-          <div style="display: inline-block;padding-right:2px;">
+          <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light" >
             <img src="images/iconos/youtube-play-48.png" alt="Youtube" height="32px" width="32px" class="icon_zoom" />
             </a>
           </div>
-          <div style="display: inline-block;padding-right:2px;">
-            <a href="#" target="_blank" class="text-decoration-none text-light" >
+          <div class="custom_display">
+            <a href="https://www.instagram.com/colegio_bellavista/" target="_blank" class="text-decoration-none text-light" >
             <img src="images/iconos/icons8-instagram-48.png" alt="Instagram" height="28px" width="28px" class="icon_zoom" />
             </a>
           </div>
@@ -260,8 +360,45 @@
        window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
     }
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script language="javascript">
+        function soloNumeros(e){
+              key = e.keyCode || e.which;
+              tecla = String.fromCharCode(key).toLowerCase();
+              letras = " 0123456789()/-";//caracteres permitidos
+              especiales = "8-37-39-46";//teclas especiales ejem espacio, se puede ver en numero de la letra en el mapa de caracteres
+
+              tecla_especial = false
+              for(var i in especiales){
+                   if(key == especiales[i]){
+                       tecla_especial = true;
+                       break;
+                   }
+               }
+
+               if(letras.indexOf(tecla)==-1 && !tecla_especial){
+                   return false;
+               }
+           }
+           function soloLetras(e){
+              key = e.keyCode || e.which;
+              tecla = String.fromCharCode(key).toLowerCase();
+              letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";//caracteres permitidos
+              especiales = "8-37-39-46";//teclas especiales ejem espacio, se puede ver en numero de la letra en el mapa de caracteres
+
+              tecla_especial = false
+              for(var i in especiales){
+                   if(key == especiales[i]){
+                       tecla_especial = true;
+                       break;
+                   }
+               }
+
+               if(letras.indexOf(tecla)==-1 && !tecla_especial){
+                   return false;
+               }
+           }
+    </script>
+    <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var ano = (new Date).getFullYear();
       $(document).ready(function() {

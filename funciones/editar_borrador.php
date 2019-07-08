@@ -2,7 +2,7 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
-require ("../funciones/session_usuario.php");
+require ("session_usuario.php");
   if (!isset($_POST["btn_editar_borrador"])) {
       echo "<script> window.location.href='../ingreso.html';</script>";
   }else {
@@ -104,7 +104,7 @@ require ("../funciones/session_usuario.php");
                  <div class="form-group">
                    <div class="custom-file">
                       <input type="hidden" name="foto_intro_noticia_old" value="<?php echo $foto_intro_noticia; ?>">
-                      <input type="file" class="custom-file-input" name="foto_intro_noticia" id="customFile" required>
+                      <input type="file" class="custom-file-input" name="foto_intro_noticia" id="customFile">
                       <label class="custom-file-label" for="customFile"><?php echo $foto_intro_noticia; ?></label>
                    </div>
                    <small id="intro_help" class="form-text text-muted">

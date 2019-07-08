@@ -10,23 +10,24 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Actividades Colegio Bellavista</title>
   </head>
-  <body >
-    <header style="background-color:#E03C3B;">
-        <div class="container-fluid d-block d-sm-none" style="background-color:#e6e6e6;">
-            <ul class="nav justify-content-center" style="background-color:#e6e6e6;">
+  <body>
+    <?php require('funciones/datos_contacto.php'); ?>
+    <header class="header_color">
+        <div class="container-fluid d-block d-sm-none color_1">
+            <ul class="nav justify-content-center color_1">
               <li class="nav-item">
                 <div style="padding-right:6px;">
-                  <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> directorbellavista@machali.cl</p>
+                  <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="email" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> (9) 93492280</p>
+                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> Calle John Kennedy # 178, Coya – Machalí</p>
+                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="direccion" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                 </div>
               </li>
             </ul>
@@ -61,12 +62,12 @@
                 <li class='nav-item dropdown navheader'>
                   <a class='nav-link dropdown-toggle navbar_titulo line_hover' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>INSTITUCIÓN</a>
                   <div class='dropdown-menu background_navbar' aria-labelledby='navbarDropdown'>
-                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.html'>Centro Educativo</a>
+                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='educativo.php'>Centro Educativo</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='equipo.php'>Equipo Docente</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='noticias.php'>Noticias</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='actividades.php'>Actividades</a>
                       <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='galerias.php'>Galeria</a>
-                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='historia.html'>Historia</a>
+                      <a class='dropdown-item text-uppercase text-light background_navbar font-weight-bold' href='historia.php'>Historia</a>
                   </div>
                 </li>
                 <li class='nav-item navheader'>
@@ -176,18 +177,18 @@
         <div class="col-12  col-md">
           <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="" width="18" height="16"></span>&nbsp;directorbellavista@machali.cl</p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span>&nbsp;(9) 93492280</p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span>&nbsp;Calle John Kennedy # 178, Coya – Machalí</p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
           </ul>
         </div>
         <div class="col-6  col-md">
           <h5>Institución</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="educativo.html">Centro Educativo</a></li>
+            <li><a class="text-muted" href="educativo.php">Centro Educativo</a></li>
             <li><a class="text-muted" href="admision.php">Admisión <span class="ano_actual"></span></a></li>
             <li><a class="text-muted" href="equipo.php">Equipo Docente</a></li>
-            <li><a class="text-muted" href="historia.html">Historia</a></li>
+            <li><a class="text-muted" href="historia.php">Historia</a></li>
             <li><a class="text-muted" href="contacto.php">Contacto</a></li>
           </ul>
         </div>
@@ -202,23 +203,23 @@
         </div>
         <div class="col-12  col-md">
           <h5>Redes Sociales</h5>
-          <div style="display: inline-block;padding-right:2px;">
-            <a href="#" target="_blank" class="text-decoration-none text-light">
+          <div class="custom_display">
+            <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
             <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
             </a>
           </div>
-          <div style="display: inline-block;padding-right:2px;">
+          <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light">
             <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
             </a>
           </div>
-          <div style="display: inline-block;padding-right:2px;">
+          <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light" >
             <img src="images/iconos/youtube-play-48.png" alt="Youtube" height="32px" width="32px" class="icon_zoom" />
             </a>
           </div>
-          <div style="display: inline-block;padding-right:2px;">
-            <a href="#" target="_blank" class="text-decoration-none text-light" >
+          <div class="custom_display">
+            <a href="https://www.instagram.com/colegio_bellavista/" target="_blank" class="text-decoration-none text-light" >
             <img src="images/iconos/icons8-instagram-48.png" alt="Instagram" height="28px" width="28px" class="icon_zoom" />
             </a>
           </div>
@@ -227,8 +228,8 @@
     </footer>
 
     <!--SCRIPTS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript">
     function nuevaventana (URL){

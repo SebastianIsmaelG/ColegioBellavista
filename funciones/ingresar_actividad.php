@@ -1,4 +1,6 @@
 <?php
+session_start();
+require ("session_usuario.php");
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
  if (isset($_POST["btn_nueva_actividad"])) {
   $nombre = $_POST["nombre_actividad"];

@@ -44,10 +44,8 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar secciones.." aria-label="Search">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
+          <div class="buscador" id="bs1"></div>
+          <button class="btn btn-success my-2 my-sm-0" onclick="return validar();" type="button">Buscar</button>
         </div>
       </nav>
     </section>
@@ -78,7 +76,7 @@
             <div class="col-lg-12">
               <div class="py-2">
                 <label class="control-label label_menu sr-only" for=""> Titulo del álbum</label>
-                <form class=""><input type="text" name="titulo_album" onkeyup="myFunction()" id="titulo_album" class="form-control"  maxlength="60" placeholder="Titular del album" autofocus aria-describedby="titulo_help" required>
+                <form class=""><input type="text" name="titulo_album" onkeyup="myFunction()" id="titulo_album" class="form-control"  maxlength="60" placeholder="Titular del album" aria-describedby="titulo_help" required>
                 <small id="titulo_help" class="form-text text-muted">Maximo 60 caracteres</small>
               </div>
             </div>
@@ -92,7 +90,7 @@
             </div>
             <div class="col-lg-12">
               <div class="py-2">
-                <button type="button" class="btn btn-primary" name="button" id="enviarDatos" onclick="this.disabled=true;">Crear nueva galeria</button></form>
+                <button type="button" class="btn btn-primary" name="button" id="enviarDatos">Crear nueva galeria</button></form>
                 <small class="text-danger" id="inputHelpBlockcampos"></small>
               </div>
             </div>
@@ -107,7 +105,8 @@
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 colxs-12">
                     <div class="form-group">
-                      <button id="submit-all" class="btn btn-success" onclick="this.disabled=true;">Subir archivos</button>
+                      <button id="submit-all" class="btn btn-success" onclick="fileload();">Subir archivos</button>
+                      <span id="contentloaded" class="text-danger font-weight-bold h6"></span>
                     </div>
                   </div>
                 </div>
@@ -116,8 +115,23 @@
         </div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!--Scripts-->
+    <script src="../js/buscador.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/validar.js"></script>
+    <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $('ul li').click(function(){
+      console.log($(this).html());
+      });
+    </script>
+    <script type="text/javascript">
+      function show(){
+        $(".haja").show();
+      }
+    </script>
     <script type="text/javascript">
       Dropzone.options.myDropzone = {
         // Prevents Dropzone from uploading dropped files immediately
@@ -146,16 +160,12 @@
         var tituloGaleria=document.getElementById('titulo_album').value;
         var introGaleria=document.getElementById('intro_album').value;
 
-        if ($('#titulo_album').val().length == 0) {
+        if ($('#titulo_album').val().length == 0 ||  $('#intro_album').val().length == 0 ) {
           $( "#inputHelpBlockcampos" ).show();
           document.getElementById("inputHelpBlockcampos").innerHTML = "Complete los campos requeridos";
           return false;
         }
-        if ($('#intro_album').val().length == 0) {
-          $( "#inputHelpBlockcampos" ).show();
-          document.getElementById("inputHelpBlock").innerHTML = "Complete los campos requeridos";
-          return false;
-        }
+        $( "#enviarDatos" ).prop( "disabled", true );
 
         var Ruta="titulo="+tituloGaleria+"&intro="+introGaleria;
 
@@ -169,6 +179,17 @@
           $('#respuesta').val(res);
         })
 
+      });
+    </script>
+    <script type="text/javascript">
+      function fileload(){
+        document.getElementById("contentloaded").innerHTML = " Ya subidos todos los archivos puede salir de esta ventana";
+        this.disabled=true;
+      }
+    </script>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+      $( "#titulo_album" ).focus();
       });
     </script>
   </body>

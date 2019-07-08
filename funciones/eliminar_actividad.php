@@ -1,4 +1,6 @@
 <?php
+session_start();
+require ("session_usuario.php");
   if (!isset($_POST["btn_eliminar_actividad"])) {
     echo "<script> window.location.href='../ingreso.html';</script>";
   }else {

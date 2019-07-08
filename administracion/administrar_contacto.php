@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/utilidad/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <title>Administrar Contacto CB</title>
   </head>
   <body>
@@ -31,10 +32,8 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar secciones.." aria-label="Search">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
+          <div class="buscador" id="bs1"></div>
+          <button class="btn btn-success my-2 my-sm-0" onclick="return validar();" type="button">Buscar</button>
         </div>
       </nav>
     </section>
@@ -116,7 +115,6 @@
                     <tr>
                       <td><p class="font_open_nosize font-weight-bold">Telefono</p></td>
                       <td><input type="button" class="btn btn-success" name="" value="Modificar" data-toggle='modal' data-target='#ModalCenterEditartelefono'>
-
                         <div class='modal fade' id='ModalCenterEditartelefono' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
                           <div class='modal-dialog modal-dialog-centered' role='document'>
                             <div class='modal-content'>
@@ -189,9 +187,22 @@
     </section>
 
     <!--SCRIPTS-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="../js/buscador.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/validar.js"></script>
+    <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $('ul li').click(function(){
+      console.log($(this).html());
+      });
+    </script>
+    <script type="text/javascript">
+      function show(){
+        $(".haja").show();
+      }
+    </script>
     <script language="javascript">
         function soloNumeros(e){
               key = e.keyCode || e.which;

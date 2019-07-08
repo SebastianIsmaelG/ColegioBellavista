@@ -301,10 +301,9 @@
       </html>";
     }
 
-  }
+//Ingresar Publicación
+  }elseif (isset($_POST["btn_nueva_noticia"])) {
 
-  //Ingresar Publicación
-  if (isset($_POST["btn_nueva_noticia"])) {
     //Almacena la noticia directamente
     $titulo_noticia = $_POST["titular_noticia"];
     $intro_noticia = $_POST["introduccion_noticia"];
@@ -362,78 +361,71 @@
       }
 
     }
+  }elseif (isset($_POST["btn_guardar_borrador"])) {
+    try {
 
+      $titulo_noticia = $_POST["titular_noticia"];
+      $intro_noticia = $_POST["introduccion_noticia"];
+      $nombre_fotografia_intro = $_FILES['foto_intro_noticia']['name'];
+      $tipo_fotografia_intro  = $_FILES['foto_intro_noticia']['type'];
+      $tam_fotografia_intro   = $_FILES['foto_intro_noticia']['size'];
+      $cuerpo_noticia = $_POST["cuerpo_noticia"];
+      $fecha_publicacion = date('Y-m-d');
+      $usuario_autor = $us;
+
+      if ($titulo_noticia=="" || $intro_noticia=="" || $cuerpo_noticia=="" || $fecha_publicacion=="" || $usuario_autor=="" || $nombre_fotografia_intro=="") {
+        echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');</script>";
+      }else {
+        if ($tipo_fotografia_intro=="image/jpeg" ||$tipo_fotografia_intro=="image/png" ||$tipo_fotografia_intro=="image/gif" ||$tipo_fotografia_intro=="image/jpg" ) {
+          if ($tam_fotografia_intro<=3000000) {
+            //Comienza el guardado
+              require ("dbcall.php");
+              if (!$cnn) {
+                  die("Conexion Fallida: " . mysqli_connect_error());
+              }else {
+
+                try {
+                    $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Proyectos/ColegioBellavista/images/noticias/images/';
+                    //mover imagen a directorio temporal
+                    move_uploaded_file($_FILES['foto_intro_noticia']['tmp_name'],$carpeta.$nombre_fotografia_intro);
+
+                    //Constructor para obtener un nombre unico
+                    //Renombramos el archivo subido
+                    $codigo_fecha = date("YmdHis");
+                    $no_aleatorio = rand(100,999);
+                    $codigojunto = $codigo_fecha.$no_aleatorio; //17 digitos aleatoreos
+
+                    list($nombre,$ext)= explode(".",$nombre_fotografia_intro);
+                    $nombre_nuevo = "$codigojunto"."."."$ext" ;
+                    //renombra
+                    rename("../images/noticias/images/$nombre_fotografia_intro","../images/noticias/images/$nombre_nuevo");
+
+                    $sql = mysqli_prepare($cnn,"INSERT INTO borradores (id_noticia, usuario_autor, fecha_noticia, titulo_noticia, intro_noticia, foto_intro_noticia, cuerpo_noticia) VALUES (NULL,?,?,?,?,?,?)");
+                    mysqli_stmt_bind_param($sql,"ssssss",utf8_decode($usuario_autor),$fecha_publicacion,utf8_decode($titulo_noticia),utf8_decode($intro_noticia),utf8_decode($nombre_nuevo),utf8_decode($cuerpo_noticia));
+                    if (mysqli_stmt_execute($sql) == TRUE) {
+                        echo "<script> window.alert('Noticia almacenada con exito');window.location.href='../administracion/menu_principal.php';</script>";
+                    }else {
+                      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');window.location.href='../administracion/menu_principal.php';</script>";
+                    }
+                } catch (\Exception $e) {
+                    echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');</script>";
+
+                }
+
+              }
+          }else {
+            echo "<script> window.alert('La imagen ingresada no cumple con los requerimientos: Excede el tamaño permitido (3mb)'); window.history.back();</script>";
+          }
+        }else {
+          echo "<script> window.alert('La imagen ingresada no cumple con los requerimientos: Imagen File (JPEG,PNG,GIF,JPG)'); window.history.back();</script>";
+        }
+
+      }
+
+    } catch (\Exception $e) {
+      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');window.location.href='../administracion/menu_principal.php';</script>";
+    }
+  }else {
+    echo "<script> window.location.href='../ingreso.html';</script>";
   }
-
-  //Guardar Borrador
- if (isset($_POST["btn_guardar_borrador"])) {
-   try {
-
-     $titulo_noticia = $_POST["titular_noticia"];
-     $intro_noticia = $_POST["introduccion_noticia"];
-     $nombre_fotografia_intro = $_FILES['foto_intro_noticia']['name'];
-     $tipo_fotografia_intro  = $_FILES['foto_intro_noticia']['type'];
-     $tam_fotografia_intro   = $_FILES['foto_intro_noticia']['size'];
-     $cuerpo_noticia = $_POST["cuerpo_noticia"];
-     $fecha_publicacion = date('Y-m-d');
-     $usuario_autor = $us;
-
-     if ($titulo_noticia=="" || $intro_noticia=="" || $cuerpo_noticia=="" || $fecha_publicacion=="" || $usuario_autor=="" || $nombre_fotografia_intro=="") {
-       echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');</script>";
-     }else {
-       if ($tipo_fotografia_intro=="image/jpeg" ||$tipo_fotografia_intro=="image/png" ||$tipo_fotografia_intro=="image/gif" ||$tipo_fotografia_intro=="image/jpg" ) {
-         if ($tam_fotografia_intro<=3000000) {
-           //Comienza el guardado
-             require ("dbcall.php");
-             if (!$cnn) {
-                 die("Conexion Fallida: " . mysqli_connect_error());
-             }else {
-
-               try {
-                   $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Proyectos/ColegioBellavista/images/noticias/images/';
-                   //mover imagen a directorio temporal
-                   move_uploaded_file($_FILES['foto_intro_noticia']['tmp_name'],$carpeta.$nombre_fotografia_intro);
-
-                   //Constructor para obtener un nombre unico
-                   //Renombramos el archivo subido
-                   $codigo_fecha = date("YmdHis");
-                   $no_aleatorio = rand(100,999);
-                   $codigojunto = $codigo_fecha.$no_aleatorio; //17 digitos aleatoreos
-
-                   list($nombre,$ext)= explode(".",$nombre_fotografia_intro);
-                   $nombre_nuevo = "$codigojunto"."."."$ext" ;
-                   //renombra
-                   rename("../images/noticias/images/$nombre_fotografia_intro","../images/noticias/images/$nombre_nuevo");
-
-                   $sql = mysqli_prepare($cnn,"INSERT INTO borradores (id_noticia, usuario_autor, fecha_noticia, titulo_noticia, intro_noticia, foto_intro_noticia, cuerpo_noticia) VALUES (NULL,?,?,?,?,?,?)");
-                   mysqli_stmt_bind_param($sql,"ssssss",utf8_decode($usuario_autor),$fecha_publicacion,utf8_decode($titulo_noticia),utf8_decode($intro_noticia),utf8_decode($nombre_nuevo),utf8_decode($cuerpo_noticia));
-                   if (mysqli_stmt_execute($sql) == TRUE) {
-                       echo "<script> window.alert('Noticia subida con exito');window.location.href='../administracion/menu_principal.php';</script>";
-                   }else {
-                     echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');window.location.href='../administracion/menu_principal.php';</script>";
-                   }
-               } catch (\Exception $e) {
-                   echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');</script>";
-
-               }
-
-             }
-         }else {
-           echo "<script> window.alert('La imagen ingresada no cumple con los requerimientos: Excede el tamaño permitido (3mb)'); window.history.back();</script>";
-         }
-       }else {
-         echo "<script> window.alert('La imagen ingresada no cumple con los requerimientos: Imagen File (JPEG,PNG,GIF,JPG)'); window.history.back();</script>";
-       }
-
-     }
-
-   } catch (\Exception $e) {
-     echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');window.location.href='../administracion/menu_principal.php';</script>";
-   }
-
- }
-
-
-
-//  echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0008');window.location.href='../administracion/menu_principal.php';</script>";
- ?>
+?>

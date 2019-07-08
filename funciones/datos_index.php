@@ -12,7 +12,7 @@
       FROM noticias as n
       ORDER by rand() LIMIT 4";
       $results = mysqli_query($cnn, $sql);
-      if(mysqli_num_rows($results)>="4"){
+      if(mysqli_num_rows($results)>=4){
         $rows = [];
         while($row = mysqli_fetch_assoc($results)) {
                   $rows[] = $row;
@@ -60,8 +60,6 @@
       $slider2 = $rows2[1]["imagen_slider"];
       $slider3 = $rows2[2]["imagen_slider"];
 
-      //Sentencia de busqueda contactos
-      $sql = 
 
       //Sentencia de busqueda actividades
       $sql = "SELECT a.id_actividad, a.nombre_actividad, a.fecha_actividad

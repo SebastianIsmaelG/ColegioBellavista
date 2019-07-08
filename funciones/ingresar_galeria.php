@@ -5,7 +5,7 @@
   require("session_usuario.php");
 
   if (!isset($_POST["titulo"]) || !isset($_POST["intro"])) {
-    // code...
+    echo "<script> window.location.href='index.php';</script>";
   }else {
     try {
       $titulo_album = $_POST["titulo"];
