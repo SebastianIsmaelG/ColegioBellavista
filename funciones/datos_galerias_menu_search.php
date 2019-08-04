@@ -38,7 +38,7 @@
 
     }
     if ($rowCount=="0") {
-      echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+      echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
     }else {
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
       //Container
@@ -48,7 +48,7 @@
 
       //Consulta SQL
       $sql = mysqli_prepare($cnn,"SELECT g.id_galeria,g.codigo_galeria,g.titulo_galeria,g.intro_galeria
-      FROM datos_galerias as g WHERE g.titulo_galeria LIKE ? OR g.titulo_galeria LIKE ? ORDER BY g.id_galeria ASC LIMIT ?,?");
+      FROM datos_galerias as g WHERE g.titulo_galeria LIKE ? OR g.titulo_galeria LIKE ? ORDER BY g.id_galeria DESC LIMIT ?,?");
       mysqli_stmt_bind_param($sql,"ssii",$factor_busqueda_titulo,$factor_busqueda_titulo2,$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);
       mysqli_stmt_bind_result($sql,$ID,$COD,$TITULO,$INTRO);

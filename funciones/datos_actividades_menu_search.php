@@ -26,7 +26,7 @@
 
       //Bloque para el conteo de resultados de la consulta
       $sqlCount = mysqli_prepare($cnn,"SELECT COUNT(*) AS TD FROM (SELECT a.id_actividad,a.nombre_actividad,a.fecha_actividad FROM actividades as a
-        WHERE a.nombre_actividad LIKE ? OR a.fecha_actividad LIKE ?) as tt");
+        WHERE a.nombre_actividad LIKE ? OR a.fecha_actividad LIKE ? and a.fecha_actividad BETWEEN CURDATE() and CURDATE() + INTERVAL 365 DAY ) as tt");
       mysqli_stmt_bind_param($sqlCount,"ss",$factor_busqueda_titulo,$factor_busqueda_fecha);
       mysqli_stmt_execute($sqlCount);
       mysqli_stmt_bind_result($sqlCount,$rc);
@@ -36,13 +36,13 @@
       }
     }
     if ($rowCount=="0") {
-      echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+      echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
     }else {
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
 
       //Consulta SQL
       $sql = mysqli_prepare($cnn,"SELECT a.id_actividad,a.nombre_actividad,a.fecha_actividad FROM actividades as a
-        WHERE a.nombre_actividad LIKE ? OR a.fecha_actividad LIKE ? ORDER BY a.fecha_actividad ASC LIMIT ?,?");
+        WHERE a.nombre_actividad LIKE ? OR a.fecha_actividad LIKE ? AND a.fecha_actividad BETWEEN CURDATE() and CURDATE() + INTERVAL 365 DAY ORDER BY a.fecha_actividad DESC LIMIT ?,?");
 
       mysqli_stmt_bind_param($sql,"ssii",$factor_busqueda_titulo,$factor_busqueda_fecha,$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);

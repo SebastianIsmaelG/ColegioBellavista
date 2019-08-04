@@ -100,7 +100,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
-                      <form action="../funciones/upload_gallery.php" class="dropzone" id="my-dropzone"><input type="hidden" id="respuesta" name="inputdropzoneID" value=""></form>
+                      <form action="../funciones/upload_gallery.php" class="dropzone" id="my-dropzone" enctype="multipart/form-data"><input type="hidden" id="respuesta" name="inputdropzoneID" value=""></form>
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 colxs-12">

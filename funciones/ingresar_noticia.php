@@ -47,7 +47,7 @@
                     </li>
                     <li class='nav-item'>
                       <div>
-                        <p class='font-weight-bold'><span><img src='../images/iconos/marcador-teléfono.png' alt='fono' width='18' height='18'></span> (9) 93492280</p>
+                        <p class='font-weight-bold'><span><img src='../images/iconos/marcador-telefono.png' alt='fono' width='18' height='18'></span> (9) 93492280</p>
                       </div>
                     </li>
                     <li class='nav-item'>
@@ -226,7 +226,7 @@
                 <h5>Contacto</h5>
                 <ul class='list-unstyled text-small'>
                   <li><p class='text-muted'><span><img src='../images/iconos/marcador-email.png' alt='' width='18' height='16'></span>&nbsp;directorbellavista@machali.cl</p></li>
-                  <li><p class='text-muted'><span><img src='../images/iconos/marcador-teléfono.png' alt='' width='18' height='18'></span>&nbsp;(9) 93492280</p></li>
+                  <li><p class='text-muted'><span><img src='../images/iconos/marcador-telefono.png' alt='' width='18' height='18'></span>&nbsp;(9) 93492280</p></li>
                   <li><p class='text-muted'><span><img src='../images/iconos/marcador-localidad.png' alt='' width='18' height='18'></span>&nbsp;Calle John Kennedy # 178, Coya – Machalí</p></li>
                 </ul>
               </div>

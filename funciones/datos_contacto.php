@@ -5,15 +5,15 @@
       die("Conexion Fallida: " . mysqli_connect_error());
     }else{
       $sql = "SELECT id,email,telefono,ubicacion FROM datos_contacto";
-      $results = mysqli_query($cnn, $sql);
-      while($row = mysqli_fetch_assoc($results)) {
-                $rows[] = $row;
+      $result2 = mysqli_query($cnn, $sql);
+      while($row = mysqli_fetch_assoc($result2)) {
+
+                $id_contacto = $row["id"];
+                $email_contacto = $row["email"];
+                $telefono_contacto = $row["telefono"];
+                $ubicacion_contacto = utf8_encode($row["ubicacion"]);
       }
-      //Datos de contacto
-      $id_contacto = $rows[0]["id"];
-      $email_contacto = $rows[0]["email"];
-      $telefono_contacto = $rows[0]["telefono"];
-      $ubicacion_contacto = utf8_encode($rows[0]["ubicacion"]);
+
 
     }
   } catch (\Exception $e) {

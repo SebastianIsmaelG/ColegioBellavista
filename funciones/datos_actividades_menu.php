@@ -18,7 +18,7 @@
 
       //Bloque para el conteo de resultados de la consulta
       $sqlCount = mysqli_prepare($cnn,"SELECT COUNT(*) AS TD FROM (SELECT a.nombre_actividad, a.fecha_actividad
-      FROM actividades as a) as tt");
+      FROM actividades as a WHERE a.fecha_actividad BETWEEN CURDATE() and CURDATE() + INTERVAL 300 DAY ) as tt");
       mysqli_stmt_execute($sqlCount);
       mysqli_stmt_bind_result($sqlCount,$rc);
 
@@ -27,13 +27,13 @@
       }
     }
     if ($rowCount=="0") {
-      echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+      echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
     }else {
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
 
       //Consulta SQL
       $sql = mysqli_prepare($cnn,"SELECT a.nombre_actividad, a.fecha_actividad
-      FROM actividades as a
+      FROM actividades as a WHERE a.fecha_actividad BETWEEN CURDATE() and CURDATE() + INTERVAL 300 DAY
       ORDER BY a.fecha_actividad ASC LIMIT ?,?");
 
       mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);

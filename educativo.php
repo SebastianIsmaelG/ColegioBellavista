@@ -19,17 +19,17 @@
           <ul class="nav justify-content-center color_1">
             <li class="nav-item">
               <div style="padding-right:6px;">
-                <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
+                <p class="font-weight-bold font_contact"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
               </div>
             </li>
             <li class="nav-item">
               <div>
-                <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
+                <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-telefono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
               </div>
             </li>
             <li class="nav-item">
               <div>
-                <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
+                <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
               </div>
             </li>
           </ul>
@@ -125,7 +125,7 @@
                             <p class=" text-white font_open"><span class="font-weight-bold">Comuna :</span> Machalí</p>
                             <p class=" text-white font_open"><span class="font-weight-bold">Dependencia :</span> Municipal</p>
                             <p class=" text-white font_open"><span class="font-weight-bold">Telefono :</span> 9 93492280</p>
-                            <p class=" text-white font_open"><span class="font-weight-bold">Nivel y Modalidad :</span> nose we</p>
+                            <p class=" text-white font_open"><span class="font-weight-bold">Nivel y Modalidad :</span> Pre Kinder a 8° Basico</p>
                           </div>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -143,21 +143,22 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 py-3 px-3">
                   <h3 class="title_vision_mision text-danger">VISIÓN</h3>
                   <hr>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>Aspiramos a que nuestro establecimiento sea percibido por la comunidad educativa, con un ambiente grato y acogedor, donde todos sus alumnos aprendan y sean valorados como personas</p>
+                  <p>Generamos espacios y ambientes propicios para un adecuado clima de convivencia escolar. Propiciamos el estudio, el trabajo y el espíritu de emprendimiento</p>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 py-3 px-3">
-                  <img src="https://picsum.photos/550/250" alt="" class="img-fluid hover-shadow" />
+                  <img src="images/noticias/images/vision.jpg" alt="" class="img-fluid hover-shadow" />
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-none d-md-block py-3 px-3">
-                  <img src="https://picsum.photos/550/250" alt="" class="img-fluid hover-shadow" />
+                  <img src="images/noticias/images/mision.jpg" alt="" class="img-fluid hover-shadow" />
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 py-3 px-3">
                   <h3 class="title_vision_mision text-danger">MISIÓN</h3>
                   <hr>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>Promover la formación de personas a traves de aprendizajes significativos, centradas en un ambiente propicio, lo que  permitira en educarnos en una formacioon valorica y en la entrega de habilidades necesarias para la continuidad de sus estudios y asi desenvolverse en una sociedad globalizada de permanentes cambios</p>
                 </div>
                 <div class="col-lg-6 d-block d-md-none py-3 px-3" >
-                  <img src="https://picsum.photos/550/250" alt="" class="img-fluid hover-shadow" />
+                  <img src="images/noticias/images/mision.jpg" alt="" class="img-fluid hover-shadow" />
                 </div>
               </div>
             </div>
@@ -260,7 +261,7 @@
           <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
             <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-telefono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
             <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
           </ul>
         </div>
@@ -287,12 +288,12 @@
           <h5>Redes Sociales</h5>
           <div class="custom_display">
             <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+            <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
             </a>
           </div>
           <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+            <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
             </a>
           </div>
           <div class="custom_display">
@@ -316,7 +317,7 @@
     }
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="js/jquery-3.4.1.min.js" ></script>
     <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript">

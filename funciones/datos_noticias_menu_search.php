@@ -36,14 +36,14 @@
       }
     }
     if ($rowCount=="0") {
-      echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+      echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
     }else {
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
 
       //Consulta SQL
       $sql = mysqli_prepare($cnn,"SELECT n.id_noticia, u.nombre, u.apellido, n.titulo_noticia,n.fecha_noticia,n.intro_noticia,n.foto_intro_noticia
       FROM noticias as n INNER JOIN usuarios as u ON n.usuario_autor = u.nombre_usuario WHERE n.titulo_noticia LIKE ? OR n.fecha_noticia LIKE ?
-      ORDER BY n.fecha_noticia ASC LIMIT ?,?");
+      ORDER BY n.fecha_noticia DESC LIMIT ?,?");
 
       mysqli_stmt_bind_param($sql,"ssii",$factor_busqueda_titulo,$factor_busqueda_fecha,$empiezaPaginacion,$paginacion);
       mysqli_stmt_execute($sql);

@@ -3,21 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Colegio Bellavista Coya</title>
+        <meta name="description" content="Con mas de 10 años de experiencia en el rubro educacional, Colegio Bellavista es una institution ubicada en la localidad de Coya, Machali. Nuestro objetivo es educar con pasion y afecto a los jovenes del futuro ">
         <meta name="theme-color" content="#E03C3B">
+        <meta name="robots" content="notranslate" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.css">
-        <script src="js/jquery-3.3.1.slim.min.js" ></script>
-        <script type="text/javascript">
-          $(window).on('load', function () {
-              setTimeout(function () {
-            $(".loader-page").css({visibility:"hidden",opacity:"0"})
-          }, 2000);
-
-          });
-        </script>
-        <title>Colegio Bellavista</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
     <body class="sadas">
       <div class="loader-page">
@@ -38,17 +31,17 @@
                 <ul class="nav justify-content-center color_1">
                   <li class="nav-item">
                     <div style="padding-right:6px;">
-                      <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
+                      <p class="font-weight-bold font_contact"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
                     </div>
                   </li>
                   <li class="nav-item">
                     <div>
-                      <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
+                      <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-telefono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                     </div>
                   </li>
                   <li class="nav-item">
                     <div>
-                      <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
+                      <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                     </div>
                   </li>
                 </ul>
@@ -120,10 +113,10 @@
                             <img src="<?php if (isset($slider1)) { echo $sliderurl.$slider1;}else { echo"";} ?>"  class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
-                            <img src="<?php if (isset($slider2)) { echo $sliderurl.$slider2;}else { echo"";} ?>"  class="d-block w-100" alt="...">
+                            <img src="<?php if (isset($slider2)) { echo $sliderurl.$slider3;}else { echo"";} ?>"  class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
-                            <img src="<?php if (isset($slider3)) { echo $sliderurl.$slider3;}else { echo"";} ?>"  class="d-block w-100" alt="...">
+                            <img src="<?php if (isset($slider3)) { echo $sliderurl.$slider2;}else { echo"";} ?>"  class="d-block w-100" alt="...">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -155,8 +148,8 @@
                                     <a class="text-decoration-none" href="noticia.php?name=<?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_1)) {echo $id_noticia_1;}else {echo "";} ?>" ><h5 class="font-weight-bold text-danger"><?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?></h5></a>
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="px-2 py-2">
-                                      <p><?php if (isset($intro_noticia_1)) {echo $intro_noticia_1;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_1)) {echo $id_noticia_1;}else {echo "";} ?>">ver mas»</a></span></p>
+                                    <div class="px-2 py-2" style="font-family: 'Open Sans', sans-serif;">
+                                      <p class="content_intro"><?php if (isset($intro_noticia_1)) {echo $intro_noticia_1;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_1)) {echo $titulo_noticia_1;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_1)) {echo $id_noticia_1;}else {echo "";} ?>">ver mas»</a></span></p>
                                     </div>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
@@ -166,10 +159,10 @@
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
                                       <a href="http://www.facebook.com/sharer.php?u=http://norfipc.com&t=NorfiPC" name="ventana1" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                                      <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                                      <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light" >
                                       <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
@@ -190,7 +183,7 @@
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="px-2 py-2">
-                                      <p><?php if (isset($intro_noticia_2)) {echo $intro_noticia_2;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_2)) {echo $titulo_noticia_2;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_2)) {echo $id_noticia_2;}else {echo "";} ?>" >ver mas»</a></span></p>
+                                      <p class="content_intro"><?php if (isset($intro_noticia_2)) {echo $intro_noticia_2;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_2)) {echo $titulo_noticia_2;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_2)) {echo $id_noticia_2;}else {echo "";} ?>" >ver mas»</a></span></p>
                                     </div>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
@@ -201,10 +194,10 @@
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                                      <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                                      <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light" >
                                       <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
@@ -225,7 +218,7 @@
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="px-2 py-2">
-                                      <p><?php if (isset($intro_noticia_3)) {echo $intro_noticia_3;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_3)) {echo $titulo_noticia_3;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_3)) {echo $id_noticia_3;}else {echo "";} ?>" >ver mas»</a></span></p>
+                                      <p class="content_intro"><?php if (isset($intro_noticia_3)) {echo $intro_noticia_3;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_3)) {echo $titulo_noticia_3;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_3)) {echo $id_noticia_3;}else {echo "";} ?>" >ver mas»</a></span></p>
                                     </div>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
@@ -236,10 +229,10 @@
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                                      <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                                      <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light" >
                                       <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
@@ -260,7 +253,7 @@
                                   </div>
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="py-2 px-2">
-                                      <p><?php if (isset($intro_noticia_4)) {echo $intro_noticia_4;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_4)) {echo $titulo_noticia_4;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_4)) {echo $id_noticia_4;}else {echo "";} ?>" >ver mas»</a></span></p>
+                                      <p class="content_intro"><?php if (isset($intro_noticia_4)) {echo $intro_noticia_4;}else {echo "";} ?><span>...<a href="noticia.php?name=<?php if (isset($titulo_noticia_4)) {echo $titulo_noticia_4;}else {echo "";} ?>&publicacion=<?php if (isset($id_noticia_4)) {echo $id_noticia_4;}else {echo "";} ?>" >ver mas»</a></span></p>
                                     </div>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" style="width:50%;">
@@ -270,10 +263,10 @@
                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" style="width:50%;">
                                     <div class="social-share">
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                                      <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light">
-                                      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                                      <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
                                       </a>
                                       <a href="#" target="_blank" class="text-decoration-none text-light" >
                                       <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
@@ -313,7 +306,7 @@
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                   <div style="padding:3px;">
-                                    <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
+                                    <p class="font-weight-bold"><span><img src="images/iconos/marcador-telefono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                                   </div>
                                 </div>
                               </div>
@@ -367,7 +360,7 @@
                                     <a href="actividades.php" class="text-decoration-none text-dark">
                                       <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
-                                          <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
+                                          <span> <img src="images/iconos/calendario-color.png" alt="calendar" width="50" height="50"></span>
                                         </div>
                                         <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 text-center ">
                                           <p class="font-weight-bold"> <?php if (isset($titulo_actividad_1)) {echo $titulo_actividad_1; }else{echo "";} ?></p>
@@ -382,7 +375,7 @@
                                     <a href="actividades.php" class="text-decoration-none text-dark">
                                       <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
-                                          <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
+                                          <span> <img src="images/iconos/calendario-color.png" alt="calendar" width="50" height="50"></span>
                                         </div>
                                         <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 text-center ">
                                           <p class="font-weight-bold"> <?php if (isset($titulo_actividad_2)) {echo $titulo_actividad_2; }else{echo "";} ?></p>
@@ -397,7 +390,7 @@
                                     <a href="actividades.php" class="text-decoration-none text-dark">
                                       <div class="row">
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
-                                        <span> <img src="images/iconos/calendario-color.png" alt="" width="30" height="30"></span>
+                                        <span> <img src="images/iconos/calendario-color.png" alt="calendar" width="50" height="50"></span>
                                       </div>
                                       <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 text-center ">
                                         <p class="font-weight-bold"> <?php if (isset($titulo_actividad_3)) {echo $titulo_actividad_3; }else{echo "";} ?></p>
@@ -420,7 +413,7 @@
                     <div class="container">
                       <div class="box_container">
                         <div class="encabezado_secciones3" style="background-color: #<?php echo $border_admision ?>;">
-                          <a href="admision.php" class="text-decoration-none"><img src="images/utilidad/<?php echo $imagen_admision ?>" alt=""></a>
+                          <a href="admision.php" class="text-decoration-none"><img src="images/utilidad/<?php echo $imagen_admision ?>" alt="" style="height: 120px!important; width: 405px!important;object-fit:cover"></a>
                         </div>
                       </div>
                     </div>
@@ -450,7 +443,7 @@
               <h5>Contacto</h5>
               <ul class="list-unstyled text-small">
                 <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
-                <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+                <li><p class="text-muted"><span><img src="images/iconos/marcador-telefono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
                 <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
               </ul>
             </div>
@@ -464,7 +457,7 @@
                 <li><a class="text-muted" href="contacto.php">Contacto</a></li>
               </ul>
             </div>
-            <div class="col-6  col-md">
+            <div class="col-12 col-md">
               <h5>Mas Contenidos</h5>
               <ul class="list-unstyled text-small">
                 <li><a class="text-muted" href="noticias.php">Noticias</a></li>
@@ -477,12 +470,12 @@
               <h5>Redes Sociales</h5>
               <div class="custom_display">
                 <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
-                <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
                 </a>
               </div>
               <div class="custom_display">
                 <a href="#" target="_blank" class="text-decoration-none text-light">
-                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
                 </a>
               </div>
               <div class="custom_display">
@@ -499,20 +492,30 @@
           </div>
         </footer>
         <!--SCRIPTS-->
-        <script language=javascript>
-        function nuevaventana (URL){
-           window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
-        }
+        <script src="js/jquery-3.4.1.min.js" ></script>
+        <script type="text/javascript">
+          $(window).on('load', function () {
+              setTimeout(function () {
+            $(".loader-page").css({visibility:"hidden",opacity:"0"})
+          }, 1000);
+
+          });
         </script>
+        <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.css">
         <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="js/ekko-lightbox.min.js"></script>
+        <script type="text/javascript" src="js/ekko-lightbox.min.js.map"></script>
         <script type="text/javascript">
+          //Nueva ventana al compartir RRSS
+          function nuevaventana (URL){
+             window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
+          }
+          //Año dinamico dinamico
           var ano = (new Date).getFullYear();
           $(document).ready(function() {
           $(".ano_actual").text( ano );
           });
-        </script>
-        <script type="text/javascript">
           // ENABLE TOUCH SWIPE FOR CAROUSEL - NO PLUGINS NEEDED!
           $('.carousel').on('touchstart', function (event) {
             var xClick = event.originalEvent.touches[0].pageX;
@@ -528,10 +531,7 @@
                 $(this).off('touchmove');
             });
           });
-        </script>
-        <script src="js/ekko-lightbox.min.js"></script>
-        <script type="text/javascript" src="js/ekko-lightbox.min.js.map"></script>
-        <script type="text/javascript">
+          //Lightbox gallery event
           $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                     event.preventDefault();
                     $(this).ekkoLightbox();

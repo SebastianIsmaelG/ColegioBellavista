@@ -3,6 +3,8 @@
 <?php
   try {
     require('funciones/datos_publicacion.php');
+    require('funciones/datos_publi_mas_vistas.php');
+    $nc = contador($vistas_publicacion,$id);
   } catch (\Exception $e) {
       echo "<script> window.history.back();</script>";
   }
@@ -17,16 +19,7 @@
     <link rel='shortcut icon' href='images/utilidad/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?php echo $titulo ?></title>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3"></script>
-    <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      $(window).on('load', function () {
-          setTimeout(function () {
-        $(".loader-page").css({visibility:"hidden",opacity:"0"})
-      }, 2000);
-
-      });
-    </script>
+    <meta name="description" content="<?php echo $intro_publicacion ?>">
   </head>
   <body>
     <?php require('funciones/datos_contacto.php'); ?>
@@ -38,17 +31,17 @@
         <ul class="nav justify-content-center color_1">
           <li class="nav-item">
             <div style="padding-right:6px;">
-              <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
+              <p class="font-weight-bold font_contact"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
             </div>
           </li>
           <li class="nav-item">
             <div>
-              <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
+              <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-telefono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
             </div>
           </li>
           <li class="nav-item">
             <div>
-              <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
+              <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
             </div>
           </li>
         </ul>
@@ -58,7 +51,7 @@
             <div class='row'>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                 <div class='py-2'>
-                  <a href="index.php"><img src='images/utilidad/insignia.png' width='76' height='80' alt=''></a>
+                  <a href="index.php"><img src="images/utilidad/insignia.png" width="76" height="80" role="img" focusable="false" alt=""></a>
                 </div>
               </div>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -119,7 +112,7 @@
         </div>
       </section>
       <section>
-        <div class='container bg-light shadow-border'>
+        <div class='container bg-light '>
               <div class='row'>
                   <div class='col-lg-9 col-md-12 col-sm-12 col-xs-12 bg-white'>
                     <div class='row'>
@@ -129,11 +122,12 @@
                       </div>
                       <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                         <div class='row'>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style='width:60%;'>
-                            <div class='container'><span class="text-secondary">Autor </span><span class="text-danger font-weight-bold"><?php if (isset($nombre_autor)) {echo $nombre_autor; }else{echo "";} ?> <?php if (isset($apellido_autor)) {echo $apellido_autor; }else{echo "";} ?> </span></div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style='width:50%;'>
+                            <div class='container-fluid'><small class="text-secondary">Autor </small><small class="text-danger font-weight-bold"><?php if (isset($nombre_autor)) {echo $nombre_autor; }else{echo "";} ?> <?php if (isset($apellido_autor)) {echo $apellido_autor; }else{echo "";} ?> </small></div>
                           </div>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right' style='width:40%;'>
-                            <div class='container-fluid font-weight-bold text-secondary'><?php if (isset($fecha_publicacion)) {echo $fecha_publicacion; }else{echo "";} ?></div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right' style='width:50%;'>
+                            <div class='container-fluid font-weight-bold text-secondary'><small><?php if (isset($fecha_publicacion)) {echo $fecha_publicacion; }else{echo "";} ?></small></div>
+                            <div class='container-fluid font-weight-bold text-secondary'><span><img src="images/iconos/icons8-visible.png" alt="visitas"  height="15px" width="15px"><small class="font-weight-bold">&nbsp;&nbsp;<?php if (isset($nc)) {echo $nc; }else{echo "";} ?></small></span></div>
                           </div>
                         </div>
                       </div>
@@ -147,12 +141,12 @@
                           </div>
                           <div class='container py-2 text-right'>
                             <div class="social-share">
-                              <span>Compartir &nbsp;</span>
+                              <span class="text-muted font-weight-bold">Compartir &nbsp;</span>
                               <a href="#" target="_blank" class="text-decoration-none text-light">
-                              <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+                              <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
                               </a>
                               <a href="#" target="_blank" class="text-decoration-none text-light">
-                              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+                              <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
                               </a>
                               <a href="#" target="_blank" class="text-decoration-none text-light" >
                               <img src="images/iconos/whatsapp-48.png" alt="whatsapp" height="35px" width="35px" class="icon_zoom" />
@@ -161,9 +155,10 @@
                           </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <div class="container display_center py-2" style="background-color: #eee;border-left: 7px solid #cecece;">
+                          <div class="container display_center py-2 rounded" style="background-color: #eee;border-left: 7px solid #cecece;">
                             <div class="fb-comments" data-href="http://localhost:8090/Proyectos/ColegioBellavista/noticia.php" data-width="" data-numposts="8"></div>
                           </div>
+                          <br>
                         </div>
                     </div>
                   </div>
@@ -193,9 +188,8 @@
                           </div>
                         </div>
                         <div class="col-lg-12 d-none d-lg-block">
-                          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FColegio-Bellavista-1328489143963284%2F&tabs=timeline&width=250&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="250" height="450" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                          <iframe class="display_center" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FColegio-Bellavista-1328489143963284%2F&tabs=timeline&width=250&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="100%" height="450" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                         </div>
-                        <br>
                       </div>
                     </div>
                   </div>
@@ -203,6 +197,163 @@
             </div>
       </section>
     </div>
+    <br>
+    <div class="container bg-light">
+      <div class="row">
+        <div class="col-12 py-1">
+          <h4>PUBLICACIONES MAS VISITADAS</h4>
+        </div>
+        <!--Col pensado para dispositivos moviles XS EN SM Y MD SE PODRA VER LA INTRO PARA ACAPAR ESPACIO-->
+        <div class="col-4 col-12 d-block d-md-none">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_0)) {echo $titulo_mv_0; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_0)) {echo $id_mv_0;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-5">
+                <!--Fotografia-->
+                  <div class="mx-1">
+                    <img src="<?php if (isset($fintro_mv_0) && $fintro_mv_0!="") { echo $ruta_noticias.$fintro_mv_0;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-7">
+                <!--Informacion-->
+                <div class="px-1">
+                  <h6 class="text-uppercase text-left hover_title_info"><?php if (isset($titulo_mv_0)) { echo $titulo_mv_0;}else{echo "";}?></h6>
+                  <small><?php if (isset($intro_mv_0)) { echo substr($intro_mv_0, 0, 65)." ...";}else{echo "";}?></small>
+                </div>
+              </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-12 d-block d-md-none">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_1)) {echo $titulo_mv_1; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_1)) {echo $id_mv_1;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-5">
+                <!--Fotografia-->
+                  <div class="mx-1">
+                    <img src="<?php if (isset($fintro_mv_1) && $fintro_mv_1!="") { echo $ruta_noticias.$fintro_mv_1;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-7">
+                <!--Informacion-->
+                <div class="px-1">
+                  <h6 class="text-uppercase text-left hover_title_info"><?php if (isset($titulo_mv_1)) { echo $titulo_mv_1;}else{echo "";}?></h6>
+                  <small><?php if (isset($intro_mv_1)) { echo substr($intro_mv_1, 0, 65)." ...";}else{echo "";}?></small>
+                </div>
+              </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-12 d-block d-md-none">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_2)) {echo $titulo_mv_2; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_2)) {echo $id_mv_2;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-5">
+                <!--Fotografia-->
+                  <div class="mx-1">
+                    <img src="<?php if (isset($fintro_mv_2) && $fintro_mv_2!="") { echo $ruta_noticias.$fintro_mv_2;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-7">
+                <!--Informacion-->
+                <div class="px-1">
+                  <h6 class="text-uppercase text-left hover_title_info"><?php if (isset($titulo_mv_2)) { echo $titulo_mv_2;}else{echo "";}?></h6>
+                  <small><?php if (isset($intro_mv_2)) { echo substr($intro_mv_2, 0, 65)." ...";}else{echo "";}?></small>
+                </div>
+              </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!--Fin del col-->
+
+        <!--Col para dispositivos lg +-->
+        <div class="col-3 d-none d-md-block">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_0)) {echo $titulo_mv_0; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_0)) {echo $id_mv_0;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-12">
+                  <div class="mx-1">
+                    <!--Fotografia-->
+                    <img src="<?php if (isset($fintro_mv_0) && $fintro_mv_0!="") { echo $ruta_noticias.$fintro_mv_0;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mx-2 my-2">
+                    <!--Informacion-->
+                    <h6><?php if (isset($titulo_mv_0)) { echo $titulo_mv_0;}?></h6>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-3 d-none d-md-block">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_1)) {echo $titulo_mv_1; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_1)) {echo $id_mv_1;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-12">
+                  <div class="mx-1">
+                    <!--Fotografia-->
+                    <img src="<?php if (isset($fintro_mv_1) && $fintro_mv_1!="") { echo $ruta_noticias.$fintro_mv_1;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mx-2 my-2">
+                    <!--Informacion-->
+                    <h6><?php if (isset($titulo_mv_1)) { echo $titulo_mv_1;}?></h6>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-3 d-none d-md-block">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_2)) {echo $titulo_mv_2; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_2)) {echo $id_mv_2;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-12">
+                  <div class="mx-1">
+                    <!--Fotografia-->
+                    <img src="<?php if (isset($fintro_mv_2) && $fintro_mv_2!="") { echo $ruta_noticias.$fintro_mv_2;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mx-2 my-2">
+                    <!--Informacion-->
+                    <h6><?php if (isset($titulo_mv_2)) { echo $titulo_mv_2;}?></h6>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-3 d-none d-md-block">
+          <div class="related_box my-2 hover_box_info">
+            <a href="noticia.php?name=<?php if (isset($titulo_mv_3)) {echo $titulo_mv_3; }else {echo '';} ?>&publicacion=<?php if (isset($id_mv_3)) {echo $id_mv_3;}else {echo '';} ?>" class="text-decoration-none text-dark">
+              <div class="row py-2">
+                <div class="col-12">
+                  <div class="mx-1">
+                    <!--Fotografia-->
+                    <img src="<?php if (isset($fintro_mv_3) && $fintro_mv_3!="") { echo $ruta_noticias.$fintro_mv_3;}else{ echo $ruta_no_image;} ?>" alt="Intro Publicacion" style="object-fit:cover;">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mx-2 my-2">
+                    <!--Informacion-->
+                    <h6><?php if (isset($titulo_mv_3)) { echo $titulo_mv_3;}?></h6>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- fin del col -->
+      </div>
+    </div>
+    <br>
     <footer class="container-fluid py-3 bg-dark noseleccionable">
       <div class="row">
         <div class="col-12 col-md">
@@ -223,7 +374,7 @@
           <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
             <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-telefono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
             <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
           </ul>
         </div>
@@ -250,12 +401,12 @@
           <h5>Redes Sociales</h5>
           <div class="custom_display">
             <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+            <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
             </a>
           </div>
           <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+            <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
             </a>
           </div>
           <div class="custom_display">
@@ -273,6 +424,15 @@
     </footer>
 
     <!--javascript-->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+      $(window).on('load', function () {
+          setTimeout(function () {
+        $(".loader-page").css({visibility:"hidden",opacity:"0"})
+      }, 1000);
+
+      });
+    </script>
     <script language=javascript>
     function nuevaventana (URL){
        window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
@@ -280,14 +440,9 @@
     </script>
     <!-- LightWidget WIDGET --><script src="js/lightwidget.js"></script>
     <script async defer crossorigin='anonymous' src='https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3'></script>
-    <script src='js/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
+    <script src='js/jquery-3.4.1.min.js'></script>
     <script src='js/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
     <script src='js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'></script>
-    <script>
-      function goBack() {
-        window.history.back();
-      }
-    </script>
     <script type="text/javascript">
       var ano = (new Date).getFullYear();
       $(document).ready(function() {

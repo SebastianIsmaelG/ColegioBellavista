@@ -19,7 +19,7 @@ if (isset($_GET["btn_search"]) && isset($_GET["input_busqueda"])) {
         $rowCount = $fila["0"];
       }
       if ($rowCount=="0") {
-        echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+        echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
       }else {
         //Paginacion
         $paginacion  = 10;
@@ -200,7 +200,7 @@ if (isset($_GET["btn_search"]) && isset($_GET["input_busqueda"])) {
         $rowCount = $fila["0"];
       }
       if ($rowCount=="0") {
-        echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+        echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
       }else {
         //Paginacion
         $paginacion  = 10;

@@ -23,7 +23,7 @@
       }
 
 
-      if ($titulo==""||$intro==""||$cuerpo==""||$nombre_fotografia_intro_old=="") {
+      if ($titulo==""||$intro==""||$cuerpo==""||$nombre_fotografia=="") {
         echo "<script> window.alert(' Ha ocurrrido un error al recuperar los datos, reintente. COD:0011');window.history.back();</script>";
       }else {
         require ("dbcall.php");
@@ -60,8 +60,6 @@
                   if ($tipo_fotografia_intro=="image/jpeg" ||$tipo_fotografia_intro=="image/png" ||$tipo_fotografia_intro=="image/gif" ||$tipo_fotografia_intro=="image/jpg" ) {
                     if ($tam_fotografia_intro<=3000000) {
                         try {
-                          //Borramos la imagen vieja
-                          unlink("../images/noticias/images/$nombre_fotografia_intro_old");
 
                           $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Proyectos/ColegioBellavista/images/noticias/images/';
                           //mover imagen a directorio temporal

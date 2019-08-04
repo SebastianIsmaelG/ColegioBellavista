@@ -17,14 +17,14 @@
         $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia,foto_intro_noticia FROM noticias WHERE (titulo_noticia LIKE $factor_busqueda_titulo OR fecha_noticia LIKE $factor_busqueda_fecha) )as TT";
         $rs = mysqli_query($cnn,$sqlCount);
         if (mysqli_num_rows($rs)==0) {
-            echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+            echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
         }else {
           while ($fila = mysqli_fetch_row($rs)) {
             $rowCount = $fila["0"];
           }
         }
         if ($rowCount=="0") {
-          echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+          echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
         }else {
           //Paginacion
           $paginacion  = 8;
@@ -169,14 +169,14 @@
         $sqlCount = "SELECT COUNT(*) AS TD FROM (SELECT titulo_noticia,fecha_noticia,intro_noticia,foto_intro_noticia FROM noticias)as TT";
         $rs = mysqli_query($cnn,$sqlCount);
         if (mysqli_num_rows($rs)==0) {
-            echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+            echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
         }else {
           while ($fila = mysqli_fetch_row($rs)) {
             $rowCount = $fila["0"];
           }
         }
         if ($rowCount=="0") {
-          echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+          echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
         }else {
           //Paginacion
           $paginacion  = 8;

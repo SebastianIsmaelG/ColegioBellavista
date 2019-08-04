@@ -10,7 +10,7 @@
       //Sentencia de busqueda Noticias
       $sql = "SELECT n.id_noticia,n.titulo_noticia, n.intro_noticia, n.fecha_noticia
       FROM noticias as n
-      ORDER by rand() LIMIT 4";
+      ORDER by n.fecha_noticia DESC LIMIT 4";
       $results = mysqli_query($cnn, $sql);
       if(mysqli_num_rows($results)>=4){
         $rows = [];
@@ -63,8 +63,8 @@
 
       //Sentencia de busqueda actividades
       $sql = "SELECT a.id_actividad, a.nombre_actividad, a.fecha_actividad
-      FROM actividades as a
-      ORDER by rand() LIMIT 3";
+      FROM actividades as a WHERE a.fecha_actividad BETWEEN CURDATE() and CURDATE() + INTERVAL 300 DAY
+      ORDER by a.fecha_actividad asc LIMIT 3";
 
       $results = mysqli_query($cnn, $sql);
       if (mysqli_num_rows($results)>="3") {
@@ -79,21 +79,21 @@
         $titulo_actividad_1 = utf8_encode($rows3[0]["nombre_actividad"]);
         $intro_actividad_1 = $rows3[0]["fecha_actividad"];
         //Fecha convertida
-        $fecha_actividad_1 = strftime("%d de %B", strtotime($intro_actividad_1));
+        $fecha_actividad_1 = strftime("%d de %b", strtotime($intro_actividad_1));
 
         //Cuadro2
         $id_actividad_2 = $rows3[1]["id_actividad"];
         $titulo_actividad_2 =  utf8_encode($rows3[1]["nombre_actividad"]);
         $intro_actividad_2 = $rows3[1]["fecha_actividad"];
         //Fecha convertida
-        $fecha_actividad_2 = strftime("%d de %B", strtotime($intro_actividad_2));
+        $fecha_actividad_2 = strftime("%d de %b", strtotime($intro_actividad_2));
 
         //Cuadro3
         $id_actividad_3 = $rows3[2]["id_actividad"];
         $titulo_actividad_3 =  utf8_encode($rows3[2]["nombre_actividad"]);
         $intro_actividad_3 = $rows3[2]["fecha_actividad"];
         //Fecha convertida
-        $fecha_actividad_3 = strftime("%d de %B", strtotime($intro_actividad_3));
+        $fecha_actividad_3 = strftime("%d de %b", strtotime($intro_actividad_3));
 
         //Fin de las declaraciones
         mysqli_free_result($results);

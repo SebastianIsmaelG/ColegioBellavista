@@ -67,7 +67,21 @@
   padding-bottom: 4px;
   border-bottom: solid #ff4d4d;
 }
-
+.related_box{
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #ffff;
+}
+.hover_title_info:hover{
+  color: #588cf3;
+}
+.hover_box_info:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.font_apple{
+  font-family: Tofino, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #333;
+  font-weight: bold;
+}
 #loadpage{
   display: block;
   background-color: gray;
@@ -172,6 +186,10 @@ img {
   background-position: center;
   height: 300px;
 }
+.content_intro{
+  font-family: 'Open Sans', sans-serif;
+}
+
 .imagen_bellavista{
     background-image: url(../images/utilidad/FRONT_COLEGIO.jpg);
     background-position: 0 0;
@@ -203,7 +221,7 @@ img {
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-}
+
 .font_lato{
   font-family: 'Lato', sans-serif !important;
   letter-spacing: 1px;
@@ -268,7 +286,8 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed
+  background-attachment: fixed;
+
 }
 .shared_label{
   font-weight: bold;
@@ -400,11 +419,28 @@ img {
     overflow: hidden;
     object-fit: cover;
   }
+  @media screen and (max-width: 448px){
+  .g-recaptcha iframe {
+  width: 200px!important;
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+  }}
+
   .cuerpo_noticia p > img {
     margin-left: auto!important;
     margin-right: auto!important;
     display: block!important;
     width: auto !important;
+  }
+  .font_contact{
+    font-size: 12px!important;
+  }
+  .sadas{
+    background-image: url("../images/utilidad/FRONT COLEGIO.jpg");
+    height: 650px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed
   }
 
 }
@@ -454,12 +490,11 @@ img {
   padding: 5px;
   border-style: solid;
   border-color: #a6a6a6;
-  border-width: 2px;
-  border-radius: 6px;
+  border-width: 1px;
+  border-radius: 5px;
 }
 .container_actividad:hover{
   cursor: pointer;
-  transform: scale(1.1);
   background-color: #f2f2f2;
 }
 .contenedor_registro{
@@ -516,7 +551,7 @@ img {
 }
 .border_solid{
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
 }
 .border-activity{
   border-style: solid;
@@ -656,6 +691,7 @@ img {
   bottom: 20px;
   right: 80px;
 }
+
 .encabezado_secciones{
   background-color: #E03C3B;
   color: white;
@@ -681,11 +717,11 @@ img {
 }
 .contenido_secciones{
   background-color: #ffff;
-  border-left:solid black 1.5px;
-  border-right:solid black 1.5px;
+  border-left:solid #E03C3B 1px;
+  border-right:solid #E03C3B 1px;
   border-top: 0px!important;
-  border-bottom:solid black 1.5px;
-  padding: 5px;
+  border-bottom:solid #E03C3B 1px;
+  padding: 4px;
 }
 .custom-actividad{
   width: 50%!important;
@@ -758,5 +794,6 @@ img {
 
 .carousel.carousel-fade .carousel-item.active {
     opacity: 1 !important;
+}
 }
 /*Fin de clases estructuras*/

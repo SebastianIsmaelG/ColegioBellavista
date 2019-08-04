@@ -10,7 +10,7 @@ try {
   if (!$cnn) {
       die("Conexion Fallida: " . mysqli_connect_error());
   }else{
-    $sql1="SELECT nombre FROM equipo_trabajadores WHERE (tipo=1)";
+    $sql1="SELECT nombre FROM equipo_trabajadores WHERE (tipo=1) ORDER BY nombre";
     $results = mysqli_query($cnn, $sql1);
     echo "<div class='row'>";
     while ($row = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
@@ -27,7 +27,7 @@ try {
       <ul class='list-group'>";
       echo "<div class='row'>";
 
-      $sql2="SELECT nombre FROM equipo_trabajadores WHERE (tipo=2)";
+      $sql2="SELECT nombre FROM equipo_trabajadores WHERE (tipo=2) ORDER BY nombre";
       $results = mysqli_query($cnn, $sql2);
       while ($row2 = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
         $nombre = utf8_encode($row2["nombre"]);

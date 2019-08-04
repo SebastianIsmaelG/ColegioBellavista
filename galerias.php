@@ -18,17 +18,17 @@
             <ul class="nav justify-content-center color_1">
               <li class="nav-item">
                 <div style="padding-right:6px;">
-                  <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
+                  <p class="font-weight-bold font_contact"><span> <img src="images/iconos/marcador-email.png" alt="" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
+                  <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-telefono.png" alt="" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
+                  <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-localidad.png" alt="" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                 </div>
               </li>
             </ul>
@@ -38,7 +38,7 @@
             <div class='row'>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                 <div class='py-2'>
-                  <img src='images/utilidad/insignia.png' width='76' height='80' alt=''>
+                  <a href="index.php"><img src='images/utilidad/insignia.png' width='76' height='80' alt=''></a>
                 </div>
               </div>
               <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -85,7 +85,7 @@
     <section>
         <br>
         <div class="container bg-light shadow-border">
-          <div class="container py-3">
+          <div class="container py-2">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php"><small>INICIO</small></a></li>
@@ -95,7 +95,7 @@
             </nav>
           </div>
           <hr>
-          <div class="container py-2">
+          <div class="container py-1">
             <div class="form-group display_center">
               <form action="galerias.php" class="form-inline" method="GET" onSubmit="return validar();">
                 <div class="form-group col-lg-10 col-md-10 col-sm-7 col-xs-6" style="width:70%;">
@@ -133,7 +133,7 @@
             <div class="row">
               <div class="col-lg-12 col-sm-12 logotipo">
                 <div class="mx-auto" style="width:90px;">
-                  <img src="images/utilidad/insignia.png" width="76" height="80" class="d-block mb-12 noseleccionable" role="img" focusable="false" alt="">
+                <a href="index.php"><img src="images/utilidad/insignia.png" width="76" height="80" class="d-block mb-12 noseleccionable" role="img" focusable="false" alt=""></a>
                 </div>
               </div>
               <div class="col-lg-12 col-sm-12 text-center ">
@@ -146,7 +146,7 @@
           <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
             <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-telefono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
             <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
           </ul>
         </div>
@@ -173,12 +173,12 @@
           <h5>Redes Sociales</h5>
           <div class="custom_display">
             <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+            <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
             </a>
           </div>
           <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+            <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
             </a>
           </div>
           <div class="custom_display">
@@ -201,7 +201,7 @@
        window.open(URL,"ventana1","width=600,height=300,scrollbars=NO")
     }
     </script>
-    <script src="js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="js/jquery-3.4.1.min.js" ></script>
     <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript">

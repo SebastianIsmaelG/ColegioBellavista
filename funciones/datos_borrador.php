@@ -21,7 +21,7 @@ if (isset($_GET["input_busqueda"]) && isset($_GET["btn_search"])) {
         $rowCount = $fila["0"];
       }
       if ($rowCount=="0") {
-        echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+        echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
       }else {
         //Paginacion
         $paginacion  = 8;
@@ -73,12 +73,12 @@ if (isset($_GET["input_busqueda"]) && isset($_GET["btn_search"])) {
                                 <hr>
                                 <p><span class='font_open font-weight-bold'>Titulo Noticia: </span>$tn </p>
                                 <p><span class='font_open font-weight-bold'>Fecha Publicación: </span>$fn </p>
-                              </div>
+                              </div>z
                             </div>
                           </div>
                           <div class='modal-footer'>
                             <input type='hidden' name='id_noticia' value='$idn'>
-                            <input type='submit' class='btn btn-danger' name='btn_eliminar_noticia' value='Eliminar'></form>
+                            <input type='submit' class='btn btn-danger' name='btn_eliminar_borrador' value='Eliminar'></form>
                           </div>
                         </div>
                       </div>
@@ -172,7 +172,7 @@ if (isset($_GET["input_busqueda"]) && isset($_GET["btn_search"])) {
         $rowCount = $fila["0"];
       }
       if ($rowCount=="0") {
-        echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+        echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
       }else {
         //Paginacion
         $paginacion  = 8;
@@ -229,7 +229,7 @@ if (isset($_GET["input_busqueda"]) && isset($_GET["btn_search"])) {
                           </div>
                           <div class='modal-footer'>
                             <input type='hidden' name='id_noticia' value='$idn'>
-                            <input type='submit' class='btn btn-danger' name='btn_eliminar_noticia' value='Eliminar'></form>
+                            <input type='submit' class='btn btn-danger' name='btn_eliminar_borrador' value='Eliminar'></form>
                           </div>
                         </div>
                       </div>

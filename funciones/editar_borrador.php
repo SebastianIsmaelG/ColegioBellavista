@@ -123,7 +123,7 @@ require ("session_usuario.php");
                <div class="col-lg-12 text-right">
                  <input type="hidden" name="id_noticia" value="<?php echo $id_noticia; ?>">
                  <input type="submit" class="btn btn-primary" name="btn_subir_noticia" value="Subir Noticia">
-                 <input type="submit" class="btn btn-warning text-light" name="btn_actualizar_borrador" value="Guardar Borrador">
+                 <input type="submit" class="btn btn-warning text-light disabled" name="btn_actualizar_borrador" value="Guardar Borrador">
                </div>
              </div>
            </form>

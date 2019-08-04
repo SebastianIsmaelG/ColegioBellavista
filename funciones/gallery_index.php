@@ -169,7 +169,7 @@
               while ($fila = mysqli_stmt_fetch($sql5)) {
                 if ($foto_uno == 0) {
                   echo "
-                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 $variable_dnone'>
                     <div class='container_thumbnail'>
                       <img src='";
                       if(isset($nameimg)){
@@ -213,7 +213,7 @@
               while ($fila = mysqli_stmt_fetch($sql6)) {
                 if ($foto_uno == 0) {
                   echo "
-                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 $variable_dnone'>
                     <div class='container_thumbnail'>
                       <img src='";
                       if(isset($nameimg)){
@@ -257,7 +257,7 @@
               while ($fila = mysqli_stmt_fetch($sql7)) {
                 if ($foto_uno == 0) {
                   echo "
-                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 $variable_dnone'>
 
 
                     <div class='container_thumbnail'>
@@ -290,62 +290,3 @@
 
 
  ?>
-
-
-<!--
-//Sentencia de busqueda galerias
-$sql = "SELECT dg.id_galeria,dg.titulo_galeria,dg.intro_galeria
-FROM datos_galerias as dg
-ORDER by rand() LIMIT 6";
-$results = mysqli_query($cnn, $sql);
-if(mysqli_num_rows($results)>="6"){
-  $rows = [];
-  while($row = mysqli_fetch_assoc($results)) {
-      $rows[] = $row;
-      //Por cada row se saca el id, con el id se hace un bucle for para que con cada imagen del id se haga un div en un require externo
-  }
-  //cuadro1
-  $id_galeria_1 = $rows[0]["id_galeria"];
-  $titulo_galeria_1 = utf8_encode($rows[0]["titulo_galeria"]);
-  $intro_galeria_1 = utf8_encode($rows[0]["intro_galeria"]);
-  if (!$cnn) {
-    die("Conexion Fallida: " . mysqli_connect_error());
-  }else{
-      //Select count
-
-  }
-  //LLamado imagenes cuadro1
-  function ImagenesGaleria($id_galeria_1){
-    for ($i=0; $i == $total_images ; $i++) {
-      //Select all fotos y en el while se crea en div
-      echo "<div></div>";
-    }
-  }
-  //cuadro2
-  $id_galeria_2 = $rows[1]["id_galeria"];
-  $titulo_galeria_2 = utf8_encode($rows[1]["titulo_galeria"]);
-  $intro_galeria_2 = utf8_encode($rows[1]["intro_galeria"]);
-  //cuadro3
-  $id_galeria_3 = $rows[2]["id_galeria"];
-  $titulo_galeria_3 = utf8_encode($rows[2]["titulo_galeria"]);
-  $intro_galeria_3 = utf8_encode($rows[2]["intro_galeria"]);
-  //cuadro4
-  $id_galeria_4 = $rows[3]["id_galeria"];
-  $titulo_galeria_4 = utf8_encode($rows[3]["titulo_galeria"]);
-  $intro_galeria_4 = utf8_encode($rows[3]["intro_galeria"]);
-  //cuadro5
-  $id_galeria_5 = $rows[4]["id_galeria"];
-  $titulo_galeria_5 = utf8_encode($rows[4]["titulo_galeria"]);
-  $intro_galeria_5 = utf8_encode($rows[4]["intro_galeria"]);
-  //cuadro6
-  $id_galeria_6 = $rows[5]["id_galeria"];
-  $titulo_galeria_6 = utf8_encode($rows[5]["titulo_galeria"]);
-  $intro_galeria_6 = utf8_encode($rows[5]["intro_galeria"]);
-
-  //Fin de las declaraciones
-
-
-}else {
-  echo "";
-}
--->

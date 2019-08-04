@@ -9,31 +9,10 @@
     <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Admisión Colegio Bellavista</title>
-    <script type="text/javascript">
-          function getParameterByName(name, url) {
-          if (!url) url = window.location.href;
-          name = name.replace(/[\[\]]/g, '\\$&');
-          var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-              results = regex.exec(url);
-          if (!results) return null;
-          if (!results[2]) return '';
-          return decodeURIComponent(results[2].replace(/\+/g, ' '));
-      }
-      function openModal(){
-        var open_modal = getParameterByName('estatemodal');
-        if (open_modal =="true"){
-        //Abre el modal que quieras
-          $('#Modalsend').modal();
-        }
-        if (open_modal =="false"){
-        //Abre el modal que quieras
-          $('#Modalsenderror').modal();
-        }
-      }
-    </script>
+    <script type="text/javascript" src="js/statemodal.js"></script>
     <script type="text/javascript">
       function comprobar_form(){
         if (document.getElementById('input1').value == ""){
@@ -113,17 +92,17 @@
             <ul class="nav justify-content-center color_1">
               <li class="nav-item">
                 <div style="padding-right:6px;">
-                  <p class="font-weight-bold"><span> <img src="images/iconos/marcador-email.png" alt="email" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
+                  <p class="font-weight-bold font_contact"><span> <img src="images/iconos/marcador-email.png" alt="email" width="18" height="18"></span> <?php echo $email_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
+                  <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-telefono.png" alt="telefono" width="18" height="18"></span> <?php echo $telefono_contacto; ?></p>
                 </div>
               </li>
               <li class="nav-item">
                 <div>
-                  <p class="font-weight-bold"><span><img src="images/iconos/marcador-localidad.png" alt="direccion" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
+                  <p class="font-weight-bold font_contact"><span><img src="images/iconos/marcador-localidad.png" alt="direccion" width="18" height="18"></span> <?php echo $ubicacion_contacto; ?></p>
                 </div>
               </li>
             </ul>
@@ -305,7 +284,7 @@
           <h5>Contacto</h5>
           <ul class="list-unstyled text-small">
             <li><p class="text-muted"><span><img src="images/iconos/marcador-email.png" alt="email" width="18" height="16"></span>&nbsp;<?php echo $email_contacto; ?></p></li>
-            <li><p class="text-muted"><span><img src="images/iconos/marcador-teléfono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
+            <li><p class="text-muted"><span><img src="images/iconos/marcador-telefono.png" alt="telefono" width="18" height="18"></span>&nbsp;<?php echo $telefono_contacto; ?></p></li>
             <li><p class="text-muted"><span><img src="images/iconos/marcador-localidad.png" alt="ubicacion" width="18" height="18"></span>&nbsp;<?php echo $ubicacion_contacto; ?></p></li>
           </ul>
         </div>
@@ -332,12 +311,12 @@
           <h5>Redes Sociales</h5>
           <div class="custom_display">
             <a href="https://www.facebook.com/Colegio-Bellavista-1328489143963284/" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
+            <img src="images/iconos/facebook.png" alt="Facebook"  height="25px" width="25px" class="icon_zoom"/>
             </a>
           </div>
           <div class="custom_display">
             <a href="#" target="_blank" class="text-decoration-none text-light">
-            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
+            <img src="images/iconos/twitter.png" alt="Twitter" height="25px" width="25px" class="icon_zoom" />
             </a>
           </div>
           <div class="custom_display">

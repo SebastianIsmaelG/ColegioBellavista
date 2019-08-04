@@ -25,7 +25,7 @@
 
     }
     if ($rowCount=="0") {
-      echo "<span class='text-muted font-weight-bold text-center'>Sin resultados</span>";
+      echo "<div class='container d-flex justify-content-center'><span class='text-muted font-weight-bold'>Sin resultados</span></div>";
     }else {
       $empiezaPaginacion = ($pagina-1) *  $paginacion;
       //Container
@@ -35,7 +35,7 @@
 
       //Consulta SQL
       $sql = mysqli_prepare($cnn,"SELECT g.id_galeria,g.codigo_galeria,g.titulo_galeria,g.intro_galeria
-      FROM datos_galerias as g
+      FROM datos_galerias as g ORDER BY id_galeria DESC
        LIMIT ?,?");
 
       mysqli_stmt_bind_param($sql,"ii",$empiezaPaginacion,$paginacion);
