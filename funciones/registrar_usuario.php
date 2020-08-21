@@ -12,55 +12,57 @@ if (isset($_POST["btn_registro_usuario"])) {
     if ($nombre_real == "" || $apellido_real == "" || $usuario=="" || $password=="" || $email =="") {
       echo "<script> window.alert(' Ha ocurrrido un error al recuperar los datos, reintente. COD:0000');window.history.back();</script>";
     }else{
-    }else {
-      require ("dbcall.php");
-      if (!$cnn) {
-          die("Conexion Fallida: " . mysqli_connect_error());
-      }else{
-            $sql = mysqli_prepare($cnn,"SELECT * FROM usuarios WHERE nombre_usuario = ?");
-            mysqli_stmt_bind_param($sql,"s",$usuario);
-            $rs = mysqli_stmt_execute($sql);
 
-                  mysqli_stmt_store_result($sql);
-            $contar = mysqli_stmt_num_rows($sql);
+    include("dbcall.php");
+    if (!$cnn) {
+      die("Conexion Fallida: " . mysqli_connect_error());
+    }else{
+        $sql = mysqli_prepare($cnn,"SELECT * FROM usuarios WHERE nombre_usuario = ?");
+        mysqli_stmt_bind_param($sql,"s",$usuario);
+        $rs = mysqli_stmt_execute($sql);
 
-                  if ($contar==0) {
-                      if ($password == $confirm_password) {
+              mysqli_stmt_store_result($sql);
+        $contar = mysqli_stmt_num_rows($sql);
 
-                        try {
-                          require ("dbcall.php");
-                          if (!$cnn) {
-                              die("Conexion Fallida: " . mysqli_connect_error());
-                          }else{
-                              //Encriptado hash para la contraseña
-                              $password_cifrada = password_hash($password,PASSWORD_DEFAULT);
+          if ($contar==0) {
+                  if ($password == $confirm_password) {
 
-                              $sql = mysqli_prepare($cnn,"INSERT INTO usuarios (nombre, apellido, nombre_usuario, password_usuario, email) VALUES (?,?,?,?,?)");
-                              mysqli_stmt_bind_param($sql,"sssss",$nombre_real, $apellido_real, $usuario, $password_cifrada,$email);
-                              $rs = mysqli_stmt_execute($sql);
+                    try {
+                      require ("dbcall.php");
+                      if (!$cnn) {
+                          die("Conexion Fallida: " . mysqli_connect_error());
+                      }else{
+                          //Encriptado hash para la contraseña
+                          $password_cifrada = password_hash($password,PASSWORD_DEFAULT);
 
-                              mysqli_stmt_free_result($sql);
-                              mysqli_close($cnn);
+                          $sql = mysqli_prepare($cnn,"INSERT INTO usuarios (nombre, apellido, nombre_usuario, password_usuario, email) VALUES (?,?,?,?,?)");
+                          mysqli_stmt_bind_param($sql,"sssss",$nombre_real, $apellido_real, $usuario, $password_cifrada,$email);
+                          $rs = mysqli_stmt_execute($sql);
 
-                              echo "<script> window.alert('Usuario almacenado con exito!');window.location.href='../administracion/registrar_usuario.html';</script>";
+                          mysqli_stmt_free_result($sql);
+                          mysqli_close($cnn);
 
-                          }
-                        } catch (\Exception $e) {
-                          echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
+                          echo "<script> window.alert('Usuario almacenado con exito!');window.location.href='../administracion/registrar_usuario.html';</script>";
 
-                        }
+                      }
+                    } catch (\Exception $e) {
+                      echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
 
-            }else {
-                echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
+                    }
 
-            }
         }else {
             echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
 
-
         }
+    }else {
+        echo "<script> window.alert('Ha ocurrrido un error inesperado contacte al administrador. COD:0001');window.location.href='../ingreso.html';</script>";
 
-      }
+
+    }
+
+    }
+
+      
     }
 
   } catch (\Exception $e) {
