@@ -8,7 +8,7 @@
         <meta name="theme-color" content="#E03C3B">
         <meta name="robots" content="notranslate" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap.min.css"  crossorigin="anonymous">
         <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
@@ -502,8 +502,8 @@
           });
         </script>
         <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.css">
-        <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="js/popper.min.js" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script src="js/ekko-lightbox.min.js"></script>
         <script type="text/javascript" src="js/ekko-lightbox.min.js.map"></script>
         <script type="text/javascript">
