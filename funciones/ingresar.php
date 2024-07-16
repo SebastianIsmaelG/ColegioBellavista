@@ -32,7 +32,7 @@ if (isset($_POST["btn_ingreso_usuario"])) {
                               $password_hash = $pass;
                           }
                           //Comprueba el hash con la contraseña ingresada
-                          if (password_verify($password,$password_hash)) {
+                          if ($password_hash ==$password) {
                             $_SESSION["usuario_administracion"]=utf8_encode($usuario);
                             echo "<script> window.location.href='../administracion/menu_principal.php';</script>";//Aceder
                           }else {
