@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css"  crossorigin="anonymous">
         <link rel="shortcut icon" href="images/utilidad/favicon.ico" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.css">
     </head>
     <body class="sadas">
       <div class="loader-page">
@@ -413,7 +414,7 @@
                     <div class="container">
                       <div class="box_container">
                         <div class="encabezado_secciones3" style="background-color: #<?php echo $border_admision ?>;">
-                          <a href="admision.php" class="text-decoration-none"><img src="images/utilidad/<?php echo $imagen_admision ?>" alt="" style="height: 120px!important; width: 405px!important;object-fit:cover"></a>
+                          <a href="admision.php" class="text-decoration-none"><img src="images/utilidad/<?php echo $imagen_admision ?>" alt="imagen" object-fit:cover"></a>
                         </div>
                       </div>
                     </div>
@@ -492,7 +493,7 @@
           </div>
         </footer>
         <!--SCRIPTS-->
-        <script src="js/jquery-3.4.1.min.js" ></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
         <script type="text/javascript">
           $(window).on('load', function () {
               setTimeout(function () {
@@ -501,7 +502,6 @@
 
           });
         </script>
-        <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.css">
         <script src="js/popper.min.js" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script src="js/ekko-lightbox.min.js"></script>

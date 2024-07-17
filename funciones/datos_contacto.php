@@ -11,7 +11,7 @@
                 $id_contacto = $row["id"];
                 $email_contacto = $row["email"];
                 $telefono_contacto = $row["telefono"];
-                $ubicacion_contacto = utf8_encode($row["ubicacion"]);
+                $ubicacion_contacto = $row["ubicacion"];//utf8_encode($row["ubicacion"]);
       }
 
 

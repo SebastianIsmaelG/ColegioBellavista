@@ -8,5 +8,4 @@ Dropzonejs https://www.dropzone.dev/
 Lightwidget https://lightwidget.com/
 Lightbox https://github.com/ashleydw/lightbox
 
-Watch it here!
 
